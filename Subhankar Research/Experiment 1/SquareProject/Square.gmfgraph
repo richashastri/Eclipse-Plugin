@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="SquareMM">
+  <figures name="Default">
+    <descriptors name="SquareFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="SquareFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="SquareNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="SquareColorFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="SquareLengthFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="RelationFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RelationFigure">
+        <children xsi:type="gmfgraph:Label" name="RelationNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="Square" figure="SquareFigure"/>
+  <connections name="Relation" figure="RelationFigure"/>
+  <labels name="SquareName" figure="SquareFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="SquareColor" figure="SquareFigure" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="SquareLength" figure="SquareFigure" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels name="RelationName" figure="RelationFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+</gmfgraph:Canvas>

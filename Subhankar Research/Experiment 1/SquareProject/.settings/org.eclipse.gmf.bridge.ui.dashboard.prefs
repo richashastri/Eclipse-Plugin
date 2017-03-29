@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/SquareProject/Square.genmodel
+gmf_dashboard/domainModel=platform\:/resource/SquareProject/Square.ecore
+gmf_dashboard/generationModel=platform\:/resource/SquareProject/Square.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/SquareProject/Square.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/SquareProject/Square.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/SquareProject/Square.gmftool

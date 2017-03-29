@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Square -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="SquareMM.presentation.SquareMMModelWizardID"
+            name="%_UI_SquareMMModelWizard_label"
+            class="SquareMM.presentation.SquareMMModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SquareMMModelFile.gif">
+         <description>%_UI_SquareMMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Square -->
+      <editor
+            id="SquareMM.presentation.SquareMMEditorID"
+            name="%_UI_SquareMMEditor_label"
+            icon="icons/full/obj16/SquareMMModelFile.gif"
+            extensions="squaremm"
+            class="SquareMM.presentation.SquareMMEditor"
+            contributorClass="SquareMM.presentation.SquareMMActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

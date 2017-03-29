@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:square="http://square/1.0" xmi:id="_8x9fABKmEee-P7C42_uxUg" type="Square" name="SquareM.squaremm_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_WfZtkBKnEee-P7C42_uxUg" type="2001" fontName="Segoe UI" bold="true">
+    <children xmi:type="notation:DecorationNode" xmi:id="_WfdX8BKnEee-P7C42_uxUg" type="5001"/>
+    <element xmi:type="square:Square" href="SquareM.squaremm#//@squares.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WfZtkRKnEee-P7C42_uxUg" x="36" y="24" width="133" height="61"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Y2FREBKnEee-P7C42_uxUg" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Y2FREhKnEee-P7C42_uxUg" type="5001"/>
+    <element xmi:type="square:Square" href="SquareM.squaremm#//@squares.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y2FRERKnEee-P7C42_uxUg" x="36" y="156" width="133" height="49"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_cwPZgBKnEee-P7C42_uxUg" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_cwPZghKnEee-P7C42_uxUg" type="5001"/>
+    <element xmi:type="square:Square" href="SquareM.squaremm#//@squares.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cwPZgRKnEee-P7C42_uxUg" x="24" y="264" width="145" height="73"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8x-GEBKmEee-P7C42_uxUg"/>
+  <element xmi:type="square:Architecture" href="SquareM.squaremm#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_bo_dkBKnEee-P7C42_uxUg" type="4001" source="_WfZtkBKnEee-P7C42_uxUg" target="_Y2FREBKnEee-P7C42_uxUg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_bo_dkRKnEee-P7C42_uxUg" fontName="Segoe UI"/>
+    <element xmi:type="square:Relation" href="SquareM.squaremm#//@relations.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bo_dkhKnEee-P7C42_uxUg" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bpDH8BKnEee-P7C42_uxUg" id="(0.49624060150375937,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ech8MBKnEee-P7C42_uxUg" id="(0.49624060150375937,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_duWnkBKnEee-P7C42_uxUg" type="4001" source="_Y2FREBKnEee-P7C42_uxUg" target="_cwPZgBKnEee-P7C42_uxUg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_duWnkRKnEee-P7C42_uxUg" fontName="Segoe UI"/>
+    <element xmi:type="square:Relation" href="SquareM.squaremm#//@relations.1"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_duWnkhKnEee-P7C42_uxUg" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_echVIBKnEee-P7C42_uxUg" id="(0.49624060150375937,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_echVIRKnEee-P7C42_uxUg" id="(0.496551724137931,0.0)"/>
+  </edges>
+</notation:Diagram>

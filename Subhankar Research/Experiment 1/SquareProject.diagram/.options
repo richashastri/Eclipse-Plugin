@@ -1,0 +1,7 @@
+# Tracing options for the SquareProject.diagram plug-in
+
+# Common issues
+SquareProject.diagram/debug=false
+
+# Visual IDs
+SquareProject.diagram/debug/visualID=false

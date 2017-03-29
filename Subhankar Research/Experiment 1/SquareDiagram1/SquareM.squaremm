@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<square:Architecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:square="http://square/1.0">
+  <squares Name="Code Block 1" Color="int a = 10"/>
+  <squares Name="Code Block 2"/>
+  <squares Name="Code Block 3"/>
+  <relations source="//@squares.0" target="//@squares.1"/>
+  <relations source="//@squares.1" target="//@squares.2"/>
+</square:Architecture>
