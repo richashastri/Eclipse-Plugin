@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/CodeBlockGMF/CodeBlock.genmodel
+gmf_dashboard/domainModel=platform\:/resource/CodeBlockGMF/CodeBlock.ecore
+gmf_dashboard/generationModel=platform\:/resource/CodeBlockGMF/CodeBlock.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/CodeBlockGMF/CodeBlock.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/CodeBlockGMF/CodeBlock.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/CodeBlockGMF/CodeBlock.gmftool

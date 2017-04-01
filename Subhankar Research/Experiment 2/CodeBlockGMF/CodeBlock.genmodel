@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/CodeBlockGMF/src" modelPluginID="CodeBlockGMF"
+    modelName="CodeBlock" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>CodeBlock.ecore</foreignModel>
+  <genPackages prefix="CodeBlockMM" disposableProviderFactory="true" ecorePackage="CodeBlock.ecore#/">
+    <genClasses ecoreClass="CodeBlock.ecore#//Architecture">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CodeBlock.ecore#//Architecture/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CodeBlock.ecore#//Architecture/codeblocks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CodeBlock.ecore#//Architecture/connections"/>
+    </genClasses>
+    <genClasses ecoreClass="CodeBlock.ecore#//CodeBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CodeBlock.ecore#//CodeBlock/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CodeBlock.ecore#//CodeBlock/Code"/>
+    </genClasses>
+    <genClasses ecoreClass="CodeBlock.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CodeBlock.ecore#//Connection/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CodeBlock.ecore#//Connection/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CodeBlock.ecore#//Connection/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

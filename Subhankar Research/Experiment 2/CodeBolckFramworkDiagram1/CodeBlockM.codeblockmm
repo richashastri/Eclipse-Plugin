@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codeblock:Architecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:codeblock="http://codeblock/1.0">
+  <codeblocks Name="Block1" Code="int a = 5"/>
+  <codeblocks Name="Block 2"/>
+  <connections source="//@codeblocks.0" target="//@codeblocks.1"/>
+</codeblock:Architecture>

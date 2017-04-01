@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:codeblock="http://codeblock/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_57BjQBZ5EeeRy9xJGUXF7Q" type="CodeBlock" name="CodeBlockM.codeblockmm_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_78AjkBZ5EeeRy9xJGUXF7Q" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_78AjkhZ5EeeRy9xJGUXF7Q" type="5001"/>
+    <element xmi:type="codeblock:CodeBlock" href="CodeBlockM.codeblockmm#//@codeblocks.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_78AjkRZ5EeeRy9xJGUXF7Q" x="24" y="24" width="169" height="61"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_DHn1sBZ6EeeRy9xJGUXF7Q" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DHn1shZ6EeeRy9xJGUXF7Q" type="5001"/>
+    <element xmi:type="codeblock:CodeBlock" href="CodeBlockM.codeblockmm#//@codeblocks.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DHn1sRZ6EeeRy9xJGUXF7Q" x="36" y="156" width="157" height="73"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_57BjQRZ5EeeRy9xJGUXF7Q"/>
+  <element xmi:type="codeblock:Architecture" href="CodeBlockM.codeblockmm#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_KCxC4BZ6EeeRy9xJGUXF7Q" type="4001" source="_78AjkBZ5EeeRy9xJGUXF7Q" target="_DHn1sBZ6EeeRy9xJGUXF7Q">
+    <styles xmi:type="notation:FontStyle" xmi:id="_KCxC4RZ6EeeRy9xJGUXF7Q" fontName="Segoe UI"/>
+    <element xmi:type="codeblock:Connection" href="CodeBlockM.codeblockmm#//@connections.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KCxC4hZ6EeeRy9xJGUXF7Q" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K2SxkBZ6EeeRy9xJGUXF7Q" id="(0.4970414201183432,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K2cikBZ6EeeRy9xJGUXF7Q" id="(0.4968152866242038,0.0)"/>
+  </edges>
+</notation:Diagram>

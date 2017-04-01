@@ -1,0 +1,7 @@
+# Tracing options for the CodeBlockGMF.diagram plug-in
+
+# Common issues
+CodeBlockGMF.diagram/debug=false
+
+# Visual IDs
+CodeBlockGMF.diagram/debug/visualID=false
