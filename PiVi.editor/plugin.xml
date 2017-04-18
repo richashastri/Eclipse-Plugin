@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Pivicode -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="CodeBlockMM.presentation.CodeBlockMMModelWizardID"
+            name="%_UI_CodeBlockMMModelWizard_label"
+            class="CodeBlockMM.presentation.CodeBlockMMModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CodeBlockMMModelFile.gif">
+         <description>%_UI_CodeBlockMMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Pivicode -->
+      <editor
+            id="CodeBlockMM.presentation.CodeBlockMMEditorID"
+            name="%_UI_CodeBlockMMEditor_label"
+            icon="icons/full/obj16/CodeBlockMMModelFile.gif"
+            extensions="codeblockmm"
+            class="CodeBlockMM.presentation.CodeBlockMMEditor"
+            contributorClass="CodeBlockMM.presentation.CodeBlockMMActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
