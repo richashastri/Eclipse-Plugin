@@ -1,0 +1,7 @@
+# Tracing options for the PiVi.diagram plug-in
+
+# Common issues
+PiVi.diagram/debug=false
+
+# Visual IDs
+PiVi.diagram/debug/visualID=false

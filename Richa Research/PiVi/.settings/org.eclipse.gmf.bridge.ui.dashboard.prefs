@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/PiVi/pivicode.genmodel
+gmf_dashboard/domainModel=platform\:/resource/PiVi/pivicode.ecore
+gmf_dashboard/generationModel=platform\:/resource/PiVi/pivicode.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/PiVi/pivicode.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/PiVi/pivicode.gmfmap
+gmf_dashboard/option_rcp=*
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/PiVi/pivicode.gmftool
