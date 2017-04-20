@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/PiVIProject/PiVi.genmodel
+gmf_dashboard/domainModel=platform\:/resource/PiVIProject/PiVi.ecore
+gmf_dashboard/generationModel=platform\:/resource/PiVIProject/PiVi.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/PiVIProject/PiVi.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/PiVIProject/PiVi.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/PiVIProject/PiVi.gmftool

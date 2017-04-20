@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated PiVi -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="PiViMM.presentation.PiViMMModelWizardID"
+            name="%_UI_PiViMMModelWizard_label"
+            class="PiViMM.presentation.PiViMMModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PiViMMModelFile.gif">
+         <description>%_UI_PiViMMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated PiVi -->
+      <editor
+            id="PiViMM.presentation.PiViMMEditorID"
+            name="%_UI_PiViMMEditor_label"
+            icon="icons/full/obj16/PiViMMModelFile.gif"
+            extensions="pivimm"
+            class="PiViMM.presentation.PiViMMEditor"
+            contributorClass="PiViMM.presentation.PiViMMActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

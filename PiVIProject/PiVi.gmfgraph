@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="PiViMM">
+  <figures name="Default">
+    <descriptors name="CodeBlockFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="CodeBlockFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="CodeBlockNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="CodeBlockCodeFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ConnectorFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorFigure">
+        <children xsi:type="gmfgraph:Label" name="ConnectorNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="CodeBlock" figure="CodeBlockFigure"/>
+  <connections name="Connector" figure="ConnectorFigure"/>
+  <labels name="CodeBlockName" figure="CodeBlockFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="CodeBlockCode" figure="CodeBlockFigure" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="ConnectorName" figure="ConnectorFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+</gmfgraph:Canvas>
