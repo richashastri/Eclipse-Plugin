@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="asu.ser.capstone.pivi.presentation.PiviModelWizardID"
+            name="%_UI_PiviModelWizard_label"
+            class="asu.ser.capstone.pivi.presentation.PiviModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PiviModelFile.gif">
+         <description>%_UI_PiviModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="asu.ser.capstone.pivi.presentation.PiviEditorID"
+            name="%_UI_PiviEditor_label"
+            icon="icons/full/obj16/PiviModelFile.gif"
+            extensions="pivi"
+            class="asu.ser.capstone.pivi.presentation.PiviEditor"
+            contributorClass="asu.ser.capstone.pivi.presentation.PiviActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
