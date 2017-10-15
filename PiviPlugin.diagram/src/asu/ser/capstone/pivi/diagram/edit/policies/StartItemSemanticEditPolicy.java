@@ -27,25 +27,23 @@ import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
 public class StartItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public StartItemSemanticEditPolicy() {
 		super(PiviElementTypes.Start_2008);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (PiviVisualIDRegistry.getVisualID(outgoingLink) == StartStartPortEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -70,18 +68,15 @@ public class StartItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy 
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (PiviElementTypes.StartStartPort_4004 == req.getElementType()) {
-			return getGEFWrapper(new StartStartPortCreateCommand(req,
-					req.getSource(), req.getTarget()));
+			return getGEFWrapper(new StartStartPortCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -89,8 +84,7 @@ public class StartItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy 
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (PiviElementTypes.StartStartPort_4004 == req.getElementType()) {
 			return null;
 		}
@@ -103,8 +97,7 @@ public class StartItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy 
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case StartStartPortEditPart.VISUAL_ID:
 			return getGEFWrapper(new StartStartPortReorientCommand(req));
