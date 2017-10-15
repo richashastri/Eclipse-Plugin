@@ -15,8 +15,8 @@ import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
 public class PiviEditPartFactory implements EditPartFactory {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
@@ -91,20 +91,18 @@ public class PiviEditPartFactory implements EditPartFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EditPart createUnrecognizedEditPart(EditPart context, Object model) {
 		// Handle creation of unrecognized child node EditParts here
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	* @generated
+	*/
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }
