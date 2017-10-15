@@ -28,7 +28,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OutputPortItemProvider
+public class OutputPortItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -128,6 +128,7 @@ public class OutputPortItemProvider
 	public String getText(Object object) {
 		return getString("_UI_OutputPort_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
