@@ -25,7 +25,7 @@
          default="true"
          class="asu.ser.capstone.pivi.diagram.part.PiviDiagramEditor"
          matchingStrategy="asu.ser.capstone.pivi.diagram.part.PiviMatchingStrategy"
-         contributorClass="asu.ser.capstone.pivi.diagram.part.PiviDiagramActionBarContributor">
+         contributorClass="asu.ser.capstone.pivi.diagram.part.custom.CustomPiviDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -245,25 +245,72 @@
       </editpartProvider>
    </extension>
 
+   
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.PiviModelingAssistantProvider">
+      <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfPiviDiagramEditPart">
          <Priority name="Lowest"/>
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart" id="PiviDiagram_1000"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart" id="IfStart_2001"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart" id="WhileEnd_2002"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart" id="MethodEnd_2003"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart" id="IfEnd_2004"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart" id="Instruction_2005"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart" id="MethodStart_2006"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart" id="WhileStart_2007"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart" id="Start_2008"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart" id="InputPort_3001"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart" id="StartPort_3002"/>
-         <object class="asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart" id="OutputPort_3003"/>
-         <context elements="PiviDiagram_1000,IfStart_2001,WhileEnd_2002,MethodEnd_2003,IfEnd_2004,Instruction_2005,MethodStart_2006,WhileStart_2007,Start_2008,InputPort_3001,StartPort_3002,OutputPort_3003"/>
+         <context elements="PiviDiagram_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfIfStartEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart" id="IfStart_2001"/>
+         <context elements="IfStart_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfWhileEndEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart" id="WhileEnd_2002"/>
+         <context elements="WhileEnd_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfMethodEndEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart" id="MethodEnd_2003"/>
+         <context elements="MethodEnd_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfIfEndEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart" id="IfEnd_2004"/>
+         <context elements="IfEnd_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfInstructionEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart" id="Instruction_2005"/>
+         <context elements="Instruction_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfMethodStartEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart" id="MethodStart_2006"/>
+         <context elements="MethodStart_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfWhileStartEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart" id="WhileStart_2007"/>
+         <context elements="WhileStart_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfStartEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart" id="Start_2008"/>
+         <context elements="Start_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfInputPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart" id="InputPort_3001"/>
+         <context elements="InputPort_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfStartPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart" id="StartPort_3002"/>
+         <context elements="StartPort_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="asu.ser.capstone.pivi.diagram.providers.assistants.PiviModelingAssistantProviderOfOutputPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart" id="OutputPort_3003"/>
+         <context elements="OutputPort_3003"/>
+      </modelingAssistantProvider>
+      
    </extension>
+
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
