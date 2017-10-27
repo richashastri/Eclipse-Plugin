@@ -148,6 +148,15 @@ public interface PiviFactory extends EFactory {
 	ThreadStart createThreadStart();
 
 	/**
+	 * Returns a new object of class '<em>Print Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Print Statement</em>'.
+	 * @generated
+	 */
+	PrintStatement createPrintStatement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

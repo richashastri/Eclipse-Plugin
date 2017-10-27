@@ -69,7 +69,7 @@ public class StartPortImpl extends MinimalEObjectImpl.Container implements Start
 	 */
 	public Statement getStatement() {
 		if (eContainerFeatureID() != PiviPackage.START_PORT__STATEMENT) return null;
-		return (Statement)eContainer();
+		return (Statement)eInternalContainer();
 	}
 
 	/**

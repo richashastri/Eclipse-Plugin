@@ -69,7 +69,7 @@ public class InputPortImpl extends MinimalEObjectImpl.Container implements Input
 	 */
 	public Statement getStatement() {
 		if (eContainerFeatureID() != PiviPackage.INPUT_PORT__STATEMENT) return null;
-		return (Statement)eContainer();
+		return (Statement)eInternalContainer();
 	}
 
 	/**

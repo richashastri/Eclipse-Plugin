@@ -12,6 +12,7 @@ import asu.ser.capstone.pivi.OutputPort;
 import asu.ser.capstone.pivi.PiviDiagram;
 import asu.ser.capstone.pivi.PiviFactory;
 import asu.ser.capstone.pivi.PiviPackage;
+import asu.ser.capstone.pivi.PrintStatement;
 import asu.ser.capstone.pivi.Start;
 import asu.ser.capstone.pivi.StartPort;
 import asu.ser.capstone.pivi.Statement;
@@ -138,6 +139,13 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 	 * @generated
 	 */
 	private EClass threadStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass printStatementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -502,6 +510,24 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPrintStatement() {
+		return printStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPrintStatement_Printlines() {
+		return (EAttribute)printStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PiviFactory getPiviFactory() {
 		return (PiviFactory)getEFactoryInstance();
 	}
@@ -572,6 +598,9 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 
 		threadStartEClass = createEClass(THREAD_START);
 		createEAttribute(threadStartEClass, THREAD_START__CONDITION);
+
+		printStatementEClass = createEClass(PRINT_STATEMENT);
+		createEAttribute(printStatementEClass, PRINT_STATEMENT__PRINTLINES);
 	}
 
 	/**
@@ -611,6 +640,7 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 		whileStartEClass.getESuperTypes().add(this.getStatement());
 		threadEndEClass.getESuperTypes().add(this.getStatement());
 		threadStartEClass.getESuperTypes().add(this.getStatement());
+		printStatementEClass.getESuperTypes().add(this.getStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ifEndEClass, IfEnd.class, "IfEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -660,6 +690,9 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 
 		initEClass(threadStartEClass, ThreadStart.class, "ThreadStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getThreadStart_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, ThreadStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(printStatementEClass, PrintStatement.class, "PrintStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPrintStatement_Printlines(), ecorePackage.getEString(), "printlines", null, 0, 1, PrintStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -881,6 +881,70 @@ public interface PiviPackage extends EPackage {
 	 */
 	int THREAD_START_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link asu.ser.capstone.pivi.impl.PrintStatementImpl <em>Print Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see asu.ser.capstone.pivi.impl.PrintStatementImpl
+	 * @see asu.ser.capstone.pivi.impl.PiviPackageImpl#getPrintStatement()
+	 * @generated
+	 */
+	int PRINT_STATEMENT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT__START = STATEMENT__START;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT__INPUTS = STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT__OUTPUTS = STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Printlines</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT__PRINTLINES = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Print Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Print Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link asu.ser.capstone.pivi.IfEnd <em>If End</em>}'.
@@ -1231,6 +1295,27 @@ public interface PiviPackage extends EPackage {
 	EAttribute getThreadStart_Condition();
 
 	/**
+	 * Returns the meta object for class '{@link asu.ser.capstone.pivi.PrintStatement <em>Print Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Print Statement</em>'.
+	 * @see asu.ser.capstone.pivi.PrintStatement
+	 * @generated
+	 */
+	EClass getPrintStatement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link asu.ser.capstone.pivi.PrintStatement#getPrintlines <em>Printlines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Printlines</em>'.
+	 * @see asu.ser.capstone.pivi.PrintStatement#getPrintlines()
+	 * @see #getPrintStatement()
+	 * @generated
+	 */
+	EAttribute getPrintStatement_Printlines();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1546,6 +1631,24 @@ public interface PiviPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute THREAD_START__CONDITION = eINSTANCE.getThreadStart_Condition();
+
+		/**
+		 * The meta object literal for the '{@link asu.ser.capstone.pivi.impl.PrintStatementImpl <em>Print Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see asu.ser.capstone.pivi.impl.PrintStatementImpl
+		 * @see asu.ser.capstone.pivi.impl.PiviPackageImpl#getPrintStatement()
+		 * @generated
+		 */
+		EClass PRINT_STATEMENT = eINSTANCE.getPrintStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Printlines</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRINT_STATEMENT__PRINTLINES = eINSTANCE.getPrintStatement_Printlines();
 
 	}
 

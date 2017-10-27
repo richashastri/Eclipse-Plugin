@@ -165,6 +165,13 @@ public class PiviSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PiviPackage.PRINT_STATEMENT: {
+				PrintStatement printStatement = (PrintStatement)theEObject;
+				T result = casePrintStatement(printStatement);
+				if (result == null) result = caseStatement(printStatement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -391,6 +398,21 @@ public class PiviSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseThreadStart(ThreadStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Print Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Print Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrintStatement(PrintStatement object) {
 		return null;
 	}
 

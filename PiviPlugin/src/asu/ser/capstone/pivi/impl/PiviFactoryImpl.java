@@ -27,7 +27,7 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 	 */
 	public static PiviFactory init() {
 		try {
-			PiviFactory thePiviFactory = (PiviFactory)EPackage.Registry.INSTANCE.getEFactory("http:///asu/ser/capstone/pivi.ecore"); 
+			PiviFactory thePiviFactory = (PiviFactory)EPackage.Registry.INSTANCE.getEFactory(PiviPackage.eNS_URI);
 			if (thePiviFactory != null) {
 				return thePiviFactory;
 			}
@@ -70,6 +70,7 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 			case PiviPackage.WHILE_START: return createWhileStart();
 			case PiviPackage.THREAD_END: return createThreadEnd();
 			case PiviPackage.THREAD_START: return createThreadStart();
+			case PiviPackage.PRINT_STATEMENT: return createPrintStatement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -213,6 +214,16 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 	public ThreadStart createThreadStart() {
 		ThreadStartImpl threadStart = new ThreadStartImpl();
 		return threadStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PrintStatement createPrintStatement() {
+		PrintStatementImpl printStatement = new PrintStatementImpl();
+		return printStatement;
 	}
 
 	/**

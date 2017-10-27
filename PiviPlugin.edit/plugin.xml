@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated pivi -->
       <factory
             uri="http:///asu/ser/capstone/pivi.ecore"
             class="asu.ser.capstone.pivi.provider.PiviItemProviderAdapterFactory"

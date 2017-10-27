@@ -69,7 +69,7 @@ public class OutputPortImpl extends MinimalEObjectImpl.Container implements Outp
 	 */
 	public Statement getStatement() {
 		if (eContainerFeatureID() != PiviPackage.OUTPUT_PORT__STATEMENT) return null;
-		return (Statement)eContainer();
+		return (Statement)eInternalContainer();
 	}
 
 	/**

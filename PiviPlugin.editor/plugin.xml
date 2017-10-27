@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pivi -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -22,6 +23,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated pivi -->
       <editor
             id="asu.ser.capstone.pivi.presentation.PiviEditorID"
             name="%_UI_PiviEditor_label"

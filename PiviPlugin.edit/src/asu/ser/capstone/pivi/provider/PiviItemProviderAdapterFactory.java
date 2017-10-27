@@ -394,6 +394,29 @@ public class PiviItemProviderAdapterFactory extends PiviAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link asu.ser.capstone.pivi.PrintStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrintStatementItemProvider printStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link asu.ser.capstone.pivi.PrintStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrintStatementAdapter() {
+		if (printStatementItemProvider == null) {
+			printStatementItemProvider = new PrintStatementItemProvider(this);
+		}
+
+		return printStatementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -506,6 +529,7 @@ public class PiviItemProviderAdapterFactory extends PiviAdapterFactory implement
 		if (whileStartItemProvider != null) whileStartItemProvider.dispose();
 		if (threadEndItemProvider != null) threadEndItemProvider.dispose();
 		if (threadStartItemProvider != null) threadStartItemProvider.dispose();
+		if (printStatementItemProvider != null) printStatementItemProvider.dispose();
 	}
 
 }
