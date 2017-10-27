@@ -206,6 +206,42 @@
         href="pivi.ecore#//PiviDiagram/statements"/>
     <ownedChild>
       <domainMetaElement
+          href="pivi.ecore#//PrintStatement"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pivi.gmftool#//@palette/@tools.0/@tools.11"/>
+      <diagramNode
+          href="pivi.gmfgraph#PrintStatement"/>
+      <children
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/inputs"/>
+      </children>
+      <children
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/start"/>
+      </children>
+      <children
+          compartment="//@nodes.9/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/outputs"/>
+      </children>
+      <compartments
+          children="//@nodes.9/@ownedChild/@children.0 //@nodes.9/@ownedChild/@children.2 //@nodes.9/@ownedChild/@children.1">
+        <compartment
+            href="pivi.gmfgraph#PrintStatementFigureCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pivi.ecore#//PiviDiagram/statements"/>
+    <ownedChild>
+      <domainMetaElement
           href="pivi.ecore#//MethodStart"/>
       <tool
           xsi:type="gmftool:CreationTool"

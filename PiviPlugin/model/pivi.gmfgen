@@ -28,7 +28,7 @@
         canonicalEditPolicyClassName="InputPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InputPortGraphicalNodeEditPolicy"
         createCommandClassName="InputPortCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8">
+        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -354,6 +354,32 @@
             href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
       </modelFacet>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2011"
+        editPartClassName="PrintStatementEditPart"
+        itemSemanticEditPolicyClassName="PrintStatementItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="PrintStatementCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.9"
+        graphicalNodeEditPolicyClassName="PrintStatementGraphicalNodeEditPolicy"
+        createCommandClassName="PrintStatementCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="PrintStatementEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="PrintStatementFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrintStatementFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigurePrintStatementFigureCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrintStatementFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrintStatementFigureCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigurePrintStatementFigureCompartment, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigurePrintStatementFigureCompartment() {&#xA;&#x9;&#x9;return fFigurePrintStatementFigureCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="pivi.genmodel#//pivi/PrintStatement"/>
+        <containmentMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+        <childMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+      </modelFacet>
+    </topLevelNodes>
     <links
         visualID="4004"
         editPartClassName="StartStartPortEditPart"
@@ -480,6 +506,23 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
+        visualID="7011"
+        editPartClassName="PrintStatementPrintStatementFigureCompartmentEditPart"
+        itemSemanticEditPolicyClassName="PrintStatementPrintStatementFigureCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="PrintStatementPrintStatementFigureCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
+        title="PrintStatementFigureCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.10">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigurePrintStatementFigureCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
         visualID="7007"
         editPartClassName="MethodStartMethodStartFigureCompartmentEditPart"
         itemSemanticEditPolicyClassName="MethodStartMethodStartFigureCompartmentItemSemanticEditPolicy"
@@ -553,12 +596,12 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="IfEnd"
-            description="Create new IfEnd"
+            description="Create new If End"
             genNodes="//@diagram/@topLevelNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="IfStart"
-            description="Create new IfStart"
+            description="Create new If Start"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -568,17 +611,17 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="MethodEnd"
-            description="Create new MethodEnd"
+            description="Create new Method End"
             genNodes="//@diagram/@topLevelNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="MethodStart"
-            description="Create new MethodStart"
+            description="Create new Method Start"
             genNodes="//@diagram/@topLevelNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="OutputPort"
-            description="Create new OutputPort"/>
+            description="Create new Output Port"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Start"
@@ -587,23 +630,28 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="WhileEnd"
-            description="Create new WhileEnd"
+            description="Create new While End"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="WhileStart"
-            description="Create new WhileStart"
+            description="Create new While Start"
             genNodes="//@diagram/@topLevelNodes.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ThreadEnd"
-            description="Create new ThreadEnd"
+            description="Create new Thread End"
             genNodes="//@diagram/@topLevelNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ThreadStart"
-            description="Create new ThreadStart"
+            description="Create new Thread Start"
             genNodes="//@diagram/@topLevelNodes.9"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="PrintStatement"
+            description="Create new Print Statement"
+            genNodes="//@diagram/@topLevelNodes.10"/>
       </groups>
       <groups
           title="connections">
@@ -765,6 +813,18 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.9"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.10"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.10"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.10"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.10"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"

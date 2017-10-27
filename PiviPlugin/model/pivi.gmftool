@@ -12,7 +12,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="IfEnd"
-          description="Create new IfEnd">
+          description="Create new If End">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -21,7 +21,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="IfStart"
-          description="Create new IfStart">
+          description="Create new If Start">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -39,7 +39,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="MethodEnd"
-          description="Create new MethodEnd">
+          description="Create new Method End">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -48,7 +48,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="MethodStart"
-          description="Create new MethodStart">
+          description="Create new Method Start">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -57,7 +57,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="OutputPort"
-          description="Create new OutputPort">
+          description="Create new Output Port">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -75,7 +75,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="WhileEnd"
-          description="Create new WhileEnd">
+          description="Create new While End">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -84,7 +84,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="WhileStart"
-          description="Create new WhileStart">
+          description="Create new While Start">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -93,7 +93,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ThreadEnd"
-          description="Create new ThreadEnd">
+          description="Create new Thread End">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -102,7 +102,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ThreadStart"
-          description="Create new ThreadStart">
+          description="Create new Thread Start">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -115,7 +115,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="OutputPortInputPort"
-          description="Create new OutputPortInputPort">
+          description="Create new OutputPort InputPort">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -124,7 +124,16 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="StartStartPort"
-          description="Create new StartStartPort">
+          description="Create new Start Port">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PrintStatement"
+          description="Create new Print Statement">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

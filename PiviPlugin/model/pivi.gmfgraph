@@ -71,6 +71,23 @@
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
+        name="PrintStatementFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PrintStatementFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="PrintStatementFigureCompartment">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
         name="MethodEndFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -244,6 +261,9 @@
   <nodes
       name="ThreadStart"
       figure="ThreadStartFigure"/>
+  <nodes
+      name="PrintStatement"
+      figure="PrintStatementFigure"/>
   <connections
       name="OutputPortInputPort"
       figure="OutputPortInputPortFigure"/>
@@ -281,9 +301,13 @@
   <compartments
       name="ThreadEndFigureCompartment"
       figure="ThreadEndFigure"
-      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
   <compartments
       name="ThreadStartFigureCompartment"
       figure="ThreadStartFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <compartments
+      name="InstructionFigureCompartment"
+      figure="InstructionFigure"
+      accessor="//@figures.0/@descriptors.15/@accessors.0"/>
 </gmfgraph:Canvas>
