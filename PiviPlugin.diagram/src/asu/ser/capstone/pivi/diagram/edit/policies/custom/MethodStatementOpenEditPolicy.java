@@ -13,11 +13,8 @@ import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.WizardDialog;
 
 import asu.ser.capstone.pivi.diagram.edit.commands.custom.EditMethodStartCommandThread;
-import asu.ser.capstone.pivi.diagram.edit.commands.custom.EditWhileStartCommandThread;
 import asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.part.custom.MethodWizard;
-import asu.ser.capstone.pivi.diagram.part.custom.WhileStatementWizard;
 
 public class MethodStatementOpenEditPolicy extends OpenEditPolicy{
 	
