@@ -175,6 +175,7 @@ public class PiviParser {
 		for (StatementNode statement : statements) {
 			if(statement instanceof MethodStartNode){
 				methodStack.push(statement);
+				//methodDefinitionCode.append("public void " + ((MethodStartNode)statement).name + "(){\n");
 				methodDefinitionCode.append("public void " + ((MethodStartNode)statement).name + "(){\n");
 				generateStatementCode(((MethodStartNode)statement).firstOutputIndex, methodDefinitionCode);
 			}
