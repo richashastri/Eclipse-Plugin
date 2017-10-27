@@ -46,5 +46,9 @@
     <genClasses ecoreClass="pivi.ecore#//WhileStart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivi.ecore#//WhileStart/condition"/>
     </genClasses>
+    <genClasses ecoreClass="pivi.ecore#//ThreadEnd"/>
+    <genClasses ecoreClass="pivi.ecore#//ThreadStart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivi.ecore#//ThreadStart/condition"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

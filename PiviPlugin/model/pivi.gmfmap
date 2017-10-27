@@ -275,6 +275,78 @@
   </nodes>
   <nodes>
     <containmentFeature
+        href="pivi.ecore#//PiviDiagram/statements"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pivi.ecore#//ThreadEnd"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pivi.gmftool#//@palette/@tools.0/@tools.9"/>
+      <diagramNode
+          href="pivi.gmfgraph#ThreadEnd"/>
+      <children
+          compartment="//@nodes.7/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/inputs"/>
+      </children>
+      <children
+          compartment="//@nodes.7/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/outputs"/>
+      </children>
+      <children
+          compartment="//@nodes.7/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/start"/>
+      </children>
+      <compartments
+          children="//@nodes.7/@ownedChild/@children.0 //@nodes.7/@ownedChild/@children.1 //@nodes.7/@ownedChild/@children.2">
+        <compartment
+            href="pivi.gmfgraph#ThreadEndFigureCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pivi.ecore#//PiviDiagram/statements"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pivi.ecore#//ThreadStart"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pivi.gmftool#//@palette/@tools.0/@tools.10"/>
+      <diagramNode
+          href="pivi.gmfgraph#ThreadStart"/>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/inputs"/>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/outputs"/>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/start"/>
+      </children>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1 //@nodes.8/@ownedChild/@children.2">
+        <compartment
+            href="pivi.gmfgraph#ThreadStartFigureCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
         href="pivi.ecore#//PiviDiagram/start"/>
     <ownedChild>
       <domainMetaElement

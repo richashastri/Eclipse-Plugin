@@ -170,6 +170,40 @@
       <accessors
           figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="ThreadEndFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ThreadEndFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ThreadEndFigureCompartment">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ThreadStartFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ThreadStartFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ThreadStartFigureCompartment">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="IfEnd"
@@ -204,6 +238,12 @@
   <nodes
       name="WhileStart"
       figure="WhileStartFigure"/>
+  <nodes
+      name="ThreadEnd"
+      figure="ThreadEndFigure"/>
+  <nodes
+      name="ThreadStart"
+      figure="ThreadStartFigure"/>
   <connections
       name="OutputPortInputPort"
       figure="OutputPortInputPortFigure"/>
@@ -237,5 +277,13 @@
   <compartments
       name="WhileStartFigureCompartment"
       figure="WhileStartFigure"
+      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <compartments
+      name="ThreadEndFigureCompartment"
+      figure="ThreadEndFigure"
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <compartments
+      name="ThreadStartFigureCompartment"
+      figure="ThreadStartFigure"
       accessor="//@figures.0/@descriptors.12/@accessors.0"/>
 </gmfgraph:Canvas>

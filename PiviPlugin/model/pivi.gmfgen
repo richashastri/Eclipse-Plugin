@@ -28,7 +28,7 @@
         canonicalEditPolicyClassName="InputPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InputPortGraphicalNodeEditPolicy"
         createCommandClassName="InputPortCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6">
+        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -53,7 +53,7 @@
         canonicalEditPolicyClassName="StartPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StartPortGraphicalNodeEditPolicy"
         createCommandClassName="StartPortCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6">
+        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -302,6 +302,58 @@
             href="pivi.genmodel#//pivi/PiviDiagram/start"/>
       </modelFacet>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2008"
+        editPartClassName="ThreadEndEditPart"
+        itemSemanticEditPolicyClassName="ThreadEndItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ThreadEndCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.7"
+        graphicalNodeEditPolicyClassName="ThreadEndGraphicalNodeEditPolicy"
+        createCommandClassName="ThreadEndCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ThreadEndEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ThreadEndFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ThreadEndFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureThreadEndFigureCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ThreadEndFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureThreadEndFigureCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureThreadEndFigureCompartment, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureThreadEndFigureCompartment() {&#xA;&#x9;&#x9;return fFigureThreadEndFigureCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="pivi.genmodel#//pivi/ThreadEnd"/>
+        <containmentMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+        <childMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+      </modelFacet>
+    </topLevelNodes>
+    <topLevelNodes
+        visualID="2009"
+        editPartClassName="ThreadStartEditPart"
+        itemSemanticEditPolicyClassName="ThreadStartItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ThreadStartCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.8"
+        graphicalNodeEditPolicyClassName="ThreadStartGraphicalNodeEditPolicy"
+        createCommandClassName="ThreadStartCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ThreadStartEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ThreadStartFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ThreadStartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureThreadStartFigureCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ThreadStartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureThreadStartFigureCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureThreadStartFigureCompartment, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureThreadStartFigureCompartment() {&#xA;&#x9;&#x9;return fFigureThreadStartFigureCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="pivi.genmodel#//pivi/ThreadStart"/>
+        <containmentMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+        <childMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+      </modelFacet>
+    </topLevelNodes>
     <links
         visualID="4004"
         editPartClassName="StartStartPortEditPart"
@@ -461,6 +513,40 @@
           getterName="getFigureWhileStartFigureCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
+    <compartments
+        visualID="7009"
+        editPartClassName="ThreadEndThreadEndFigureCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ThreadEndThreadEndFigureCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ThreadEndThreadEndFigureCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.2 //@diagram/@childNodes.1"
+        title="ThreadEndFigureCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.1">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureThreadEndFigureCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
+        visualID="7010"
+        editPartClassName="ThreadStartThreadStartFigureCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ThreadStartThreadStartFigureCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ThreadStartThreadStartFigureCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.2 //@diagram/@childNodes.1"
+        title="ThreadStartFigureCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.6">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureThreadStartFigureCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
     <palette>
       <groups
           title="nodes">
@@ -508,6 +594,16 @@
             title="WhileStart"
             description="Create new WhileStart"
             genNodes="//@diagram/@topLevelNodes.6"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="ThreadEnd"
+            description="Create new ThreadEnd"
+            genNodes="//@diagram/@topLevelNodes.8"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="ThreadStart"
+            description="Create new ThreadStart"
+            genNodes="//@diagram/@topLevelNodes.9"/>
       </groups>
       <groups
           title="connections">
@@ -645,6 +741,30 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.7"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.8"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.8"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.8"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.8"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.9"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.9"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.9"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.9"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"
