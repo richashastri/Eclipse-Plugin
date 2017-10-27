@@ -19,30 +19,29 @@ import asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolic
 public class OutputPortInputPortReorientCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final int reorientDirection;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject referenceOwner;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject oldEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject newEnd;
 
 	/**
-	 * @generated
-	 */
-	public OutputPortInputPortReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	* @generated
+	*/
+	public OutputPortInputPortReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -51,8 +50,8 @@ public class OutputPortInputPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (false == referenceOwner instanceof OutputPort) {
 			return false;
@@ -67,37 +66,33 @@ public class OutputPortInputPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof InputPort && newEnd instanceof OutputPort)) {
 			return false;
 		}
-		return PiviBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistOutputPortInputPort_4002(getNewSource(),
-						getOldTarget());
+		return PiviBaseItemSemanticEditPolicy.getLinkConstraints().canExistOutputPortInputPort_4002(getNewSource(),
+				getOldTarget());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof InputPort && newEnd instanceof InputPort)) {
 			return false;
 		}
-		return PiviBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistOutputPortInputPort_4002(getOldSource(),
-						getNewTarget());
+		return PiviBaseItemSemanticEditPolicy.getLinkConstraints().canExistOutputPortInputPort_4002(getOldSource(),
+				getNewTarget());
 	}
 
 	/**
-	 * @generated
-	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
@@ -109,8 +104,8 @@ public class OutputPortInputPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientSource() throws ExecutionException {
 		getOldSource().setInputPort(null);
 		getNewSource().setInputPort(getOldTarget());
@@ -118,37 +113,37 @@ public class OutputPortInputPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getOldSource().setInputPort(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected OutputPort getOldSource() {
 		return (OutputPort) referenceOwner;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected OutputPort getNewSource() {
 		return (OutputPort) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected InputPort getOldTarget() {
 		return (InputPort) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected InputPort getNewTarget() {
 		return (InputPort) newEnd;
 	}
