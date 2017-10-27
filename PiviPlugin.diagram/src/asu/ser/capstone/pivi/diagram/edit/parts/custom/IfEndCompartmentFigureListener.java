@@ -2,6 +2,7 @@ package asu.ser.capstone.pivi.diagram.edit.parts.custom;
 
 import java.util.List;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -14,7 +15,6 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 
 import asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
 
 public class IfEndCompartmentFigureListener implements FigureListener {
 	private ListCompartmentEditPart compartmentEditPart = null;
@@ -30,6 +30,7 @@ public class IfEndCompartmentFigureListener implements FigureListener {
 		this.roundedRectangle = roundedRectangle;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public void figureMoved(IFigure f) {
 		ResizableCompartmentFigure figure = (ResizableCompartmentFigure) f;
@@ -47,6 +48,7 @@ public class IfEndCompartmentFigureListener implements FigureListener {
 					(int) (R * 4 * xScale),
 					(int) (R * 5 * yScale));
 			contentPane.setConstraint(roundedRectangle, constraint);
+			contentPane.setBackgroundColor(ColorConstants.lightGray);
  
 			// Set the constraints for the input and output nodes
 			List<AbstractEditPart> childs = compartmentEditPart.getChildren();

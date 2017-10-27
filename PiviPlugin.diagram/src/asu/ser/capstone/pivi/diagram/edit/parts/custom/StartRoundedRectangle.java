@@ -12,12 +12,14 @@ public class StartRoundedRectangle extends RoundedRectangle {
 		setLineWidth(1);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void paintFigure(Graphics graphics) {
 		super.paintFigure(graphics);
-		graphics.setForegroundColor(ColorConstants.black);
-		graphics.setForegroundColor(ColorConstants.black);
+		graphics.setForegroundColor(ColorConstants.orange);
 		graphics.setLineStyle(Graphics.LINE_SOLID);
-		graphics.setLineWidth(3);
+		graphics.setLineWidth(5);
+		graphics.setBackgroundColor(ColorConstants.lightGray);
+		
 		Rectangle r = getBounds();
 		
 		graphics.drawLine(new Point(r.x + r.width * 0.2, r.y + r.height * 0.2),

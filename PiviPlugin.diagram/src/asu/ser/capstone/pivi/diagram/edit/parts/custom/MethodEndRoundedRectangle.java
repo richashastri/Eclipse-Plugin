@@ -13,10 +13,9 @@ public class MethodEndRoundedRectangle extends RoundedRectangle {
 
 	public void paintFigure(Graphics graphics) {
 		super.paintFigure(graphics);
-		graphics.setForegroundColor(ColorConstants.black);
-		graphics.setForegroundColor(ColorConstants.black);
+		graphics.setForegroundColor(ColorConstants.yellow);
 		graphics.setLineStyle(Graphics.LINE_SOLID);
-		graphics.setLineWidth(3);
+		graphics.setLineWidth(5);
 		Rectangle r = getBounds();
 		// semi circle
 		graphics.drawArc(r.x + (int)(r.width * 0.2), r.y + (int)(r.height * 0.2), 

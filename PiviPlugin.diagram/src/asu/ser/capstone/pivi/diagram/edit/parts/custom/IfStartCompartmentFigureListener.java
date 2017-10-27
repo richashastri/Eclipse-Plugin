@@ -2,6 +2,7 @@ package asu.ser.capstone.pivi.diagram.edit.parts.custom;
 
 import java.util.List;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -47,8 +48,11 @@ public class IfStartCompartmentFigureListener implements FigureListener {
 					(int) (R * 4 * xScale),
 					(int) (R * 5 * yScale));
 			contentPane.setConstraint(roundedRectangle, constraint);
+			contentPane.setBackgroundColor(ColorConstants.lightGray);
+			
  
 			// Set the constraints for the input and output nodes
+			@SuppressWarnings("unchecked")
 			List<AbstractEditPart> childs = compartmentEditPart.getChildren();
 			boolean firstOutputProcessed = false;
 			for (AbstractEditPart child : childs) {

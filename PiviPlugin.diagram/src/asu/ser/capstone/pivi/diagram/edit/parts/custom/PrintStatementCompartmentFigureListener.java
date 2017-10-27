@@ -1,6 +1,7 @@
 package asu.ser.capstone.pivi.diagram.edit.parts.custom;
 
 import java.util.List;
+
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
@@ -16,8 +17,8 @@ import asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
 
-@SuppressWarnings("unused")
-public class ThreadEndCompartmentFigureListener implements FigureListener{
+public class PrintStatementCompartmentFigureListener implements FigureListener{
+	
 	private ListCompartmentEditPart compartmentEditPart = null;
 	private RoundedRectangle roundedRectangle = null;
  
@@ -26,11 +27,11 @@ public class ThreadEndCompartmentFigureListener implements FigureListener{
 	public static final double REF_W = 2 * MARGIN + R * 6; // Reference width
 	public static final double REF_H = 2 * MARGIN + R * 5; // Reference height
  
-	public ThreadEndCompartmentFigureListener(ListCompartmentEditPart compartmentEditPart, RoundedRectangle roundedRectangle) {
+	public PrintStatementCompartmentFigureListener(ListCompartmentEditPart compartmentEditPart, RoundedRectangle roundedRectangle) {
 		this.compartmentEditPart = compartmentEditPart;
 		this.roundedRectangle = roundedRectangle;
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void figureMoved(IFigure f) {
@@ -63,11 +64,19 @@ public class ThreadEndCompartmentFigureListener implements FigureListener{
 								(int) (R * xScale), 
 								(int) (R * yScale));
 						contentPane.setConstraint(gEditPart.getFigure(), constraint);
+					}
+					else if (gEditPart instanceof StartPortEditPart) {
+						constraint = new Rectangle(
+								(int) (MARGIN * xScale),
+								(int) ((MARGIN + R) * yScale),
+								(int) (R * xScale), 
+								(int) (R * yScale));
+						contentPane.setConstraint(gEditPart.getFigure(), constraint);
 					}					
 					else if (gEditPart instanceof InputPortEditPart) {
 						constraint = new Rectangle(
 								(int) (MARGIN * xScale),
-								(int) ((REF_H - R) / 2 * yScale),
+								(int) ((MARGIN + 3 * R) * yScale),
 								(int) (R * xScale), 
 								(int) (R * yScale));
 						contentPane.setConstraint(gEditPart.getFigure(), constraint);
@@ -76,6 +85,5 @@ public class ThreadEndCompartmentFigureListener implements FigureListener{
 			}
 		}
 	}
-	
 
 }
