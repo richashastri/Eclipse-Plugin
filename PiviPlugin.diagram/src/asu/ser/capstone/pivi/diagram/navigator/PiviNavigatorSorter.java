@@ -12,7 +12,7 @@ public class PiviNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7012;
+	private static final int GROUP_CATEGORY = 7013;
 
 	/**
 	 * @generated

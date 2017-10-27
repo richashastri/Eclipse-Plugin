@@ -1,177 +1,141 @@
-package asu.ser.capstone.pivi.diagram.navigator;
+	package asu.ser.capstone.pivi.diagram.navigator;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.common.ui.URIEditorInput;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.action.Action;
-import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IActionBars;
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.navigator.CommonActionProvider;
-import org.eclipse.ui.navigator.ICommonActionConstants;
-import org.eclipse.ui.navigator.ICommonActionExtensionSite;
-import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
-import org.eclipse.ui.part.FileEditorInput;
-
-import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
-import asu.ser.capstone.pivi.diagram.part.Messages;
-import asu.ser.capstone.pivi.diagram.part.PiviDiagramEditor;
-import asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin;
-import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
-
-/**
+	/**
  * @generated
  */
-public class PiviNavigatorActionProvider extends CommonActionProvider {
+public class PiviNavigatorActionProvider  extends org.eclipse.ui.navigator.CommonActionProvider {
+
+		/**
+ * @generated
+ */
+private boolean myContribute;
 
 	/**
-	 * @generated
-	 */
-	private boolean myContribute;
-
-	/**
-	 * @generated
-	 */
-	private OpenDiagramAction myOpenDiagramAction;
-
-	/**
-	 * @generated
-	 */
-	public void init(ICommonActionExtensionSite aSite) {
-		super.init(aSite);
-		if (aSite.getViewSite() instanceof ICommonViewerWorkbenchSite) {
-			myContribute = true;
-			makeActions((ICommonViewerWorkbenchSite) aSite.getViewSite());
-		} else {
-			myContribute = false;
-		}
+ * @generated
+ */
+private OpenDiagramAction myOpenDiagramAction;
+	
+		/**
+ * @generated
+ */
+public void init(org.eclipse.ui.navigator.ICommonActionExtensionSite aSite) {
+	super.init(aSite);
+	if (aSite.getViewSite() instanceof org.eclipse.ui.navigator.ICommonViewerWorkbenchSite) {
+		myContribute = true;
+		makeActions((org.eclipse.ui.navigator.ICommonViewerWorkbenchSite) aSite.getViewSite());
+	} else {
+		myContribute = false;
 	}
-
-	/**
-	 * @generated
-	 */
-	private void makeActions(ICommonViewerWorkbenchSite viewerSite) {
-		myOpenDiagramAction = new OpenDiagramAction(viewerSite);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void fillActionBars(IActionBars actionBars) {
-		if (!myContribute) {
-			return;
-		}
-		IStructuredSelection selection = (IStructuredSelection) getContext()
-				.getSelection();
-		myOpenDiagramAction.selectionChanged(selection);
-		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
-					myOpenDiagramAction);
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void fillContextMenu(IMenuManager menu) {
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class OpenDiagramAction extends Action {
-
-		/**
-		 * @generated
-		 */
-		private Diagram myDiagram;
-
-		/**
-		 * @generated
-		 */
-		private ICommonViewerWorkbenchSite myViewerSite;
-
-		/**
-		 * @generated
-		 */
-		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
-			myViewerSite = viewerSite;
-		}
-
-		/**
-		 * @generated
-		 */
-		public final void selectionChanged(IStructuredSelection selection) {
-			myDiagram = null;
-			if (selection.size() == 1) {
-				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof PiviNavigatorItem) {
-					selectedElement = ((PiviNavigatorItem) selectedElement)
-							.getView();
-				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement)
-							.getAdapter(View.class);
-				}
-				if (selectedElement instanceof Diagram) {
-					Diagram diagram = (Diagram) selectedElement;
-					if (PiviDiagramEditPart.MODEL_ID
-							.equals(PiviVisualIDRegistry.getModelID(diagram))) {
-						myDiagram = diagram;
-					}
-				}
-			}
-			setEnabled(myDiagram != null);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void run() {
-			if (myDiagram == null || myDiagram.eResource() == null) {
-				return;
-			}
-
-			IEditorInput editorInput = getEditorInput(myDiagram);
-			IWorkbenchPage page = myViewerSite.getPage();
-			try {
-				page.openEditor(editorInput, PiviDiagramEditor.ID);
-			} catch (PartInitException e) {
-				PiviDiagramEditorPlugin.getInstance().logError(
-						"Exception while openning diagram", e); //$NON-NLS-1$
-			}
-		}
-
-		/**
-		 * @generated
-		 */
-		private static IEditorInput getEditorInput(Diagram diagram) {
-			Resource diagramResource = diagram.eResource();
-			for (EObject nextEObject : diagramResource.getContents()) {
-				if (nextEObject == diagram) {
-					return new FileEditorInput(
-							WorkspaceSynchronizer.getFile(diagramResource));
-				}
-				if (nextEObject instanceof Diagram) {
-					break;
-				}
-			}
-			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#'
-					+ diagram.eResource().getContents().indexOf(diagram);
-			IEditorInput editorInput = new URIEditorInput(uri, editorName);
-			return editorInput;
-		}
-
-	}
-
 }
+	
+		/**
+ * @generated
+ */
+private void makeActions(org.eclipse.ui.navigator.ICommonViewerWorkbenchSite viewerSite) {
+	myOpenDiagramAction = new OpenDiagramAction(viewerSite);
+}
+	
+		/**
+ * @generated
+ */
+public void fillActionBars(org.eclipse.ui.IActionBars actionBars) {
+	if (!myContribute) {
+		return;
+	}
+	org.eclipse.jface.viewers.IStructuredSelection selection = (org.eclipse.jface.viewers.IStructuredSelection) getContext().getSelection();
+	myOpenDiagramAction.selectionChanged(selection);
+	if (myOpenDiagramAction.isEnabled()) {
+		actionBars.setGlobalActionHandler(org.eclipse.ui.navigator.ICommonActionConstants.OPEN, myOpenDiagramAction);
+	}
+}
+	
+		/**
+ * @generated
+ */
+public void fillContextMenu(org.eclipse.jface.action.IMenuManager menu) {
+}
+	
+	/**
+ * @generated
+ */
+private static class OpenDiagramAction extends org.eclipse.jface.action.Action {
+
+		/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.notation.Diagram myDiagram;
+		
+	/**
+ * @generated
+ */
+	private org.eclipse.ui.navigator.ICommonViewerWorkbenchSite myViewerSite;
+	
+	/**
+ * @generated
+ */
+public OpenDiagramAction(org.eclipse.ui.navigator.ICommonViewerWorkbenchSite viewerSite) {
+	super(asu.ser.capstone.pivi.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+	myViewerSite = viewerSite;
+}
+	
+	/**
+ * @generated
+ */
+public final void selectionChanged(org.eclipse.jface.viewers.IStructuredSelection selection) {
+	myDiagram = null;
+	if (selection.size() == 1) {
+		Object selectedElement = selection.getFirstElement();
+		if (selectedElement instanceof asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorItem) {
+			selectedElement = ((asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorItem) selectedElement).getView();
+		} else if (selectedElement instanceof org.eclipse.core.runtime.IAdaptable) {
+			selectedElement = ((org.eclipse.core.runtime.IAdaptable) selectedElement).getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+		}
+		if (selectedElement instanceof org.eclipse.gmf.runtime.notation.Diagram) {
+			org.eclipse.gmf.runtime.notation.Diagram diagram = (org.eclipse.gmf.runtime.notation.Diagram) selectedElement;
+			if (asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.MODEL_ID.equals(asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getModelID(diagram))) {
+				myDiagram = diagram;
+			}
+		}
+	}
+	setEnabled(myDiagram != null);
+}
+	
+	/**
+ * @generated
+ */
+public void run() {
+	if (myDiagram == null || myDiagram.eResource() == null) {
+		return;
+	}
+			
+	org.eclipse.ui.IEditorInput editorInput = getEditorInput(myDiagram);
+	org.eclipse.ui.IWorkbenchPage page = myViewerSite.getPage();
+ 	try {
+		page.openEditor(editorInput, asu.ser.capstone.pivi.diagram.part.PiviDiagramEditor.ID);
+	} catch (org.eclipse.ui.PartInitException e) {
+		asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e);  //$NON-NLS-1$
+	}
+}
+	
+	/**
+ * @generated
+ */
+private static org.eclipse.ui.IEditorInput getEditorInput(org.eclipse.gmf.runtime.notation.Diagram diagram) {
+	org.eclipse.emf.ecore.resource.Resource diagramResource = diagram.eResource();
+	for (org.eclipse.emf.ecore.EObject nextEObject : diagramResource.getContents()) {
+		if (nextEObject == diagram) {
+			return new org.eclipse.ui.part.FileEditorInput(org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(diagramResource));
+		}
+		if (nextEObject instanceof org.eclipse.gmf.runtime.notation.Diagram) {
+			break;
+		}
+	}
+	org.eclipse.emf.common.util.URI uri = org.eclipse.emf.ecore.util.EcoreUtil.getURI(diagram);
+String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
+org.eclipse.ui.IEditorInput editorInput = new org.eclipse.emf.common.ui.URIEditorInput(uri, editorName);
+	return editorInput;
+}
+	
+	}
+
+    }
