@@ -55,7 +55,11 @@ public class ThreadStartCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		ThreadStart newElement = PiviFactory.eINSTANCE.createThreadStart();
-
+		
+		newElement.getStart().add(PiviFactory.eINSTANCE.createStartPort());
+		newElement.getInputs().add(PiviFactory.eINSTANCE.createInputPort());
+		newElement.getOutputs().add(PiviFactory.eINSTANCE.createOutputPort());
+		
 		PiviDiagram owner = (PiviDiagram) getElementToEdit();
 		owner.getStatements().add(newElement);
 

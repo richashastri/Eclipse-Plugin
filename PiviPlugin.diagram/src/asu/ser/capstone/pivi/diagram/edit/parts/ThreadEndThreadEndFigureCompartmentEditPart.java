@@ -1,6 +1,8 @@
 package asu.ser.capstone.pivi.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -10,6 +12,8 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
+import asu.ser.capstone.pivi.diagram.edit.parts.custom.ThreadEndCompartmentFigureListener;
+import asu.ser.capstone.pivi.diagram.edit.parts.custom.ThreadEndRoundedRectangle;
 import asu.ser.capstone.pivi.diagram.edit.policies.ThreadEndThreadEndFigureCompartmentCanonicalEditPolicy;
 import asu.ser.capstone.pivi.diagram.edit.policies.ThreadEndThreadEndFigureCompartmentItemSemanticEditPolicy;
 import asu.ser.capstone.pivi.diagram.part.Messages;
@@ -48,12 +52,31 @@ public class ThreadEndThreadEndFigureCompartmentEditPart extends
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
 				.createFigure();
 		result.setTitleVisibility(false);
+		
+		// Setup for a XYLayout
+		IFigure contentPane = result.getContentPane();
+		contentPane.setLayoutManager(new XYLayout());
+		
+		// Delete content pane insets
+		Insets is = contentPane.getInsets();
+		is.top = 0;
+		is.bottom = 0;
+		is.left = 0;
+		is.right = 0;
+		 
+		// Setup graphical elements
+		ThreadEndRoundedRectangle roundedRectangle = new ThreadEndRoundedRectangle();
+		contentPane.add(roundedRectangle);
+		 
+		// Add the resize events listener
+		result.addFigureListener(new ThreadEndCompartmentFigureListener(this, roundedRectangle));
+				
 		return result;
 	}
 

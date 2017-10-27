@@ -55,6 +55,9 @@ public class ThreadEndCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		ThreadEnd newElement = PiviFactory.eINSTANCE.createThreadEnd();
+		
+		newElement.getInputs().add(PiviFactory.eINSTANCE.createInputPort());
+		newElement.getOutputs().add(PiviFactory.eINSTANCE.createOutputPort());
 
 		PiviDiagram owner = (PiviDiagram) getElementToEdit();
 		owner.getStatements().add(newElement);

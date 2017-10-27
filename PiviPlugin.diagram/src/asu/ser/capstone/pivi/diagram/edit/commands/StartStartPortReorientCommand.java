@@ -19,30 +19,29 @@ import asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolic
 public class StartStartPortReorientCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final int reorientDirection;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject referenceOwner;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject oldEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject newEnd;
 
 	/**
-	 * @generated
-	 */
-	public StartStartPortReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	* @generated
+	*/
+	public StartStartPortReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -51,8 +50,8 @@ public class StartStartPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (false == referenceOwner instanceof Start) {
 			return false;
@@ -67,35 +66,33 @@ public class StartStartPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof StartPort && newEnd instanceof Start)) {
 			return false;
 		}
-		return PiviBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistStartStartPort_4004(getNewSource(), getOldTarget());
+		return PiviBaseItemSemanticEditPolicy.getLinkConstraints().canExistStartStartPort_4004(getNewSource(),
+				getOldTarget());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof StartPort && newEnd instanceof StartPort)) {
 			return false;
 		}
-		return PiviBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistStartStartPort_4004(getOldSource(), getNewTarget());
+		return PiviBaseItemSemanticEditPolicy.getLinkConstraints().canExistStartStartPort_4004(getOldSource(),
+				getNewTarget());
 	}
 
 	/**
-	 * @generated
-	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
@@ -107,8 +104,8 @@ public class StartStartPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientSource() throws ExecutionException {
 		getOldSource().getStartPort().remove(getOldTarget());
 		getNewSource().getStartPort().add(getOldTarget());
@@ -116,8 +113,8 @@ public class StartStartPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getOldSource().getStartPort().remove(getOldTarget());
 		getOldSource().getStartPort().add(getNewTarget());
@@ -125,29 +122,29 @@ public class StartStartPortReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Start getOldSource() {
 		return (Start) referenceOwner;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Start getNewSource() {
 		return (Start) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected StartPort getOldTarget() {
 		return (StartPort) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected StartPort getNewTarget() {
 		return (StartPort) newEnd;
 	}
