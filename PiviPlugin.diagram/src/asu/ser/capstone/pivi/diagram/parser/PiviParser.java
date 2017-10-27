@@ -27,6 +27,10 @@ public class PiviParser {
 	Stack<StatementNode> whileStack;
 	StringBuilder methodDefinitionCode;
 	Stack<StatementNode> methodStack;
+	StringBuilder threadDefinitionCode;
+	Stack<StatementNode> threadStack;
+	int counter = 0;
+
 
 	public PiviParser() {
 		statements = new ArrayList<>();
@@ -35,6 +39,8 @@ public class PiviParser {
 		whileStack = new Stack<>();
 		methodDefinitionCode = new StringBuilder();
 		methodStack = new Stack<>();
+		threadDefinitionCode = new StringBuilder();
+		threadStack = new Stack<>();
 	}
 
 	public void ParseDiagram(String path, String fileName) {
@@ -87,14 +93,24 @@ public class PiviParser {
 		}
 	}
 
-	private void generateCode() {
-		generatedCode.append("public class Solution {\n");
+	private void generateCode() 
+	{
+		if(counter == 0)
+		{
+			generatedCode.append("public class Solution {\n");
+		}
+		else
+		{
+			generatedCode.append("public class Solution extends Thread {\n");
+		}
 		generatedCode.append("public static void main(String[] args) { \n");
 		int index = startNode.outputIndex;
 		generateStatementCode(index, generatedCode);
 		generatedCode.append("}\n");
 		generateMethodDefinitions();
 		generatedCode.append(methodDefinitionCode);
+		generateThreadDefinitions();
+		generatedCode.append(threadDefinitionCode);
 		generatedCode.append("}\n");
 	}
 
@@ -139,35 +155,20 @@ public class PiviParser {
 					code.append("}\n");
 					index = ((WhileEndNode) statement).firstOutputIndex;
 				}
-			}else if (statement instanceof MethodEndNode){
+			}
+			else if (statement instanceof MethodEndNode){
 				methodStack.pop();
 				code.append("}\n");
 				index = ((MethodEndNode) statement).firstOutputIndex;
-			}			
-			/*
-				 * else if (statement instanceof MethodStartNode) {
-				 * methodStack.push(statement); StringBuilder newMethodData =
-				 * new StringBuilder();
-				 * 
-				 * methodMap.put(((MethodStartNode) statement).name,
-				 * methodData.size()); methodData.add(newMethodData);
-				 * 
-				 * newMethodData.append("public static void " +
-				 * ((MethodStartNode) statement).name + "(){\n"); code =
-				 * newMethodData; index = ((MethodStartNode)
-				 * statement).firstOutputIndex; } else if (statement instanceof
-				 * MethodEndNode) { if (!methodStack.isEmpty()) {
-				 * code.append("}\n"); StatementNode calleeMethod =
-				 * methodStack.pop(); if (!methodStack.isEmpty()) {
-				 * StatementNode callerMethod = methodStack.peek(); String
-				 * callerName = ((MethodStartNode) callerMethod).name; if
-				 * (methodMap.containsKey(callerName)) { code =
-				 * methodData.get(methodMap.get(callerName));
-				 * code.append(((MethodStartNode) calleeMethod).name + "();\n");
-				 * } } else { code = methodData.get(0);
-				 * code.append(((MethodStartNode) calleeMethod).name + "();\n");
-				 * } index = ((MethodEndNode) statement).firstOutputIndex; } }
-				 */
+			}
+			
+			else if (statement instanceof ThreadEndNode){
+				threadStack.pop();
+				code.append("}\n");
+				index = ((ThreadEndNode) statement).firstOutputIndex;
+			}
+				
+			
 		}
 	}
 
@@ -176,22 +177,38 @@ public class PiviParser {
 			if(statement instanceof MethodStartNode){
 				methodStack.push(statement);
 				//methodDefinitionCode.append("public void " + ((MethodStartNode)statement).name + "(){\n");
-				methodDefinitionCode.append("public void " + ((MethodStartNode)statement).name + "(){\n");
+				methodDefinitionCode.append("public void run " + ((MethodStartNode)statement).name + "(){\n");
 				generateStatementCode(((MethodStartNode)statement).firstOutputIndex, methodDefinitionCode);
 			}
 		}
 	}
+	
+	private void generateThreadDefinitions() 
+	{
+		for (StatementNode statement : statements) 
+		{
+			if(statement instanceof ThreadStartNode){
+				threadStack.push(statement);
+				threadDefinitionCode.append("public void run(){\n");
+				generateStatementCode(((ThreadStartNode)statement).firstOutputIndex, threadDefinitionCode);
+			}
+		}
+	}
 
-	private void setStatements(Document doc) {
+	private void setStatements(Document doc) 
+	{
 		NodeList nStatementList = doc.getElementsByTagName("statements");
-		for (int i = 0; i < nStatementList.getLength(); i++) {
+		for (int i = 0; i < nStatementList.getLength(); i++) 
+		{
 			Node nStatement = nStatementList.item(i);
-			if (nStatement.getNodeType() == Node.ELEMENT_NODE) {
+			if (nStatement.getNodeType() == Node.ELEMENT_NODE) 
+			{
 				Element element = (Element) nStatement;
 
 				String statementType = element.getAttribute("xsi:type");
 
-				if (statementType.contains("IfStart")) {
+				if (statementType.contains("IfStart")) 
+				{
 					statements.add(new IfStartNode(element));
 				} else if (statementType.contains("IfEnd")) {
 					statements.add(new IfEndNode(element));
@@ -205,6 +222,16 @@ public class PiviParser {
 					statements.add(new MethodStartNode(element));
 				} else if (statementType.contains("MethodEnd")) {
 					statements.add(new MethodEndNode(element));
+				}
+				else if (statementType.contains("ThreadStart")) 
+				{
+					statements.add(new ThreadStartNode(element));
+					counter++;
+				} 
+				else if (statementType.contains("ThreadEnd")) 
+				{
+					statements.add(new ThreadEndNode(element));
+					counter++;
 				}
 			}
 		}
