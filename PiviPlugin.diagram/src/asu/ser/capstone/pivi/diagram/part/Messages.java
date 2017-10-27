@@ -363,6 +363,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String PrintStatement12CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PrintStatement12CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String OutputPortInputPort1CreationTool_title;
 
 	/**
@@ -408,6 +418,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String PrintStatementPrintStatementFigureCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String MethodStartMethodStartFigureCompartmentEditPart_title;
 
 	/**
@@ -433,7 +448,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_InputPort_3001_incominglinks;
+	public static String NavigatorGroupName_PiviDiagram_1000_links;
 
 	/**
 	 * @generated
@@ -448,7 +463,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Start_2008_outgoinglinks;
+	public static String NavigatorGroupName_InputPort_3001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OutputPort_3003_outgoinglinks;
 
 	/**
 	 * @generated
@@ -463,17 +483,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_OutputPort_3003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PiviDiagram_1000_links;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_StartPort_3002_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Start_2008_outgoinglinks;
 
 	/**
 	 * @generated

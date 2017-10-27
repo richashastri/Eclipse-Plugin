@@ -1,91 +1,68 @@
 package asu.ser.capstone.pivi.diagram.part;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.osgi.framework.BundleContext;
-
-import asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolicy;
-import asu.ser.capstone.pivi.diagram.providers.ElementInitializers;
-import asu.ser.capstone.pivi.provider.PiviItemProviderAdapterFactory;
-
 /**
  * @generated
  */
-public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
+public class PiviDiagramEditorPlugin extends org.eclipse.ui.plugin.AbstractUIPlugin {
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public static final String ID = "PiviPlugin.diagram"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			ID);
+ * @generated
+ */
+	public static final org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint DIAGRAM_PREFERENCES_HINT =
+			new org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint(ID);
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	private static PiviDiagramEditorPlugin instance;
 
 	/**
-	 * @generated
-	 */
-	private ComposedAdapterFactory adapterFactory;
+ * @generated
+ */
+	private org.eclipse.emf.edit.provider.ComposedAdapterFactory adapterFactory;	
 
 	/**
-	 * @generated
-	 */
-	private PiviDocumentProvider documentProvider;
+ * @generated
+ */
+	private asu.ser.capstone.pivi.diagram.part.PiviDocumentProvider documentProvider;
 
 	/**
-	 * @generated
-	 */
-	private PiviBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+ * @generated
+ */
+	private asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
 
 	/**
-	 * @generated
-	 */
-	private ElementInitializers initializers;
+ * @generated
+ */
+	private asu.ser.capstone.pivi.diagram.providers.ElementInitializers initializers;
+
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public PiviDiagramEditorPlugin() {
 	}
 
 	/**
-	 * @generated
-	 */
-	public void start(BundleContext context) throws Exception {
+ * @generated
+ */
+	public void start(org.osgi.framework.BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 	}
 
 	/**
-	 * @generated
-	 */
-	public void stop(BundleContext context) throws Exception {
+ * @generated
+ */
+	public void stop(org.osgi.framework.BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
 		linkConstraints = null;
@@ -95,45 +72,46 @@ public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public static PiviDiagramEditorPlugin getInstance() {
 		return instance;
 	}
 
 	/**
-	 * @generated
-	 */
-	protected ComposedAdapterFactory createAdapterFactory() {
-		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+ * @generated
+ */
+	protected org.eclipse.emf.edit.provider.ComposedAdapterFactory createAdapterFactory() {
+		java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
 		fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
+		return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(factories);
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		factories.add(new PiviItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
+ * @generated
+ */
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+		factories.add(new asu.ser.capstone.pivi.provider.PiviItemProviderAdapterFactory());
+		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
+		factories.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
 	}
 
 	/**
-	 * @generated
-	 */
-	public AdapterFactory getItemProvidersAdapterFactory() {
+ * @generated
+ */
+	public org.eclipse.emf.common.notify.AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;
 	}
 
 	/**
-	 * @generated
-	 */
-	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
+ * @generated
+ */
+	public org.eclipse.jface.resource.ImageDescriptor getItemImageDescriptor(Object item) {
+		org.eclipse.emf.edit.provider.IItemLabelProvider labelProvider =
+				(org.eclipse.emf.edit.provider.IItemLabelProvider) adapterFactory.adapt(
+						item, org.eclipse.emf.edit.provider.IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
+			return org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry.getInstance().getImageDescriptor(
 					labelProvider.getImage(item));
 		}
 		return null;
@@ -147,8 +125,8 @@ public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @param path the path
 	 * @return the image descriptor
 	 */
-	public static ImageDescriptor getBundledImageDescriptor(String path) {
-		return AbstractUIPlugin.imageDescriptorFromPlugin(ID, path);
+	public static org.eclipse.jface.resource.ImageDescriptor getBundledImageDescriptor(String path) {
+		return org.eclipse.ui.plugin.AbstractUIPlugin.imageDescriptorFromPlugin(ID, path);
 	}
 
 	/**
@@ -160,14 +138,14 @@ public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @param path the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
 	 * @return the image descriptor
 	 */
-	public static ImageDescriptor findImageDescriptor(String path) {
-		final IPath p = new Path(path);
+	public static org.eclipse.jface.resource.ImageDescriptor findImageDescriptor(String path) {
+		final org.eclipse.core.runtime.IPath p = new org.eclipse.core.runtime.Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-					.removeFirstSegments(1).makeAbsolute().toString());
+			return org.eclipse.ui.plugin.AbstractUIPlugin.imageDescriptorFromPlugin(
+					p.segment(0), p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
-		}
+		} 
 	}
 
 	/**
@@ -178,8 +156,8 @@ public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @param path the path
 	 * @return image instance
 	 */
-	public Image getBundledImage(String path) {
-		Image image = getImageRegistry().get(path);
+	public org.eclipse.swt.graphics.Image getBundledImage(String path) {
+		org.eclipse.swt.graphics.Image image = getImageRegistry().get(path);
 		if (image == null) {
 			getImageRegistry().put(path, getBundledImageDescriptor(path));
 			image = getImageRegistry().get(path);
@@ -193,91 +171,96 @@ public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public static String getString(String key) {
-		return Platform.getResourceString(getInstance().getBundle(), "%" + key); //$NON-NLS-1$
+		return org.eclipse.core.runtime.Platform.getResourceString(
+				getInstance().getBundle(), "%" + key); //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
-	public PiviDocumentProvider getDocumentProvider() {
+ * @generated
+ */
+	public asu.ser.capstone.pivi.diagram.part.PiviDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new PiviDocumentProvider();
+			documentProvider = new asu.ser.capstone.pivi.diagram.part.PiviDocumentProvider();
 		}
 		return documentProvider;
 	}
 
 	/**
-	 * @generated
-	 */
-	public PiviBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+ * @generated
+ */
+	public asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			PiviBaseItemSemanticEditPolicy.LinkConstraints lc) {
+ * @generated
+ */
+	public void setLinkConstraints(asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
-	 * @generated
-	 */
-	public ElementInitializers getElementInitializers() {
+ * @generated
+ */
+	public asu.ser.capstone.pivi.diagram.providers.ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setElementInitializers(ElementInitializers i) {
+ * @generated
+ */
+	public void setElementInitializers(asu.ser.capstone.pivi.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
 	}
 
+
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public void logError(String error) {
 		logError(error, null);
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public void logError(String error, Throwable throwable) {
 		if (error == null && throwable != null) {
 			error = throwable.getMessage();
 		}
-		getLog().log(
-				new Status(IStatus.ERROR, PiviDiagramEditorPlugin.ID,
-						IStatus.OK, error, throwable));
+		getLog().log(new org.eclipse.core.runtime.Status(
+				org.eclipse.core.runtime.IStatus.ERROR,
+				PiviDiagramEditorPlugin.ID,
+				org.eclipse.core.runtime.IStatus.OK,
+				error, throwable));
 		debug(error, throwable);
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public void logInfo(String message) {
 		logInfo(message, null);
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public void logInfo(String message, Throwable throwable) {
 		if (message == null && throwable != null) {
 			message = throwable.getMessage();
 		}
-		getLog().log(
-				new Status(IStatus.INFO, PiviDiagramEditorPlugin.ID,
-						IStatus.OK, message, throwable));
+		getLog().log(new org.eclipse.core.runtime.Status(
+				org.eclipse.core.runtime.IStatus.INFO,
+				PiviDiagramEditorPlugin.ID,
+				org.eclipse.core.runtime.IStatus.OK,
+				message, throwable));
 		debug(message, throwable);
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	private void debug(String message, Throwable throwable) {
 		if (!isDebugging()) {
 			return;
@@ -289,4 +272,4 @@ public class PiviDiagramEditorPlugin extends AbstractUIPlugin {
 			throwable.printStackTrace();
 		}
 	}
-}
+	}

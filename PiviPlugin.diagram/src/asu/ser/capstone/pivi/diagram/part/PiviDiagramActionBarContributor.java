@@ -1,40 +1,32 @@
 package asu.ser.capstone.pivi.diagram.part;
 
-import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramActionBarContributor;
-import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.ui.IActionBars;
-import org.eclipse.ui.IWorkbenchActionConstants;
-import org.eclipse.ui.IWorkbenchPage;
-
 /**
  * @generated
  */
-public class PiviDiagramActionBarContributor extends
-		DiagramActionBarContributor {
+public class PiviDiagramActionBarContributor extends org.eclipse.gmf.runtime.diagram.ui.parts.DiagramActionBarContributor {
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	protected Class getEditorClass() {
-		return PiviDiagramEditor.class;
+		return asu.ser.capstone.pivi.diagram.part.PiviDiagramEditor.class;
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	protected String getEditorId() {
-		return PiviDiagramEditor.ID;
+		return asu.ser.capstone.pivi.diagram.part.PiviDiagramEditor.ID;
 	}
-
+	
 	/**
-	 * @generated
-	 */
-	public void init(IActionBars bars, IWorkbenchPage page) {
+ * @generated
+ */
+	public void init(org.eclipse.ui.IActionBars bars, org.eclipse.ui.IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview
-		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(
-				IWorkbenchActionConstants.M_FILE);
+		org.eclipse.jface.action.IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(org.eclipse.ui.IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
 		fileMenu.remove("pageSetupAction"); //$NON-NLS-1$
 	}
-}
+	}

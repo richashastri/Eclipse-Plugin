@@ -1,197 +1,153 @@
 package asu.ser.capstone.pivi.diagram.part;
 
-import java.io.IOException;
-import java.util.LinkedList;
-
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.commands.operations.OperationHistoryFactory;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
-import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.osgi.util.NLS;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
-import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
-
 /**
  * @generated
  */
-public class PiviNewDiagramFileWizard extends Wizard {
+public class PiviNewDiagramFileWizard extends org.eclipse.jface.wizard.Wizard {
 
 	/**
-	 * @generated
-	 */
-	private WizardNewFileCreationPage myFileCreationPage;
+ * @generated
+ */
+	private 
+org.eclipse.ui.dialogs.WizardNewFileCreationPage myFileCreationPage;
 
 	/**
-	 * @generated
-	 */
-	private ModelElementSelectionPage diagramRootElementSelectionPage;
+ * @generated
+ */
+	private asu.ser.capstone.pivi.diagram.part.ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
-	 * @generated
-	 */
-	private TransactionalEditingDomain myEditingDomain;
+ * @generated
+ */
+	private org.eclipse.emf.transaction.TransactionalEditingDomain myEditingDomain;
 
 	/**
-	 * @generated
-	 */
-	public PiviNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
-			TransactionalEditingDomain editingDomain) {
+ * @generated
+ */
+	public PiviNewDiagramFileWizard(org.eclipse.emf.common.util.URI domainModelURI,
+			org.eclipse.emf.ecore.EObject diagramRoot,
+			org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
-		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
-		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
+	    assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
+	    assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
-				Messages.PiviNewDiagramFileWizard_CreationPageName,
-				StructuredSelection.EMPTY);
-		myFileCreationPage
-				.setTitle(Messages.PiviNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage.setDescription(NLS.bind(
-				Messages.PiviNewDiagramFileWizard_CreationPageDescription,
-				PiviDiagramEditPart.MODEL_ID));
-		IPath filePath;
-		String fileName = URI.decode(domainModelURI.trimFileExtension()
-				.lastSegment());
+		myFileCreationPage = new 
+org.eclipse.ui.dialogs.WizardNewFileCreationPage(asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_CreationPageName, org.eclipse.jface.viewers.StructuredSelection.EMPTY);
+		myFileCreationPage.setTitle(asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(org.eclipse.osgi.util.NLS.bind(
+				asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_CreationPageDescription, 
+				asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.MODEL_ID));
+		org.eclipse.core.runtime.IPath filePath;
+		String fileName = org.eclipse.emf.common.util.URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
-			filePath = new Path(domainModelURI.trimSegments(1)
-					.toPlatformString(true));
+			filePath = new org.eclipse.core.runtime.Path(domainModelURI.trimSegments(1).toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
-			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
+			filePath = new org.eclipse.core.runtime.Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException(
-					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
+			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI);  //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage.setFileName(PiviDiagramEditorUtil.getUniqueFileName(
-				filePath, fileName, "pivi_diagram")); //$NON-NLS-1$
+		myFileCreationPage.setFileName(asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorUtil.getUniqueFileName(
+				filePath, fileName, "pivi_diagram"));  //$NON-NLS-1$
 
-		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
-				Messages.PiviNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage
-				.setTitle(Messages.PiviNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage
-				.setDescription(Messages.PiviNewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
-		myEditingDomain = editingDomain;
+	   	myEditingDomain = editingDomain;
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public void addPages() {
 		addPage(myFileCreationPage);
 		addPage(diagramRootElementSelectionPage);
 	}
 
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public boolean performFinish() {
-		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
-		IFile diagramFile = myFileCreationPage.createNewFile();
-		PiviDiagramEditorUtil.setCharset(diagramFile);
+		java.util.LinkedList<org.eclipse.core.resources.IFile> affectedFiles = new java.util.LinkedList<org.eclipse.core.resources.IFile>();
+				org.eclipse.core.resources.IFile diagramFile = myFileCreationPage.createNewFile();
+		asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
-				.getFullPath().toString(), true);
-		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet
-				.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
-				myEditingDomain,
-				Messages.PiviNewDiagramFileWizard_InitDiagramCommand,
-				affectedFiles) {
+		org.eclipse.emf.common.util.URI diagramModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
+				org.eclipse.emf.ecore.resource.ResourceSet resourceSet = myEditingDomain.getResourceSet();
+		final org.eclipse.emf.ecore.resource.Resource diagramResource = resourceSet.createResource(diagramModelURI);
+		org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand command =
+			new org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand(
+				myEditingDomain, asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-				int diagramVID = PiviVisualIDRegistry
-						.getDiagramVisualID(diagramRootElementSelectionPage
-								.getModelElement());
-				if (diagramVID != PiviDiagramEditPart.VISUAL_ID) {
-					return CommandResult
-							.newErrorCommandResult(Messages.PiviNewDiagramFileWizard_IncorrectRootError);
+			protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(
+					org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info)
+						throws org.eclipse.core.commands.ExecutionException {
+				int diagramVID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
+				if (diagramVID != asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.VISUAL_ID) {
+					return org.eclipse.gmf.runtime.common.core.command.CommandResult.newErrorCommandResult(
+						asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService.createDiagram(
-						diagramRootElementSelectionPage.getModelElement(),
-						PiviDiagramEditPart.MODEL_ID,
-						PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				org.eclipse.gmf.runtime.notation.Diagram diagram =
+					org.eclipse.gmf.runtime.diagram.core.services.ViewService.createDiagram(
+						diagramRootElementSelectionPage.getModelElement(), asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.MODEL_ID,
+						asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
-				return CommandResult.newOKCommandResult();
+												return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command,
-					new NullProgressMonitor(), null);
-			diagramResource.save(PiviDiagramEditorUtil.getSaveOptions());
-			PiviDiagramEditorUtil.openDiagram(diagramResource);
-		} catch (ExecutionException e) {
-			PiviDiagramEditorPlugin.getInstance().logError(
-					"Unable to create model and diagram", e); //$NON-NLS-1$
-		} catch (IOException ex) {
-			PiviDiagramEditorPlugin.getInstance().logError(
-					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
-		} catch (PartInitException ex) {
-			PiviDiagramEditorPlugin.getInstance().logError(
-					"Unable to open editor", ex); //$NON-NLS-1$
-		}
+			org.eclipse.core.commands.operations.OperationHistoryFactory.getOperationHistory().execute(
+				command, new org.eclipse.core.runtime.NullProgressMonitor(), null);
+			diagramResource.save(asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorUtil.getSaveOptions());
+			asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorUtil.openDiagram(diagramResource);
+		} catch (org.eclipse.core.commands.ExecutionException e) {
+			asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().logError(
+				"Unable to create model and diagram", e);  //$NON-NLS-1$
+		} catch (java.io.IOException ex) {
+			asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().logError(
+				"Save operation failed for: " + diagramModelURI, ex);  //$NON-NLS-1$
+		} catch (org.eclipse.ui.PartInitException ex) {
+			asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().logError(
+				"Unable to open editor", ex);  //$NON-NLS-1$
+		}			
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static class DiagramRootElementSelectionPage extends
-			ModelElementSelectionPage {
+ * @generated
+ */
+	private static class DiagramRootElementSelectionPage extends asu.ser.capstone.pivi.diagram.part.ModelElementSelectionPage {
 
 		/**
-		 * @generated
-		 */
+ * @generated
+ */
 		protected DiagramRootElementSelectionPage(String pageName) {
 			super(pageName);
 		}
 
 		/**
-		 * @generated
-		 */
+ * @generated
+ */
 		protected String getSelectionTitle() {
-			return Messages.PiviNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+			return asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
-		 * @generated
-		 */
+ * @generated
+ */
 		protected boolean validatePage() {
 			if (selectedModelElement == null) {
-				setErrorMessage(Messages.PiviNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
+				setErrorMessage(asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			boolean result = ViewService.getInstance().provides(
-					new CreateDiagramViewOperation(new EObjectAdapter(
-							selectedModelElement),
-							PiviDiagramEditPart.MODEL_ID,
-							PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null
-					: Messages.PiviNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+			boolean result = org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(
+				new org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation(
+					new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(selectedModelElement),
+					asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.MODEL_ID, asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(result ? null : asu.ser.capstone.pivi.diagram.part.Messages.PiviNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

@@ -1,291 +1,230 @@
-package asu.ser.capstone.pivi.diagram.part;
+	package asu.ser.capstone.pivi.diagram.part;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IMarker;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.ui.URIEditorInput;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
-import org.eclipse.gef.palette.PaletteRoot;
-import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
-import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
-import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.jface.dialogs.ErrorDialog;
-import org.eclipse.jface.dialogs.IMessageProvider;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.window.Window;
-import org.eclipse.osgi.util.NLS;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IEditorMatchingStrategy;
-import org.eclipse.ui.IEditorReference;
-import org.eclipse.ui.IFileEditorInput;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.dialogs.SaveAsDialog;
-import org.eclipse.ui.ide.IGotoMarker;
-import org.eclipse.ui.navigator.resources.ProjectExplorer;
-import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.IShowInTargetList;
-import org.eclipse.ui.part.ShowInContext;
+	/**
+ * @generated
+ */
+public class PiviDiagramEditor  extends org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor implements org.eclipse.ui.ide.IGotoMarker {
 
-import asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorItem;
-
+		/**
+ * @generated
+ */
+public static final String ID = "asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorID";  //$NON-NLS-1$
+	
+	/**
+ * @generated
+ */
+public static final String CONTEXT_ID = "asu.ser.capstone.pivi.diagram.ui.diagramContext";  //$NON-NLS-1$
+	
+		/**
+ * @generated
+ */
+public PiviDiagramEditor() {
+	super(true);
+}
+	
+		/**
+ * @generated
+ */
+protected String getContextID() {
+	return CONTEXT_ID;
+}
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.palette.PaletteRoot createPaletteRoot(org.eclipse.gef.palette.PaletteRoot existingPaletteRoot) {
+	org.eclipse.gef.palette.PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
+	new asu.ser.capstone.pivi.diagram.part.PiviPaletteFactory().fillPalette(root);
+	return root;
+}
+	
+		/**
+ * @generated
+ */
+protected org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint getPreferencesHint() {
+	return asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+}
+	
+		/**
+ * @generated
+ */
+public String getContributorId() {
+	return asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.ID;
+}
+		
 /**
  * @generated
  */
-public class PiviDiagramEditor extends DiagramDocumentEditor implements
-		IGotoMarker {
-
-	/**
-	 * @generated
-	 */
-	public static final String ID = "asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorID"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final String CONTEXT_ID = "asu.ser.capstone.pivi.diagram.ui.diagramContext"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public PiviDiagramEditor() {
-		super(true);
+@SuppressWarnings("rawtypes")
+public Object getAdapter(Class type) {
+			if (type == org.eclipse.ui.part.IShowInTargetList.class) {
+		return new org.eclipse.ui.part.IShowInTargetList() {
+			public String[] getShowInTargetIds() {
+				return new String[] { org.eclipse.ui.navigator.resources.ProjectExplorer.VIEW_ID };
+			}
+		};
 	}
-
-	/**
-	 * @generated
-	 */
-	protected String getContextID() {
-		return CONTEXT_ID;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
-		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new PiviPaletteFactory().fillPalette(root);
-		return root;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected PreferencesHint getPreferencesHint() {
-		return PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-	}
-
-	/**
-	 * @generated
-	 */
-	public String getContributorId() {
-		return PiviDiagramEditorPlugin.ID;
-	}
-
-	/**
-	 * @generated
-	 */
-	@SuppressWarnings("rawtypes")
-	public Object getAdapter(Class type) {
-		if (type == IShowInTargetList.class) {
-			return new IShowInTargetList() {
-				public String[] getShowInTargetIds() {
-					return new String[] { ProjectExplorer.VIEW_ID };
-				}
-			};
-		}
 		return super.getAdapter(type);
+}
+	
+		/**
+ * @generated
+ */
+protected org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider getDocumentProvider(org.eclipse.ui.IEditorInput input) {
+	if (input instanceof org.eclipse.ui.IFileEditorInput || input instanceof org.eclipse.emf.common.ui.URIEditorInput) {
+		return asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().getDocumentProvider();
 	}
-
-	/**
-	 * @generated
-	 */
-	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			return PiviDiagramEditorPlugin.getInstance().getDocumentProvider();
-		}
-		return super.getDocumentProvider(input);
+	return super.getDocumentProvider(input);
+}
+	
+		/**
+ * @generated
+ */
+public org.eclipse.emf.transaction.TransactionalEditingDomain getEditingDomain() {
+	org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
+	if (document instanceof org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument) {
+		return ((org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument) document).getEditingDomain();
 	}
-
-	/**
-	 * @generated
-	 */
-	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider()
-				.getDocument(getEditorInput()) : null;
-		if (document instanceof IDiagramDocument) {
-			return ((IDiagramDocument) document).getEditingDomain();
-		}
-		return super.getEditingDomain();
+	return super.getEditingDomain();
+}
+	
+		/**
+ * @generated
+ */
+protected void setDocumentProvider(org.eclipse.ui.IEditorInput input) {
+	if (input instanceof org.eclipse.ui.IFileEditorInput || input instanceof org.eclipse.emf.common.ui.URIEditorInput) {
+		setDocumentProvider(asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().getDocumentProvider());
+	} else {
+		super.setDocumentProvider(input);
 	}
-
-	/**
-	 * @generated
-	 */
-	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			setDocumentProvider(PiviDiagramEditorPlugin.getInstance()
-					.getDocumentProvider());
-		} else {
-			super.setDocumentProvider(input);
-		}
+}
+		
+			/**
+ * @generated
+ */
+public void gotoMarker(org.eclipse.core.resources.IMarker marker) {
+	org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService.getInstance().gotoMarker(this, marker);
+}
+		
+			/**
+ * @generated
+ */
+public boolean isSaveAsAllowed() {
+	return true;
+}
+		
+			/**
+ * @generated
+ */
+public void doSaveAs() {
+	performSaveAs(new org.eclipse.core.runtime.NullProgressMonitor());
+}
+		
+			/**
+ * @generated
+ */
+protected void performSaveAs(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	org.eclipse.swt.widgets.Shell shell = getSite().getShell();
+	org.eclipse.ui.IEditorInput input = getEditorInput();
+	org.eclipse.ui.dialogs.SaveAsDialog dialog = new org.eclipse.ui.dialogs.SaveAsDialog(shell);
+	org.eclipse.core.resources.IFile original = input instanceof org.eclipse.ui.IFileEditorInput ? ((org.eclipse.ui.IFileEditorInput) input).getFile() : null;
+	if (original != null) {
+		dialog.setOriginalFile(original);
 	}
-
-	/**
-	 * @generated
-	 */
-	public void gotoMarker(IMarker marker) {
-		MarkerNavigationService.getInstance().gotoMarker(this, marker);
+	dialog.create();
+	org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider provider = getDocumentProvider();
+	if (provider == null) {
+		// editor has been programmatically closed while the dialog was open
+		return;
 	}
-
-	/**
-	 * @generated
-	 */
-	public boolean isSaveAsAllowed() {
-		return true;
+	if (provider.isDeleted(input) && original != null) {
+		String message = org.eclipse.osgi.util.NLS.bind(asu.ser.capstone.pivi.diagram.part.Messages.PiviDiagramEditor_SavingDeletedFile, original.getName());
+		dialog.setErrorMessage(null);
+		dialog.setMessage(message, org.eclipse.jface.dialogs.IMessageProvider.WARNING);
 	}
-
-	/**
-	 * @generated
-	 */
-	public void doSaveAs() {
-		performSaveAs(new NullProgressMonitor());
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void performSaveAs(IProgressMonitor progressMonitor) {
-		Shell shell = getSite().getShell();
-		IEditorInput input = getEditorInput();
-		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
-				.getFile() : null;
-		if (original != null) {
-			dialog.setOriginalFile(original);
-		}
-		dialog.create();
-		IDocumentProvider provider = getDocumentProvider();
-		if (provider == null) {
-			// editor has been programmatically closed while the dialog was open
-			return;
-		}
-		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(
-					Messages.PiviDiagramEditor_SavingDeletedFile,
-					original.getName());
-			dialog.setErrorMessage(null);
-			dialog.setMessage(message, IMessageProvider.WARNING);
-		}
-		if (dialog.open() == Window.CANCEL) {
-			if (progressMonitor != null) {
-				progressMonitor.setCanceled(true);
-			}
-			return;
-		}
-		IPath filePath = dialog.getResult();
-		if (filePath == null) {
-			if (progressMonitor != null) {
-				progressMonitor.setCanceled(true);
-			}
-			return;
-		}
-		IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-		IFile file = workspaceRoot.getFile(filePath);
-		final IEditorInput newInput = new FileEditorInput(file);
-		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
-				.getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage()
-				.getEditorReferences();
-		for (int i = 0; i < editorRefs.length; i++) {
-			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell,
-						Messages.PiviDiagramEditor_SaveAsErrorTitle,
-						Messages.PiviDiagramEditor_SaveAsErrorMessage);
-				return;
-			}
-		}
-		boolean success = false;
-		try {
-			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor,
-					newInput,
-					getDocumentProvider().getDocument(getEditorInput()), true);
-			success = true;
-		} catch (CoreException x) {
-			IStatus status = x.getStatus();
-			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell,
-						Messages.PiviDiagramEditor_SaveErrorTitle,
-						Messages.PiviDiagramEditor_SaveErrorMessage,
-						x.getStatus());
-			}
-		} finally {
-			provider.changed(newInput);
-			if (success) {
-				setInput(newInput);
-			}
-		}
+	if (dialog.open() == org.eclipse.jface.window.Window.CANCEL) {
 		if (progressMonitor != null) {
-			progressMonitor.setCanceled(!success);
+			progressMonitor.setCanceled(true);
+		}
+		return;
+	}
+	org.eclipse.core.runtime.IPath filePath = dialog.getResult();
+	if (filePath == null) {
+		if (progressMonitor != null) {
+			progressMonitor.setCanceled(true);
+		}
+		return;
+	}
+	org.eclipse.core.resources.IWorkspaceRoot workspaceRoot = org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot();
+	org.eclipse.core.resources.IFile file = workspaceRoot.getFile(filePath);
+	final org.eclipse.ui.IEditorInput newInput = new org.eclipse.ui.part.FileEditorInput(file);
+	// Check if the editor is already open
+	org.eclipse.ui.IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
+	org.eclipse.ui.IEditorReference[] editorRefs = org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences();
+	for (int i = 0; i < editorRefs.length; i++) {
+		if (matchingStrategy.matches(editorRefs[i], newInput)) {
+			org.eclipse.jface.dialogs.MessageDialog.openWarning(shell, asu.ser.capstone.pivi.diagram.part.Messages.PiviDiagramEditor_SaveAsErrorTitle, asu.ser.capstone.pivi.diagram.part.Messages.PiviDiagramEditor_SaveAsErrorMessage);
+			return;
 		}
 	}
-
-	/**
-	 * @generated
-	 */
-	public ShowInContext getShowInContext() {
-		return new ShowInContext(getEditorInput(), getNavigatorSelection());
+	boolean success = false;
+	try {
+		provider.aboutToChange(newInput);
+		getDocumentProvider(newInput).saveDocument(progressMonitor, newInput, getDocumentProvider().getDocument(getEditorInput()), true);
+		success = true;
+	} catch (org.eclipse.core.runtime.CoreException x) {
+		org.eclipse.core.runtime.IStatus status = x.getStatus();
+		if (status == null || status.getSeverity() != org.eclipse.core.runtime.IStatus.CANCEL) {
+			org.eclipse.jface.dialogs.ErrorDialog.openError(shell, asu.ser.capstone.pivi.diagram.part.Messages.PiviDiagramEditor_SaveErrorTitle, asu.ser.capstone.pivi.diagram.part.Messages.PiviDiagramEditor_SaveErrorMessage, x.getStatus());
+		}
+	} finally {
+		provider.changed(newInput);
+		if (success) {
+			setInput(newInput);
+		}
 	}
-
+	if (progressMonitor != null) {
+		progressMonitor.setCanceled(!success);
+	}
+}
+		
+			/**
+ * @generated
+ */
+public org.eclipse.ui.part.ShowInContext getShowInContext() {
+	return new org.eclipse.ui.part.ShowInContext(getEditorInput(), getNavigatorSelection());
+}
+			
 	/**
-	 * @generated
-	 */
-	private ISelection getNavigatorSelection() {
-		IDiagramDocument document = getDiagramDocument();
+ * @generated
+ */
+private org.eclipse.jface.viewers.ISelection getNavigatorSelection() {
+	org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument document = getDiagramDocument();
 		if (document == null) {
-			return StructuredSelection.EMPTY;
-		}
-		Diagram diagram = document.getDiagram();
-		if (diagram == null || diagram.eResource() == null) {
-			return StructuredSelection.EMPTY;
-		}
-		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
-		if (file != null) {
-			PiviNavigatorItem item = new PiviNavigatorItem(diagram, file, false);
-			return new StructuredSelection(item);
-		}
-		return StructuredSelection.EMPTY;
-	}
-
-	/**
-	 * @generated
-	 */
+	return org.eclipse.jface.viewers.StructuredSelection.EMPTY;
+}
+org.eclipse.gmf.runtime.notation.Diagram diagram = document.getDiagram();
+if (diagram == null || diagram.eResource() == null) {
+	return org.eclipse.jface.viewers.StructuredSelection.EMPTY;
+}
+org.eclipse.core.resources.IFile file = org.eclipse.emf.workspace.util.WorkspaceSynchronizer.getFile(diagram.eResource());
+if (file != null) {
+		asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorItem item = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorItem(diagram, file, false);
+		return new org.eclipse.jface.viewers.StructuredSelection(item);
+}
+	return org.eclipse.jface.viewers.StructuredSelection.EMPTY;
+}
+	
+		/**
+ * @generated
+ */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		asu.ser.capstone.pivi.diagram.part.DiagramEditorContextMenuProvider provider =
+				new asu.ser.capstone.pivi.diagram.part.DiagramEditorContextMenuProvider(this, getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
-				provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 	}
 
-}
+	
+	}
