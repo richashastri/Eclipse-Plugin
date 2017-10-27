@@ -1,64 +1,47 @@
 package asu.ser.capstone.pivi.diagram.edit.policies;
 
-import java.util.Collections;
-import java.util.List;
-
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Figure;
-import org.eclipse.draw2d.FigureListener;
-import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gef.GraphicalEditPart;
-import org.eclipse.gef.handles.MoveHandle;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
-import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
-
 /**
  * @generated
  */
-public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx
-		implements IRefreshableFeedbackEditPolicy {
+public class PiviTextNonResizableEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx implements org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy {
+
+	
+
+		/**
+ * @generated
+ */
+	private org.eclipse.draw2d.IFigure selectionFeedbackFigure;
 
 	/**
-	 * @generated
-	 */
-	private IFigure selectionFeedbackFigure;
+ * @generated
+ */
+	private org.eclipse.draw2d.IFigure focusFeedbackFigure;
 
 	/**
-	 * @generated
-	 */
-	private IFigure focusFeedbackFigure;
-
-	/**
-	 * @generated
-	 */
-	private FigureListener hostPositionListener;
-
-	/**
-	 * @generated
-	 */
+ * @generated
+ */
+	private org.eclipse.draw2d.FigureListener hostPositionListener;
+	
+		/**
+ * @generated
+ */
 	protected void showPrimarySelection() {
-		if (getHostFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getHostFigure()).setSelected(true);
-			((WrappingLabel) getHostFigure()).setFocus(true);
+		if (getHostFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setSelected(true);
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setFocus(true);
 		} else {
 			showSelection();
 			showFocus();
 		}
 	}
-
-	/**
-	 * @generated
-	 */
+	
+		/**
+ * @generated
+ */
 	protected void showSelection() {
-		if (getHostFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getHostFigure()).setSelected(true);
-			((WrappingLabel) getHostFigure()).setFocus(false);
+		if (getHostFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setSelected(true);
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setFocus(false);
 		} else {
 			hideSelection();
 			addFeedback(selectionFeedbackFigure = createSelectionFeedbackFigure());
@@ -67,14 +50,14 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 			hideFocus();
 		}
 	}
-
-	/**
-	 * @generated
-	 */
+	
+		/**
+ * @generated
+ */
 	protected void hideSelection() {
-		if (getHostFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getHostFigure()).setSelected(false);
-			((WrappingLabel) getHostFigure()).setFocus(false);
+		if (getHostFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setSelected(false);
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setFocus(false);
 		} else {
 			if (selectionFeedbackFigure != null) {
 				removeFeedback(selectionFeedbackFigure);
@@ -84,41 +67,41 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 			hideFocus();
 		}
 	}
-
-	/**
-	 * @generated
-	 */
+	
+		/**
+ * @generated
+ */
 	protected void showFocus() {
-		if (getHostFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getHostFigure()).setFocus(true);
+		if (getHostFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setFocus(true);
 		} else {
 			hideFocus();
 			addFeedback(focusFeedbackFigure = createFocusFeedbackFigure());
 			refreshFocusFeedback();
 		}
 	}
-
-	/**
-	 * @generated
-	 */
+	
+		/**
+ * @generated
+ */
 	protected void hideFocus() {
-		if (getHostFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getHostFigure()).setFocus(false);
+		if (getHostFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getHostFigure()).setFocus(false);
 		} else {
 			if (focusFeedbackFigure != null) {
 				removeFeedback(focusFeedbackFigure);
 				focusFeedbackFigure = null;
-			}
+		}
 		}
 	}
-
-	/**
-	 * @generated
-	 */
-	protected Rectangle getFeedbackBounds() {
-		Rectangle bounds;
-		if (getHostFigure() instanceof Label) {
-			bounds = ((Label) getHostFigure()).getTextBounds();
+	
+		/**
+ * @generated
+ */
+	protected org.eclipse.draw2d.geometry.Rectangle getFeedbackBounds() {
+		org.eclipse.draw2d.geometry.Rectangle bounds;
+		if (getHostFigure() instanceof org.eclipse.draw2d.Label) {
+			bounds = ((org.eclipse.draw2d.Label) getHostFigure()).getTextBounds();
 			bounds.intersect(getHostFigure().getBounds());
 		} else {
 			bounds = getHostFigure().getBounds().getCopy();
@@ -127,88 +110,85 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		getFeedbackLayer().translateToRelative(bounds);
 		return bounds;
 	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure createSelectionFeedbackFigure() {
-		if (getHostFigure() instanceof Label) {
-			Label feedbackFigure = new Label();
+	
+		/**
+ * @generated
+ */
+	protected org.eclipse.draw2d.IFigure createSelectionFeedbackFigure() {
+		if (getHostFigure() instanceof org.eclipse.draw2d.Label) {
+			org.eclipse.draw2d.Label feedbackFigure = new org.eclipse.draw2d.Label();
 			feedbackFigure.setOpaque(true);
-			feedbackFigure
-					.setBackgroundColor(ColorConstants.menuBackgroundSelected);
-			feedbackFigure
-					.setForegroundColor(ColorConstants.menuForegroundSelected);
+			feedbackFigure.setBackgroundColor(org.eclipse.draw2d.ColorConstants.menuBackgroundSelected);
+			feedbackFigure.setForegroundColor(org.eclipse.draw2d.ColorConstants.menuForegroundSelected);
 			return feedbackFigure;
 		} else {
-			RectangleFigure feedbackFigure = new RectangleFigure();
+			org.eclipse.draw2d.RectangleFigure feedbackFigure = new org.eclipse.draw2d.RectangleFigure();
 			feedbackFigure.setFill(false);
 			return feedbackFigure;
 		}
 	}
 
-	/**
-	 * @generated
-	 */
-	protected IFigure createFocusFeedbackFigure() {
-		return new Figure() {
+		/**
+ * @generated
+ */
+	protected org.eclipse.draw2d.IFigure createFocusFeedbackFigure() {
+		return new org.eclipse.draw2d.Figure() {
 
-			protected void paintFigure(Graphics graphics) {
+			protected void paintFigure(org.eclipse.draw2d.Graphics graphics) {
 				graphics.drawFocus(getBounds().getResized(-1, -1));
 			}
 		};
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void updateLabel(Label target) {
-		Label source = (Label) getHostFigure();
+		/**
+ * @generated
+ */
+	protected void updateLabel(org.eclipse.draw2d.Label target) {
+		org.eclipse.draw2d.Label source = (org.eclipse.draw2d.Label) getHostFigure();
 		target.setText(source.getText());
 		target.setTextAlignment(source.getTextAlignment());
 		target.setFont(source.getFont());
 	}
 
-	/**
-	 * @generated
-	 */
+		/**
+ * @generated
+ */
 	protected void refreshSelectionFeedback() {
 		if (selectionFeedbackFigure != null) {
-			if (selectionFeedbackFigure instanceof Label) {
-				updateLabel((Label) selectionFeedbackFigure);
+			if (selectionFeedbackFigure instanceof org.eclipse.draw2d.Label) {
+				updateLabel((org.eclipse.draw2d.Label) selectionFeedbackFigure);
 				selectionFeedbackFigure.setBounds(getFeedbackBounds());
 			} else {
-				selectionFeedbackFigure.setBounds(getFeedbackBounds().expand(5,
-						5));
+				selectionFeedbackFigure.setBounds(getFeedbackBounds().expand(5, 5));
 			}
 		}
 	}
-
-	/**
-	 * @generated
-	 */
+	
+		/**
+ * @generated
+ */
 	protected void refreshFocusFeedback() {
 		if (focusFeedbackFigure != null) {
 			focusFeedbackFigure.setBounds(getFeedbackBounds());
 		}
 	}
-
-	/**
-	 * @generated
-	 */
+	
+		/**
+ * @generated
+ */
 	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();
 	}
-
-	/**
-	 * @generated
-	 */
-	private FigureListener getHostPositionListener() {
+	
+		/**
+ * @generated
+ */
+	private org.eclipse.draw2d.FigureListener getHostPositionListener() {
 		if (hostPositionListener == null) {
-			hostPositionListener = new FigureListener() {
-				public void figureMoved(IFigure source) {
+			hostPositionListener = new org.eclipse.draw2d.FigureListener() {
+				public void figureMoved(org.eclipse.draw2d.IFigure source) {
 					refreshFeedback();
 				}
 			};
@@ -216,14 +196,16 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		return hostPositionListener;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected List createSelectionHandles() {
-		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart) getHost());
+	
+		/**
+ * @generated
+ */
+	protected java.util.List createSelectionHandles() {
+		org.eclipse.gef.handles.MoveHandle moveHandle =
+			new org.eclipse.gef.handles.MoveHandle((org.eclipse.gef.GraphicalEditPart) getHost());
 		moveHandle.setBorder(null);
-		moveHandle.setDragTracker(new DragEditPartsTrackerEx(getHost()));
-		return Collections.singletonList(moveHandle);
+		moveHandle.setDragTracker(new org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx(getHost()));
+		return java.util.Collections.singletonList(moveHandle);
 	}
-
-}
+	
+	}

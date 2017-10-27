@@ -1,377 +1,323 @@
 package asu.ser.capstone.pivi.diagram.edit.policies;
 
-import java.util.Iterator;
-
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gef.requests.ReconnectRequest;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
-import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
-import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
-import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
-
-import asu.ser.capstone.pivi.InputPort;
-import asu.ser.capstone.pivi.OutputPort;
-import asu.ser.capstone.pivi.Start;
-import asu.ser.capstone.pivi.StartPort;
-import asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin;
-import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
-import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
-
 /**
  * @generated
  */
-public class PiviBaseItemSemanticEditPolicy extends SemanticEditPolicy {
+public class PiviBaseItemSemanticEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy {
+
+		/**
+ * Extended request data key to hold editpart visual id.
+ * @generated
+ */
+	public static final String VISUAL_ID_KEY = "visual_id";  //$NON-NLS-1$
 
 	/**
-	 * Extended request data key to hold editpart visual id.
-	 * @generated
-	 */
-	public static final String VISUAL_ID_KEY = "visual_id"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	private final IElementType myElementType;
-
-	/**
-	 * @generated
-	 */
-	protected PiviBaseItemSemanticEditPolicy(IElementType elementType) {
+ * @generated
+ */
+	private final org.eclipse.gmf.runtime.emf.type.core.IElementType myElementType;
+	
+		/**
+ * @generated
+ */
+	protected PiviBaseItemSemanticEditPolicy(org.eclipse.gmf.runtime.emf.type.core.IElementType elementType) {
 		myElementType = elementType;
 	}
 
 	/**
-	 * Extended request data key to hold editpart visual id.
-	 * Add visual id of edited editpart to extended data of the request
-	 * so command switch can decide what kind of diagram element is being edited.
-	 * It is done in those cases when it's not possible to deduce diagram
-	 * element kind from domain element.
-	 * 
-	 * @generated
-	 */
-	public Command getCommand(Request request) {
-		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
-			if (view instanceof View) {
-				Integer id = new Integer(
-						PiviVisualIDRegistry.getVisualID((View) view));
+ * Extended request data key to hold editpart visual id.
+ * Add visual id of edited editpart to extended data of the request
+ * so command switch can decide what kind of diagram element is being edited.
+ * It is done in those cases when it's not possible to deduce diagram
+ * element kind from domain element.
+ * 
+ * @generated
+ */
+	public org.eclipse.gef.commands.Command getCommand(org.eclipse.gef.Request request) {
+		if (request instanceof org.eclipse.gef.requests.ReconnectRequest) {
+			Object view = ((org.eclipse.gef.requests.ReconnectRequest) request).getConnectionEditPart().getModel();
+			if (view instanceof org.eclipse.gmf.runtime.notation.View) {
+				Integer id = new Integer(asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID((org.eclipse.gmf.runtime.notation.View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
 		return super.getCommand(request);
 	}
-
+	
 	/**
-	 * Returns visual id from request parameters.
-	 * @generated
-	 */
-	protected int getVisualID(IEditCommandRequest request) {
+ * Returns visual id from request parameters.
+ * @generated
+ */
+	protected int getVisualID(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
 		Object id = request.getParameter(VISUAL_ID_KEY);
 		return id instanceof Integer ? ((Integer) id).intValue() : -1;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected Command getSemanticCommand(IEditCommandRequest request) {
-		IEditCommandRequest completedRequest = completeRequest(request);
-		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
-		if (completedRequest instanceof DestroyRequest) {
-			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+		/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getSemanticCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
+	org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest completedRequest = completeRequest(request);
+	org.eclipse.gef.commands.Command semanticCommand = getSemanticCommandSwitch(completedRequest);
+	semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
+	if (completedRequest instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest) {
+		org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest destroyRequest = (org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest) completedRequest;
+		return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
-
+	
 	/**
-	 * @generated
-	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
-	}
-
-	/**
-	 * @generated
-	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command addDeleteViewCommand(org.eclipse.gef.commands.Command mainCommand, org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest completedRequest){
+		org.eclipse.gef.commands.Command deleteViewCommand = getGEFWrapper(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), (org.eclipse.gmf.runtime.notation.View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
+}
+	
+		/**
+ * @generated
+ */
+	private org.eclipse.gef.commands.Command getEditHelperCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request, org.eclipse.gef.commands.Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			org.eclipse.gmf.runtime.common.core.command.ICommand command = editPolicyCommand instanceof org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy ? ((org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy) editPolicyCommand).getICommand() : new org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy(editPolicyCommand);
+			request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
-		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
-		ICommand command = requestContextElementType.getEditCommand(request);
-		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
+		org.eclipse.gmf.runtime.emf.type.core.IElementType requestContextElementType = getContextElementType(request);
+		request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
+		org.eclipse.gmf.runtime.common.core.command.ICommand command = requestContextElementType.getEditCommand(request);
+		request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
+		request.setParameter(org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
-			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+			if (!(command instanceof org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand)) {
+				command = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
-			return new ICommandProxy(command);
+			return new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(command);
 		}
 		return editPolicyCommand;
 	}
+	
+		/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.emf.type.core.IElementType getContextElementType(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
+		org.eclipse.gmf.runtime.emf.type.core.IElementType requestContextElementType = asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType : myElementType;
+	}
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getSemanticCommandSwitch(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest req) {
+	if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest) {
+		return getCreateRelationshipCommand((org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) {
+		return getCreateCommand((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest) {
+		return getConfigureCommand((org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest) {
+		return getDestroyElementCommand((org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest) {
+		return getDestroyReferenceCommand((org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest) {
+		return getDuplicateCommand((org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest) {
+		return getEditContextCommand((org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest) {
+		return getMoveCommand((org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest) {
+		return getReorientReferenceRelationshipCommand((org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest) {
+		return getReorientRelationshipCommand((org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest) req);
+	} else if (req instanceof org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest) {
+		return getSetCommand((org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest) req);
+	}
+	return null;
+}
+	
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getConfigureCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest req) {
+	return null;
+}
 
 	/**
-	 * @generated
-	 */
-	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = PiviElementTypes
-				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getSetCommand(org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getEditContextCommand(org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyReferenceCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDuplicateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getMoveCommand(org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest req) {
+	return null;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientReferenceRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest req) {
+	return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
+}
+
+	/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest req) {
+	return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
+}
+	
+		/**
+ * @generated
+ */
+	protected final org.eclipse.gef.commands.Command getGEFWrapper(org.eclipse.gmf.runtime.common.core.command.ICommand cmd) {
+		return new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(cmd);
 	}
 
 	/**
-	 * @generated
-	 */
-	protected Command getSemanticCommandSwitch(IEditCommandRequest req) {
-		if (req instanceof CreateRelationshipRequest) {
-			return getCreateRelationshipCommand((CreateRelationshipRequest) req);
-		} else if (req instanceof CreateElementRequest) {
-			return getCreateCommand((CreateElementRequest) req);
-		} else if (req instanceof ConfigureRequest) {
-			return getConfigureCommand((ConfigureRequest) req);
-		} else if (req instanceof DestroyElementRequest) {
-			return getDestroyElementCommand((DestroyElementRequest) req);
-		} else if (req instanceof DestroyReferenceRequest) {
-			return getDestroyReferenceCommand((DestroyReferenceRequest) req);
-		} else if (req instanceof DuplicateElementsRequest) {
-			return getDuplicateCommand((DuplicateElementsRequest) req);
-		} else if (req instanceof GetEditContextRequest) {
-			return getEditContextCommand((GetEditContextRequest) req);
-		} else if (req instanceof MoveRequest) {
-			return getMoveCommand((MoveRequest) req);
-		} else if (req instanceof ReorientReferenceRelationshipRequest) {
-			return getReorientReferenceRelationshipCommand((ReorientReferenceRelationshipRequest) req);
-		} else if (req instanceof ReorientRelationshipRequest) {
-			return getReorientRelationshipCommand((ReorientRelationshipRequest) req);
-		} else if (req instanceof SetRequest) {
-			return getSetCommand((SetRequest) req);
-		}
-		return null;
+ * Returns editing domain from the host edit part.
+ * @generated
+ */
+	protected org.eclipse.emf.transaction.TransactionalEditingDomain getEditingDomain() {
+		return ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected Command getConfigureCommand(ConfigureRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCommand(CreateElementRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getSetCommand(SetRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getEditContextCommand(GetEditContextRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getMoveCommand(MoveRequest req) {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
-		return UnexecutableCommand.INSTANCE;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
-		return UnexecutableCommand.INSTANCE;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected final Command getGEFWrapper(ICommand cmd) {
-		return new ICommandProxy(cmd);
-	}
-
-	/**
-	 * Returns editing domain from the host edit part.
-	 * @generated
-	 */
-	protected TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart) getHost()).getEditingDomain();
-	}
-
-	/**
-	 * Clean all shortcuts to the host element from the same diagram
-	 * @generated
-	 */
-	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
+		/**
+ * Clean all shortcuts to the host element from the same diagram
+ * @generated
+ */
+	protected void addDestroyShortcutsCommand(org.eclipse.gmf.runtime.common.core.command.ICompositeCommand cmd, org.eclipse.gmf.runtime.notation.View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
-			View nextView = (View) it.next();
+		for (java.util.Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
+			org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View) it.next();
 			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
 				continue;
 			}
-			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), nextView));
 		}
 	}
 
+	
 	/**
-	 * @generated
-	 */
+ * @generated
+ */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = PiviDiagramEditorPlugin.getInstance()
-				.getLinkConstraints();
+		LinkConstraints cached = asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			PiviDiagramEditorPlugin.getInstance().setLinkConstraints(
-					cached = new LinkConstraints());
+			asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
 
+
+/**
+ * @generated
+ */
+public static class LinkConstraints {
+
 	/**
-	 * @generated
-	 */
-	public static class LinkConstraints {
-
-		/**
-		 * @generated
-		 */
-		LinkConstraints() {
-			// use static method #getLinkConstraints() to access instance
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canCreateStartStartPort_4004(Start source,
-				StartPort target) {
-			if (source != null) {
-				if (source.getStartPort().contains(target)) {
-					return false;
-				}
-			}
-			if (target != null && (target.getStart() != null)) {
-				return false;
-			}
-
-			return canExistStartStartPort_4004(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canCreateOutputPortInputPort_4002(OutputPort source,
-				InputPort target) {
-			if (source != null) {
-				if (source.getInputPort() != null) {
-					return false;
-				}
-			}
-			if (target != null && (target.getOutputPort() != null)) {
-				return false;
-			}
-
-			return canExistOutputPortInputPort_4002(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canExistStartStartPort_4004(Start source,
-				StartPort target) {
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canExistOutputPortInputPort_4002(OutputPort source,
-				InputPort target) {
-			return true;
-		}
+ * @generated
+ */
+	LinkConstraints() {
+		// use static method #getLinkConstraints() to access instance
 	}
 
+	
+/**
+ * @generated
+ */
+public boolean canCreateStartStartPort_4004(asu.ser.capstone.pivi.Start source, asu.ser.capstone.pivi.StartPort target) {
+	if (source != null) {
+	if (source.getStartPort().contains(target)
+) {
+		return false;
+	}
+	}
+if (target != null && (target.getStart() != null
+)) {
+	return false;
 }
+
+	return canExistStartStartPort_4004(source, target);
+}
+
+
+/**
+ * @generated
+ */
+public boolean canCreateOutputPortInputPort_4002(asu.ser.capstone.pivi.OutputPort source, asu.ser.capstone.pivi.InputPort target) {
+	if (source != null) {
+	if (source.getInputPort() != null
+) {
+		return false;
+	}
+	}
+if (target != null && (target.getOutputPort() != null
+)) {
+	return false;
+}
+
+	return canExistOutputPortInputPort_4002(source, target);
+}
+
+	
+	/**
+ * @generated
+ */
+	public boolean canExistStartStartPort_4004(asu.ser.capstone.pivi.Start source, asu.ser.capstone.pivi.StartPort target) {
+		return true;
+	}
+
+	/**
+ * @generated
+ */
+	public boolean canExistOutputPortInputPort_4002(asu.ser.capstone.pivi.OutputPort source, asu.ser.capstone.pivi.InputPort target) {
+		return true;
+	}
+}
+
+	}

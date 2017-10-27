@@ -3,7 +3,7 @@
 /**
  * @generated
  */
-public class InstructionInstructionFigureCompartmentCanonicalEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy {
+public class PrintStatementPrintStatementFigureCompartmentCanonicalEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy {
 		
 	/**
  * @generated
@@ -44,7 +44,7 @@ myFeaturesToSynchronize.add(asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getState
 protected java.util.List getSemanticChildrenList() {
 		org.eclipse.gmf.runtime.notation.View viewObject = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
 	java.util.LinkedList<org.eclipse.emf.ecore.EObject> result = new java.util.LinkedList<org.eclipse.emf.ecore.EObject>();
-	java.util.List<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> childDescriptors = asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getInstructionInstructionFigureCompartment_7005SemanticChildren(viewObject);
+	java.util.List<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> childDescriptors = asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getPrintStatementPrintStatementFigureCompartment_7011SemanticChildren(viewObject);
 	for (asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor d : childDescriptors) {
 		result.add(d.getModelElement());
 	}
@@ -75,7 +75,7 @@ protected void refreshSemantic() {
 		return;
 	}
 	java.util.LinkedList<org.eclipse.core.runtime.IAdaptable> createdViews = new java.util.LinkedList<org.eclipse.core.runtime.IAdaptable>();
-			java.util.List<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> childDescriptors = 							asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getInstructionInstructionFigureCompartment_7005SemanticChildren((org.eclipse.gmf.runtime.notation.View) getHost().getModel());
+			java.util.List<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> childDescriptors = 							asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getPrintStatementPrintStatementFigureCompartment_7011SemanticChildren((org.eclipse.gmf.runtime.notation.View) getHost().getModel());
 					java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> orphaned = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
 				// we care to check only views we recognize as ours
 		java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> knownViewChildren = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();

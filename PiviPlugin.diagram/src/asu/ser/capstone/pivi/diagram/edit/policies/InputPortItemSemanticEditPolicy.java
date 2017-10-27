@@ -1,116 +1,93 @@
-package asu.ser.capstone.pivi.diagram.edit.policies;
-
-import java.util.Iterator;
-
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
-import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.View;
-
-import asu.ser.capstone.pivi.diagram.edit.commands.OutputPortInputPortCreateCommand;
-import asu.ser.capstone.pivi.diagram.edit.commands.OutputPortInputPortReorientCommand;
-import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart;
-import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
-import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
+	package asu.ser.capstone.pivi.diagram.edit.policies;
 
 /**
  * @generated
  */
-public class InputPortItemSemanticEditPolicy extends
-		PiviBaseItemSemanticEditPolicy {
+public class InputPortItemSemanticEditPolicy extends asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolicy {
 
-	/**
-	 * @generated
-	 */
+		/**
+ * @generated
+ */
 	public InputPortItemSemanticEditPolicy() {
-		super(PiviElementTypes.InputPort_3001);
+				super(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.InputPort_3001);
 	}
 
+	
 	/**
-	 * @generated
-	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
-		cmd.setTransactionNestingEnabled(false);
-		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
-			Edge incomingLink = (Edge) it.next();
-			if (PiviVisualIDRegistry.getVisualID(incomingLink) == OutputPortInputPortEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand cmd = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(getEditingDomain(), null);
+	cmd.setTransactionNestingEnabled(false);
+		for (java.util.Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge incomingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(incomingLink) == asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
 		}
-		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-		if (annotation == null) {
-			// there are indirectly referenced children, need extra commands: false
-			addDestroyShortcutsCommand(cmd, view);
-			// delete host element
-			cmd.add(new DestroyElementCommand(req));
-		} else {
-			cmd.add(new DeleteCommand(getEditingDomain(), view));
-		}
-		return getGEFWrapper(cmd.reduce());
 	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
-				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+	org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+	if (annotation == null) {
+		// there are indirectly referenced children, need extra commands: false
+		addDestroyShortcutsCommand(cmd, view);
+		// delete host element
+		cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	} else {
+		cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), view));
 	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (PiviElementTypes.OutputPortInputPort_4002 == req.getElementType()) {
-			return null;
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (PiviElementTypes.OutputPortInputPort_4002 == req.getElementType()) {
-			return getGEFWrapper(new OutputPortInputPortCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		return null;
-	}
-
-	/**
-	 * Returns command to reorient EReference based link. New link target or source
-	 * should be the domain model element associated with this node.
-	 * 
-	 * @generated
-	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
-		switch (getVisualID(req)) {
-		case OutputPortInputPortEditPart.VISUAL_ID:
-			return getGEFWrapper(new OutputPortInputPortReorientCommand(req));
-		}
-		return super.getReorientReferenceRelationshipCommand(req);
-	}
-
+	return getGEFWrapper(cmd.reduce());
 }
+					
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	org.eclipse.gef.commands.Command command = req.getTarget() == null ?
+			getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+	return command != null ? command : super.getCreateRelationshipCommand(req);
+}
+
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getStartCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	if (asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.OutputPortInputPort_4002 == req.getElementType()) {
+		return null;
+	}
+	return null;
+}
+
+/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getCompleteCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	if (asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.OutputPortInputPort_4002 == req.getElementType()) {
+		return getGEFWrapper(new asu.ser.capstone.pivi.diagram.edit.commands.OutputPortInputPortCreateCommand(req,
+					req.getSource(), req.getTarget()
+			));
+	}
+	return null;
+}
+					
+/**
+ * Returns command to reorient EReference based link. New link target or source
+ * should be the domain model element associated with this node.
+ * 
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getReorientReferenceRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest req) {
+	switch (getVisualID(req)) {
+	case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID:
+	return getGEFWrapper(new asu.ser.capstone.pivi.diagram.edit.commands.OutputPortInputPortReorientCommand(req));
+	}
+	return super.getReorientReferenceRelationshipCommand(req);
+}
+	
+	}

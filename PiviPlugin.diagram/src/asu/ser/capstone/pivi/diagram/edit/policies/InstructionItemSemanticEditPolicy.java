@@ -1,144 +1,97 @@
-package asu.ser.capstone.pivi.diagram.edit.policies;
-
-import java.util.Iterator;
-
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
-import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
-import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.Node;
-import org.eclipse.gmf.runtime.notation.View;
-
-import asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
-import asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart;
-import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
-import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
+	package asu.ser.capstone.pivi.diagram.edit.policies;
 
 /**
  * @generated
  */
-public class InstructionItemSemanticEditPolicy extends
-		PiviBaseItemSemanticEditPolicy {
+public class InstructionItemSemanticEditPolicy extends asu.ser.capstone.pivi.diagram.edit.policies.PiviBaseItemSemanticEditPolicy {
 
-	/**
-	 * @generated
-	 */
+		/**
+ * @generated
+ */
 	public InstructionItemSemanticEditPolicy() {
-		super(PiviElementTypes.Instruction_2005);
+				super(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.Instruction_2005);
 	}
 
+	
 	/**
-	 * @generated
-	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
-		cmd.setTransactionNestingEnabled(false);
-		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-		if (annotation == null) {
-			// there are indirectly referenced children, need extra commands: false
-			addDestroyChildNodesCommand(cmd);
-			addDestroyShortcutsCommand(cmd, view);
-			// delete host element
-			cmd.add(new DestroyElementCommand(req));
-		} else {
-			cmd.add(new DeleteCommand(getEditingDomain(), view));
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+	org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand cmd = new org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand(getEditingDomain(), null);
+	cmd.setTransactionNestingEnabled(false);
+		org.eclipse.emf.ecore.EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+	if (annotation == null) {
+		// there are indirectly referenced children, need extra commands: false
+		addDestroyChildNodesCommand(cmd);
+		addDestroyShortcutsCommand(cmd, view);
+		// delete host element
+		cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	} else {
+		cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), view));
+	}
+	return getGEFWrapper(cmd.reduce());
+}
+			
+	/**
+ * @generated
+ */
+	private void addDestroyChildNodesCommand(org.eclipse.gmf.runtime.common.core.command.ICompositeCommand cmd) {
+		org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
+		for (java.util.Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
+			org.eclipse.gmf.runtime.notation.Node node = (org.eclipse.gmf.runtime.notation.Node) nit.next();
+			switch (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(node)) {
+									case asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID:
+				for (java.util.Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
+					org.eclipse.gmf.runtime.notation.Node cnode = (org.eclipse.gmf.runtime.notation.Node) cit.next();
+					switch (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(cnode)) {
+					case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:
+		for (java.util.Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge incomingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(incomingLink) == asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
 		}
-		return getGEFWrapper(cmd.reduce());
 	}
-
-	/**
-	 * @generated
-	 */
-	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
-		View view = (View) getHost().getModel();
-		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
-			Node node = (Node) nit.next();
-			switch (PiviVisualIDRegistry.getVisualID(node)) {
-			case InstructionInstructionFigureCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
-					Node cnode = (Node) cit.next();
-					switch (PiviVisualIDRegistry.getVisualID(cnode)) {
-					case InputPortEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
-							Edge incomingLink = (Edge) it.next();
-							if (PiviVisualIDRegistry.getVisualID(incomingLink) == OutputPortInputPortEditPart.VISUAL_ID) {
-								DestroyReferenceRequest r = new DestroyReferenceRequest(
-										incomingLink.getSource().getElement(),
-										null, incomingLink.getTarget()
-												.getElement(), false);
-								cmd.add(new DestroyReferenceCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
-								continue;
-							}
-						}
-						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
-						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
-						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
-						break;
-					case StartPortEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
-							Edge incomingLink = (Edge) it.next();
-							if (PiviVisualIDRegistry.getVisualID(incomingLink) == StartStartPortEditPart.VISUAL_ID) {
-								DestroyReferenceRequest r = new DestroyReferenceRequest(
-										incomingLink.getSource().getElement(),
-										null, incomingLink.getTarget()
-												.getElement(), false);
-								cmd.add(new DestroyReferenceCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
-								continue;
-							}
-						}
-						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
-						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
-						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
-						break;
-					case OutputPortEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
-							Edge outgoingLink = (Edge) it.next();
-							if (PiviVisualIDRegistry.getVisualID(outgoingLink) == OutputPortInputPortEditPart.VISUAL_ID) {
-								DestroyReferenceRequest r = new DestroyReferenceRequest(
-										outgoingLink.getSource().getElement(),
-										null, outgoingLink.getTarget()
-												.getElement(), false);
-								cmd.add(new DestroyReferenceCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
-								continue;
-							}
-						}
-						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
-						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
-						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
-						break;
+	cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
+	// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
+	// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+	break;
+case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:
+		for (java.util.Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge incomingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(incomingLink) == asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), incomingLink));
+			continue;
+		}
+	}
+	cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
+	// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
+	// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+	break;
+case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID:
+		for (java.util.Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge outgoingLink = (org.eclipse.gmf.runtime.notation.Edge) it.next();
+		if (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(outgoingLink) == asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID) {
+			org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest r = new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+			cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand(r));
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), outgoingLink));
+			continue;
+		}
+	}
+	cmd.add(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(new org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
+	// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
+	// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+	break;
 					}
 				}
 				break;
-			}
+						}
 		}
 	}
-
-}
+					
+	}

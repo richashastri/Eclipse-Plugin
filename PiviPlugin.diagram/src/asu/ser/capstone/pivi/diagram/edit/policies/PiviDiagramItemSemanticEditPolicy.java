@@ -12,6 +12,7 @@ import asu.ser.capstone.pivi.diagram.edit.commands.IfStartCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.InstructionCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.MethodEndCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.MethodStartCreateCommand;
+import asu.ser.capstone.pivi.diagram.edit.commands.PrintStatementCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.StartCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.ThreadEndCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.ThreadStartCreateCommand;
@@ -65,6 +66,9 @@ public class PiviDiagramItemSemanticEditPolicy extends
 		}
 		if (PiviElementTypes.ThreadStart_2010 == req.getElementType()) {
 			return getGEFWrapper(new ThreadStartCreateCommand(req));
+		}
+		if (PiviElementTypes.PrintStatement_2011 == req.getElementType()) {
+			return getGEFWrapper(new PrintStatementCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
