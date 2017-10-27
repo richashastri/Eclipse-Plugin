@@ -130,6 +130,24 @@ public interface PiviFactory extends EFactory {
 	WhileStart createWhileStart();
 
 	/**
+	 * Returns a new object of class '<em>Thread End</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thread End</em>'.
+	 * @generated
+	 */
+	ThreadEnd createThreadEnd();
+
+	/**
+	 * Returns a new object of class '<em>Thread Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thread Start</em>'.
+	 * @generated
+	 */
+	ThreadStart createThreadStart();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

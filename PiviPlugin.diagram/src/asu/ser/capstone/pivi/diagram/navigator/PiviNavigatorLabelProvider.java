@@ -16,6 +16,7 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 import asu.ser.capstone.pivi.IfStart;
 import asu.ser.capstone.pivi.Instruction;
 import asu.ser.capstone.pivi.MethodStart;
+import asu.ser.capstone.pivi.ThreadStart;
 import asu.ser.capstone.pivi.WhileStart;
 import asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart;
@@ -29,6 +30,8 @@ import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart;
 import asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin;
@@ -94,48 +97,54 @@ public class PiviNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
-		case OutputPortInputPortEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///asu/ser/capstone/pivi.ecore?OutputPort?inputPort", PiviElementTypes.OutputPortInputPort_4002); //$NON-NLS-1$
-		case MethodStartEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?MethodStart", PiviElementTypes.MethodStart_2006); //$NON-NLS-1$
-		case PiviDiagramEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http:///asu/ser/capstone/pivi.ecore?PiviDiagram", PiviElementTypes.PiviDiagram_1000); //$NON-NLS-1$
-		case StartPortEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///asu/ser/capstone/pivi.ecore?StartPort", PiviElementTypes.StartPort_3002); //$NON-NLS-1$
-		case WhileStartEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?WhileStart", PiviElementTypes.WhileStart_2007); //$NON-NLS-1$
 		case InstructionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?Instruction", PiviElementTypes.Instruction_2005); //$NON-NLS-1$
+		case WhileStartEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?WhileStart", PiviElementTypes.WhileStart_2007); //$NON-NLS-1$
+		case InputPortEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///asu/ser/capstone/pivi.ecore?InputPort", PiviElementTypes.InputPort_3001); //$NON-NLS-1$
+		case StartStartPortEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///asu/ser/capstone/pivi.ecore?Start?startPort", PiviElementTypes.StartStartPort_4004); //$NON-NLS-1$
+		case IfEndEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?IfEnd", PiviElementTypes.IfEnd_2004); //$NON-NLS-1$
+		case ThreadStartEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?ThreadStart", PiviElementTypes.ThreadStart_2010); //$NON-NLS-1$
+		case WhileEndEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?WhileEnd", PiviElementTypes.WhileEnd_2002); //$NON-NLS-1$
 		case IfStartEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?IfStart", PiviElementTypes.IfStart_2001); //$NON-NLS-1$
 		case StartEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?Start", PiviElementTypes.Start_2008); //$NON-NLS-1$
-		case InputPortEditPart.VISUAL_ID:
+		case OutputPortInputPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http:///asu/ser/capstone/pivi.ecore?InputPort", PiviElementTypes.InputPort_3001); //$NON-NLS-1$
-		case OutputPortEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///asu/ser/capstone/pivi.ecore?OutputPort", PiviElementTypes.OutputPort_3003); //$NON-NLS-1$
+					"Navigator?Link?http:///asu/ser/capstone/pivi.ecore?OutputPort?inputPort", PiviElementTypes.OutputPortInputPort_4002); //$NON-NLS-1$
 		case MethodEndEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?MethodEnd", PiviElementTypes.MethodEnd_2003); //$NON-NLS-1$
-		case IfEndEditPart.VISUAL_ID:
+		case OutputPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?IfEnd", PiviElementTypes.IfEnd_2004); //$NON-NLS-1$
-		case WhileEndEditPart.VISUAL_ID:
+					"Navigator?Node?http:///asu/ser/capstone/pivi.ecore?OutputPort", PiviElementTypes.OutputPort_3003); //$NON-NLS-1$
+		case PiviDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?WhileEnd", PiviElementTypes.WhileEnd_2002); //$NON-NLS-1$
-		case StartStartPortEditPart.VISUAL_ID:
+					"Navigator?Diagram?http:///asu/ser/capstone/pivi.ecore?PiviDiagram", PiviElementTypes.PiviDiagram_1000); //$NON-NLS-1$
+		case StartPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http:///asu/ser/capstone/pivi.ecore?Start?startPort", PiviElementTypes.StartStartPort_4004); //$NON-NLS-1$
+					"Navigator?Node?http:///asu/ser/capstone/pivi.ecore?StartPort", PiviElementTypes.StartPort_3002); //$NON-NLS-1$
+		case MethodStartEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?MethodStart", PiviElementTypes.MethodStart_2006); //$NON-NLS-1$
+		case ThreadEndEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///asu/ser/capstone/pivi.ecore?ThreadEnd", PiviElementTypes.ThreadEnd_2009); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -188,34 +197,38 @@ public class PiviNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
-		case OutputPortInputPortEditPart.VISUAL_ID:
-			return getOutputPortInputPort_4002Text(view);
-		case MethodStartEditPart.VISUAL_ID:
-			return getMethodStart_2006Text(view);
-		case PiviDiagramEditPart.VISUAL_ID:
-			return getPiviDiagram_1000Text(view);
-		case StartPortEditPart.VISUAL_ID:
-			return getStartPort_3002Text(view);
-		case WhileStartEditPart.VISUAL_ID:
-			return getWhileStart_2007Text(view);
 		case InstructionEditPart.VISUAL_ID:
 			return getInstruction_2005Text(view);
+		case WhileStartEditPart.VISUAL_ID:
+			return getWhileStart_2007Text(view);
+		case InputPortEditPart.VISUAL_ID:
+			return getInputPort_3001Text(view);
+		case StartStartPortEditPart.VISUAL_ID:
+			return getStartStartPort_4004Text(view);
+		case IfEndEditPart.VISUAL_ID:
+			return getIfEnd_2004Text(view);
+		case ThreadStartEditPart.VISUAL_ID:
+			return getThreadStart_2010Text(view);
+		case WhileEndEditPart.VISUAL_ID:
+			return getWhileEnd_2002Text(view);
 		case IfStartEditPart.VISUAL_ID:
 			return getIfStart_2001Text(view);
 		case StartEditPart.VISUAL_ID:
 			return getStart_2008Text(view);
-		case InputPortEditPart.VISUAL_ID:
-			return getInputPort_3001Text(view);
-		case OutputPortEditPart.VISUAL_ID:
-			return getOutputPort_3003Text(view);
+		case OutputPortInputPortEditPart.VISUAL_ID:
+			return getOutputPortInputPort_4002Text(view);
 		case MethodEndEditPart.VISUAL_ID:
 			return getMethodEnd_2003Text(view);
-		case IfEndEditPart.VISUAL_ID:
-			return getIfEnd_2004Text(view);
-		case WhileEndEditPart.VISUAL_ID:
-			return getWhileEnd_2002Text(view);
-		case StartStartPortEditPart.VISUAL_ID:
-			return getStartStartPort_4004Text(view);
+		case OutputPortEditPart.VISUAL_ID:
+			return getOutputPort_3003Text(view);
+		case PiviDiagramEditPart.VISUAL_ID:
+			return getPiviDiagram_1000Text(view);
+		case StartPortEditPart.VISUAL_ID:
+			return getStartPort_3002Text(view);
+		case MethodStartEditPart.VISUAL_ID:
+			return getMethodStart_2006Text(view);
+		case ThreadEndEditPart.VISUAL_ID:
+			return getThreadEnd_2009Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -223,36 +236,15 @@ public class PiviNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getOutputPortInputPort_4002Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getMethodStart_2006Text(View view) {
-		MethodStart domainModelElement = (MethodStart) view.getElement();
+	private String getInstruction_2005Text(View view) {
+		Instruction domainModelElement = (Instruction) view.getElement();
 		if (domainModelElement != null) {
-			return domainModelElement.getName();
+			return domainModelElement.getInstructions();
 		} else {
 			PiviDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2006); //$NON-NLS-1$
+					"No domain element for view with visualID = " + 2005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getPiviDiagram_1000Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getStartPort_3002Text(View view) {
-		return ""; //$NON-NLS-1$
 	}
 
 	/**
@@ -272,15 +264,43 @@ public class PiviNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getInstruction_2005Text(View view) {
-		Instruction domainModelElement = (Instruction) view.getElement();
+	private String getInputPort_3001Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getStartStartPort_4004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getIfEnd_2004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getThreadStart_2010Text(View view) {
+		ThreadStart domainModelElement = (ThreadStart) view.getElement();
 		if (domainModelElement != null) {
-			return domainModelElement.getInstructions();
+			return domainModelElement.getCondition();
 		} else {
 			PiviDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2005); //$NON-NLS-1$
+					"No domain element for view with visualID = " + 2010); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getWhileEnd_2002Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
@@ -307,14 +327,7 @@ public class PiviNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getInputPort_3001Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getOutputPort_3003Text(View view) {
+	private String getOutputPortInputPort_4002Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
@@ -328,21 +341,42 @@ public class PiviNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getIfEnd_2004Text(View view) {
+	private String getOutputPort_3003Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getWhileEnd_2002Text(View view) {
+	private String getPiviDiagram_1000Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getStartStartPort_4004Text(View view) {
+	private String getStartPort_3002Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getMethodStart_2006Text(View view) {
+		MethodStart domainModelElement = (MethodStart) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			PiviDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 2006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getThreadEnd_2009Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

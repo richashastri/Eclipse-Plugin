@@ -11,18 +11,19 @@ import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
 /**
  * @generated
  */
-public class WhileEndWhileEndFigureCompartmentItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy {
+public class WhileEndWhileEndFigureCompartmentItemSemanticEditPolicy extends
+		PiviBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public WhileEndWhileEndFigureCompartmentItemSemanticEditPolicy() {
 		super(PiviElementTypes.WhileEnd_2002);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (PiviElementTypes.InputPort_3001 == req.getElementType()) {
 			return getGEFWrapper(new InputPortCreateCommand(req));

@@ -22,18 +22,19 @@ import asu.ser.capstone.pivi.PiviFactory;
 public class IfStartCreateCommand extends EditElementCommand {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IfStartCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
-	* FIXME: replace with setElementToEdit()
-	* @generated
-	*/
+	 * FIXME: replace with setElementToEdit()
+	 * @generated
+	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		EObject container = ((CreateElementRequest) getRequest())
+				.getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -41,24 +42,20 @@ public class IfStartCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean canExecute() {
 		return true;
 
 	}
 
 	/**
-	* @generated NOT
-	*/
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	 * @generated
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
 		IfStart newElement = PiviFactory.eINSTANCE.createIfStart();
 
-		newElement.getStart().add(PiviFactory.eINSTANCE.createStartPort());
-		newElement.getInputs().add(PiviFactory.eINSTANCE.createInputPort());
-		newElement.getOutputs().add(PiviFactory.eINSTANCE.createOutputPort());
-		newElement.getOutputs().add(PiviFactory.eINSTANCE.createOutputPort());
-		
 		PiviDiagram owner = (PiviDiagram) getElementToEdit();
 		owner.getStatements().add(newElement);
 
@@ -69,15 +66,19 @@ public class IfStartCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	* @generated
-	*/
-	protected void doConfigure(IfStart newElement, IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+	 * @generated
+	 */
+	protected void doConfigure(IfStart newElement, IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest())
+				.getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(
+				getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest())
+				.getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType
+				.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

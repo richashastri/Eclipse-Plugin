@@ -9,29 +9,31 @@ import org.eclipse.ui.IWorkbenchPage;
 /**
  * @generated
  */
-public class PiviDiagramActionBarContributor extends DiagramActionBarContributor {
+public class PiviDiagramActionBarContributor extends
+		DiagramActionBarContributor {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Class getEditorClass() {
 		return PiviDiagramEditor.class;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected String getEditorId() {
 		return PiviDiagramEditor.ID;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview
-		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
+		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(
+				IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
 		fileMenu.remove("pageSetupAction"); //$NON-NLS-1$
 	}

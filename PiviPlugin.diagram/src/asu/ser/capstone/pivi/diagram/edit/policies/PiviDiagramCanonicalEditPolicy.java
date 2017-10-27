@@ -42,6 +42,8 @@ import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart;
 import asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater;
@@ -55,13 +57,13 @@ import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
 public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -72,26 +74,28 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(PiviPackage.eINSTANCE.getPiviDiagram_Statements());
-			myFeaturesToSynchronize.add(PiviPackage.eINSTANCE.getPiviDiagram_Start());
+			myFeaturesToSynchronize.add(PiviPackage.eINSTANCE
+					.getPiviDiagram_Statements());
+			myFeaturesToSynchronize.add(PiviPackage.eINSTANCE
+					.getPiviDiagram_Start());
 		}
 		return myFeaturesToSynchronize;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("rawtypes")
-
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<PiviNodeDescriptor> childDescriptors = PiviDiagramUpdater.getPiviDiagram_1000SemanticChildren(viewObject);
+		List<PiviNodeDescriptor> childDescriptors = PiviDiagramUpdater
+				.getPiviDiagram_1000SemanticChildren(viewObject);
 		for (PiviNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -99,15 +103,17 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
-	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
-		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
+	 * @generated
+	 */
+	protected boolean isOrphaned(Collection<EObject> semanticChildren,
+			final View view) {
+		return isMyDiagramElement(view)
+				&& !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = PiviVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
@@ -119,21 +125,24 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case MethodStartEditPart.VISUAL_ID:
 		case WhileStartEditPart.VISUAL_ID:
 		case StartEditPart.VISUAL_ID:
+		case ThreadEndEditPart.VISUAL_ID:
+		case ThreadStartEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<PiviNodeDescriptor> childDescriptors = PiviDiagramUpdater
-				.getPiviDiagram_1000SemanticChildren((View) getHost().getModel());
+				.getPiviDiagram_1000SemanticChildren((View) getHost()
+						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -147,8 +156,8 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<PiviNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
-				.hasNext();) {
+		for (Iterator<PiviNodeDescriptor> descriptorsIterator = childDescriptors
+				.iterator(); descriptorsIterator.hasNext();) {
 			PiviNodeDescriptor next = descriptorsIterator.next();
 			String hint = PiviVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
@@ -177,9 +186,11 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 				childDescriptors.size());
 		for (PiviNodeDescriptor next : childDescriptors) {
 			String hint = PiviVisualIDRegistry.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
-					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(
+					next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
+					host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -188,10 +199,10 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(
+					new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
-
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -203,8 +214,8 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
-					host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
+					.getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -214,17 +225,21 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<PiviLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+		Collection<PiviLinkDescriptor> linkDescriptors = collectAllLinks(
+				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
+				.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = PiviVisualIDRegistry.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = PiviVisualIDRegistry
+					.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null
+						&& nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
@@ -234,11 +249,14 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
 			for (Iterator<PiviLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				PiviLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
+				PiviLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+						.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
-						&& diagramLinkDst == nextLinkDescriptor.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+						&& diagramLinkDst == nextLinkDescriptor
+								.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor
+								.getVisualID()) {
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;
@@ -250,125 +268,164 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
-	private Collection<PiviLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
-		if (!PiviDiagramEditPart.MODEL_ID.equals(PiviVisualIDRegistry.getModelID(view))) {
+	 * @generated
+	 */
+	private Collection<PiviLinkDescriptor> collectAllLinks(View view,
+			Domain2Notation domain2NotationMap) {
+		if (!PiviDiagramEditPart.MODEL_ID.equals(PiviVisualIDRegistry
+				.getModelID(view))) {
 			return Collections.emptyList();
 		}
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
 		case PiviDiagramEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getPiviDiagram_1000ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getPiviDiagram_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case IfStartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getIfStart_2001ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getIfStart_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case WhileEndEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getWhileEnd_2002ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getWhileEnd_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MethodEndEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getMethodEnd_2003ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getMethodEnd_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case IfEndEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getIfEnd_2004ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getIfEnd_2004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InstructionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getInstruction_2005ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getInstruction_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MethodStartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getMethodStart_2006ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getMethodStart_2006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case WhileStartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getWhileStart_2007ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getWhileStart_2007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case StartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getStart_2008ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getStart_2008ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ThreadEndEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(PiviDiagramUpdater
+						.getThreadEnd_2009ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ThreadStartEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(PiviDiagramUpdater
+						.getThreadStart_2010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InputPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getInputPort_3001ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getInputPort_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case StartPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getStartPort_3002ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getStartPort_3002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OutputPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(PiviDiagramUpdater.getOutputPort_3003ContainedLinks(view));
+				result.addAll(PiviDiagramUpdater
+						.getOutputPort_3003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children
+				.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(),
+					domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(),
+					domain2NotationMap));
 		}
 		return result;
 	}
 
 	/**
-	* @generated
-	*/
-	private Collection<IAdaptable> createConnections(Collection<PiviLinkDescriptor> linkDescriptors,
+	 * @generated
+	 */
+	private Collection<IAdaptable> createConnections(
+			Collection<PiviLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (PiviLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
+					domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
+					domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					PiviVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
-					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
+					PiviVisualIDRegistry.getType(nextLinkDescriptor
+							.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost())
+							.getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
+					descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -387,71 +444,77 @@ public class PiviDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
-	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
+	 * @generated
+	 */
+	private EditPart getEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
 		}
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
 	}
 
 	/**
-	* @generated
-	*/
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	 * @generated
+	 */
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
-	* @generated
-	*/
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	 * @generated
+	 */
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
-	* @generated
-	*/
-	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
-			int hintVisualId) {
-		View view = (View) domain2NotationMap.getHinted(domainModelElement, PiviVisualIDRegistry.getType(hintVisualId));
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement,
+				PiviVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
 		}
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("serial")
 	protected static class Domain2Notation extends HashMap<EObject, View> {
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean containsDomainElement(EObject domainElement) {
 			return this.containsKey(domainElement);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public View getHinted(EObject domainEObject, String hint) {
 			return this.get(domainEObject);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public void putView(EObject domainElement, View view) {
 			if (!containsKey(view.getElement())) {
 				this.put(domainElement, view);

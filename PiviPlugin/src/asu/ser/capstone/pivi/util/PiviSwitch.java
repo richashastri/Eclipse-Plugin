@@ -151,6 +151,20 @@ public class PiviSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PiviPackage.THREAD_END: {
+				ThreadEnd threadEnd = (ThreadEnd)theEObject;
+				T result = caseThreadEnd(threadEnd);
+				if (result == null) result = caseStatement(threadEnd);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PiviPackage.THREAD_START: {
+				ThreadStart threadStart = (ThreadStart)theEObject;
+				T result = caseThreadStart(threadStart);
+				if (result == null) result = caseStatement(threadStart);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -347,6 +361,36 @@ public class PiviSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseWhileStart(WhileStart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread End</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadEnd(ThreadEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadStart(ThreadStart object) {
 		return null;
 	}
 

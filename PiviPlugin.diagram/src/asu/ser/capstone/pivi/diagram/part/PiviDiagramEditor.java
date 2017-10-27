@@ -46,35 +46,36 @@ import asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorItem;
 /**
  * @generated
  */
-public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
+public class PiviDiagramEditor extends DiagramDocumentEditor implements
+		IGotoMarker {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final String ID = "asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorID"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final String CONTEXT_ID = "asu.ser.capstone.pivi.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public PiviDiagramEditor() {
 		super(true);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected String getContextID() {
 		return CONTEXT_ID;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
 		new PiviPaletteFactory().fillPalette(root);
@@ -82,15 +83,15 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected PreferencesHint getPreferencesHint() {
 		return PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getContributorId() {
 		return PiviDiagramEditorPlugin.ID;
 	}
@@ -111,20 +112,22 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+		if (input instanceof IFileEditorInput
+				|| input instanceof URIEditorInput) {
 			return PiviDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
+		IDocument document = getEditorInput() != null ? getDocumentProvider()
+				.getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
 			return ((IDiagramDocument) document).getEditingDomain();
 		}
@@ -132,45 +135,48 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			setDocumentProvider(PiviDiagramEditorPlugin.getInstance().getDocumentProvider());
+		if (input instanceof IFileEditorInput
+				|| input instanceof URIEditorInput) {
+			setDocumentProvider(PiviDiagramEditorPlugin.getInstance()
+					.getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void gotoMarker(IMarker marker) {
 		MarkerNavigationService.getInstance().gotoMarker(this, marker);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
+				.getFile() : null;
 		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
@@ -181,7 +187,9 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(Messages.PiviDiagramEditor_SavingDeletedFile, original.getName());
+			String message = NLS.bind(
+					Messages.PiviDiagramEditor_SavingDeletedFile,
+					original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -202,12 +210,15 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 		IFile file = workspaceRoot.getFile(filePath);
 		final IEditorInput newInput = new FileEditorInput(file);
 		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
+				.getEditorMatchingStrategy();
+		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell, Messages.PiviDiagramEditor_SaveAsErrorTitle,
+				MessageDialog.openWarning(shell,
+						Messages.PiviDiagramEditor_SaveAsErrorTitle,
 						Messages.PiviDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
@@ -215,14 +226,17 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 		boolean success = false;
 		try {
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
+			getDocumentProvider(newInput).saveDocument(progressMonitor,
+					newInput,
 					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell, Messages.PiviDiagramEditor_SaveErrorTitle,
-						Messages.PiviDiagramEditor_SaveErrorMessage, x.getStatus());
+				ErrorDialog.openError(shell,
+						Messages.PiviDiagramEditor_SaveErrorTitle,
+						Messages.PiviDiagramEditor_SaveErrorMessage,
+						x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -236,15 +250,15 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ShowInContext getShowInContext() {
 		return new ShowInContext(getEditorInput(), getNavigatorSelection());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ISelection getNavigatorSelection() {
 		IDiagramDocument document = getDiagramDocument();
 		if (document == null) {
@@ -263,14 +277,15 @@ public class PiviDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
-				getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(
+				this, getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
+				provider, getDiagramGraphicalViewer());
 	}
 
 }

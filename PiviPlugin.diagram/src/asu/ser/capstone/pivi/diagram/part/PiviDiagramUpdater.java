@@ -25,6 +25,8 @@ import asu.ser.capstone.pivi.PiviPackage;
 import asu.ser.capstone.pivi.Start;
 import asu.ser.capstone.pivi.StartPort;
 import asu.ser.capstone.pivi.Statement;
+import asu.ser.capstone.pivi.ThreadEnd;
+import asu.ser.capstone.pivi.ThreadStart;
 import asu.ser.capstone.pivi.WhileEnd;
 import asu.ser.capstone.pivi.WhileStart;
 import asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart;
@@ -44,6 +46,10 @@ import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartThreadStartFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndWhileEndFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart;
@@ -56,8 +62,8 @@ import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
 public class PiviDiagramUpdater {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<PiviNodeDescriptor> getSemanticChildren(View view) {
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
 		case PiviDiagramEditPart.VISUAL_ID:
@@ -76,22 +82,29 @@ public class PiviDiagramUpdater {
 			return getMethodStartMethodStartFigureCompartment_7007SemanticChildren(view);
 		case WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID:
 			return getWhileStartWhileStartFigureCompartment_7008SemanticChildren(view);
+		case ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:
+			return getThreadEndThreadEndFigureCompartment_7009SemanticChildren(view);
+		case ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
+			return getThreadStartThreadStartFigureCompartment_7010SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getPiviDiagram_1000SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getPiviDiagram_1000SemanticChildren(
+			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 		PiviDiagram modelElement = (PiviDiagram) view.getElement();
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getStatements().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getStatements().iterator(); it
+				.hasNext();) {
 			Statement childElement = (Statement) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == IfStartEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -120,10 +133,19 @@ public class PiviDiagramUpdater {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == ThreadEndEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ThreadStartEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		{
 			Start childElement = modelElement.getStart();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 			}
@@ -132,9 +154,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getIfStartIfStartFigureCompartment_7001SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getIfStartIfStartFigureCompartment_7001SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -146,7 +169,8 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -154,15 +178,18 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -172,9 +199,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getWhileEndWhileEndFigureCompartment_7002SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getWhileEndWhileEndFigureCompartment_7002SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -186,15 +214,18 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -202,7 +233,8 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -212,9 +244,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getMethodEndMethodEndFigureCompartment_7003SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getMethodEndMethodEndFigureCompartment_7003SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -226,7 +259,8 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -234,15 +268,18 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -252,9 +289,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getIfEndIfEndFigureCompartment_7004SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getIfEndIfEndFigureCompartment_7004SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -266,15 +304,18 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -282,7 +323,8 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -292,9 +334,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getInstructionInstructionFigureCompartment_7005SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getInstructionInstructionFigureCompartment_7005SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -306,7 +349,8 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -314,15 +358,18 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -332,9 +379,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getMethodStartMethodStartFigureCompartment_7007SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getMethodStartMethodStartFigureCompartment_7007SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -346,15 +394,18 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -362,7 +413,8 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -372,9 +424,10 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<PiviNodeDescriptor> getWhileStartWhileStartFigureCompartment_7008SemanticChildren(View view) {
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getWhileStartWhileStartFigureCompartment_7008SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -386,15 +439,18 @@ public class PiviDiagramUpdater {
 		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
 			InputPort childElement = (InputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == InputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
 			OutputPort childElement = (OutputPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == OutputPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -402,7 +458,8 @@ public class PiviDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
 			StartPort childElement = (StartPort) it.next();
-			int visualID = PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StartPortEditPart.VISUAL_ID) {
 				result.add(new PiviNodeDescriptor(childElement, visualID));
 				continue;
@@ -412,8 +469,98 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getThreadEndThreadEndFigureCompartment_7009SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ThreadEnd modelElement = (ThreadEnd) containerView.getElement();
+		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
+			InputPort childElement = (InputPort) it.next();
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == InputPortEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
+			OutputPort childElement = (OutputPort) it.next();
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == OutputPortEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
+			StartPort childElement = (StartPort) it.next();
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == StartPortEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviNodeDescriptor> getThreadStartThreadStartFigureCompartment_7010SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ThreadStart modelElement = (ThreadStart) containerView.getElement();
+		LinkedList<PiviNodeDescriptor> result = new LinkedList<PiviNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
+			InputPort childElement = (InputPort) it.next();
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == InputPortEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getOutputs().iterator(); it
+				.hasNext();) {
+			OutputPort childElement = (OutputPort) it.next();
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == OutputPortEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
+			StartPort childElement = (StartPort) it.next();
+			int visualID = PiviVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == StartPortEditPart.VISUAL_ID) {
+				result.add(new PiviNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<PiviLinkDescriptor> getContainedLinks(View view) {
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
 		case PiviDiagramEditPart.VISUAL_ID:
@@ -434,6 +581,10 @@ public class PiviDiagramUpdater {
 			return getWhileStart_2007ContainedLinks(view);
 		case StartEditPart.VISUAL_ID:
 			return getStart_2008ContainedLinks(view);
+		case ThreadEndEditPart.VISUAL_ID:
+			return getThreadEnd_2009ContainedLinks(view);
+		case ThreadStartEditPart.VISUAL_ID:
+			return getThreadStart_2010ContainedLinks(view);
 		case InputPortEditPart.VISUAL_ID:
 			return getInputPort_3001ContainedLinks(view);
 		case StartPortEditPart.VISUAL_ID:
@@ -445,8 +596,8 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<PiviLinkDescriptor> getIncomingLinks(View view) {
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
 		case IfStartEditPart.VISUAL_ID:
@@ -465,6 +616,10 @@ public class PiviDiagramUpdater {
 			return getWhileStart_2007IncomingLinks(view);
 		case StartEditPart.VISUAL_ID:
 			return getStart_2008IncomingLinks(view);
+		case ThreadEndEditPart.VISUAL_ID:
+			return getThreadEnd_2009IncomingLinks(view);
+		case ThreadStartEditPart.VISUAL_ID:
+			return getThreadStart_2010IncomingLinks(view);
 		case InputPortEditPart.VISUAL_ID:
 			return getInputPort_3001IncomingLinks(view);
 		case StartPortEditPart.VISUAL_ID:
@@ -476,8 +631,8 @@ public class PiviDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<PiviLinkDescriptor> getOutgoingLinks(View view) {
 		switch (PiviVisualIDRegistry.getVisualID(view)) {
 		case IfStartEditPart.VISUAL_ID:
@@ -496,6 +651,10 @@ public class PiviDiagramUpdater {
 			return getWhileStart_2007OutgoingLinks(view);
 		case StartEditPart.VISUAL_ID:
 			return getStart_2008OutgoingLinks(view);
+		case ThreadEndEditPart.VISUAL_ID:
+			return getThreadEnd_2009OutgoingLinks(view);
+		case ThreadStartEditPart.VISUAL_ID:
+			return getThreadStart_2010OutgoingLinks(view);
 		case InputPortEditPart.VISUAL_ID:
 			return getInputPort_3001OutgoingLinks(view);
 		case StartPortEditPart.VISUAL_ID:
@@ -509,28 +668,32 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getPiviDiagram_1000ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getPiviDiagram_1000ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getIfStart_2001ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getIfStart_2001ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getWhileEnd_2002ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getWhileEnd_2002ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getMethodEnd_2003ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getMethodEnd_2003ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -544,21 +707,24 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getInstruction_2005ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getInstruction_2005ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getMethodStart_2006ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getMethodStart_2006ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getWhileStart_2007ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getWhileStart_2007ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -575,21 +741,40 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getInputPort_3001ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getThreadEnd_2009ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getStartPort_3002ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getThreadStart_2010ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getOutputPort_3003ContainedLinks(View view) {
+	public static List<PiviLinkDescriptor> getInputPort_3001ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviLinkDescriptor> getStartPort_3002ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviLinkDescriptor> getOutputPort_3003ContainedLinks(
+			View view) {
 		OutputPort modelElement = (OutputPort) view.getElement();
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_OutputPort_InputPort_4002(modelElement));
@@ -599,21 +784,24 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getIfStart_2001IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getIfStart_2001IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getWhileEnd_2002IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getWhileEnd_2002IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getMethodEnd_2003IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getMethodEnd_2003IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -627,21 +815,24 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getInstruction_2005IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getInstruction_2005IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getMethodStart_2006IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getMethodStart_2006IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getWhileStart_2007IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getWhileStart_2007IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -655,52 +846,76 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getInputPort_3001IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getThreadEnd_2009IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviLinkDescriptor> getThreadStart_2010IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviLinkDescriptor> getInputPort_3001IncomingLinks(
+			View view) {
 		InputPort modelElement = (InputPort) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_OutputPort_InputPort_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_OutputPort_InputPort_4002(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getStartPort_3002IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getStartPort_3002IncomingLinks(
+			View view) {
 		StartPort modelElement = (StartPort) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Start_StartPort_4004(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Start_StartPort_4004(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getOutputPort_3003IncomingLinks(View view) {
+	public static List<PiviLinkDescriptor> getOutputPort_3003IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getIfStart_2001OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getIfStart_2001OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getWhileEnd_2002OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getWhileEnd_2002OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getMethodEnd_2003OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getMethodEnd_2003OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -714,21 +929,24 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getInstruction_2005OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getInstruction_2005OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getMethodStart_2006OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getMethodStart_2006OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getWhileStart_2007OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getWhileStart_2007OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -745,21 +963,40 @@ public class PiviDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getInputPort_3001OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getThreadEnd_2009OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getStartPort_3002OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getThreadStart_2010OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PiviLinkDescriptor> getOutputPort_3003OutgoingLinks(View view) {
+	public static List<PiviLinkDescriptor> getInputPort_3001OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviLinkDescriptor> getStartPort_3002OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<PiviLinkDescriptor> getOutputPort_3003OutgoingLinks(
+			View view) {
 		OutputPort modelElement = (OutputPort) view.getElement();
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_OutputPort_InputPort_4002(modelElement));
@@ -770,12 +1007,16 @@ public class PiviDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<PiviLinkDescriptor> getIncomingFeatureModelFacetLinks_Start_StartPort_4004(
-			StartPort target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			StartPort target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == PiviPackage.eINSTANCE.getStart_StartPort()) {
-				result.add(new PiviLinkDescriptor(setting.getEObject(), target, PiviElementTypes.StartStartPort_4004,
+			if (setting.getEStructuralFeature() == PiviPackage.eINSTANCE
+					.getStart_StartPort()) {
+				result.add(new PiviLinkDescriptor(setting.getEObject(), target,
+						PiviElementTypes.StartStartPort_4004,
 						StartStartPortEditPart.VISUAL_ID));
 			}
 		}
@@ -786,34 +1027,41 @@ public class PiviDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<PiviLinkDescriptor> getIncomingFeatureModelFacetLinks_OutputPort_InputPort_4002(
-			InputPort target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			InputPort target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == PiviPackage.eINSTANCE.getOutputPort_InputPort()) {
+			if (setting.getEStructuralFeature() == PiviPackage.eINSTANCE
+					.getOutputPort_InputPort()) {
 				result.add(new PiviLinkDescriptor(setting.getEObject(), target,
-						PiviElementTypes.OutputPortInputPort_4002, OutputPortInputPortEditPart.VISUAL_ID));
+						PiviElementTypes.OutputPortInputPort_4002,
+						OutputPortInputPortEditPart.VISUAL_ID));
 			}
 		}
 		return result;
 	}
 
 	/**
-	* @generated
-	*/
-	private static Collection<PiviLinkDescriptor> getOutgoingFeatureModelFacetLinks_Start_StartPort_4004(Start source) {
+	 * @generated
+	 */
+	private static Collection<PiviLinkDescriptor> getOutgoingFeatureModelFacetLinks_Start_StartPort_4004(
+			Start source) {
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
-		for (Iterator<?> destinations = source.getStartPort().iterator(); destinations.hasNext();) {
+		for (Iterator<?> destinations = source.getStartPort().iterator(); destinations
+				.hasNext();) {
 			StartPort destination = (StartPort) destinations.next();
-			result.add(new PiviLinkDescriptor(source, destination, PiviElementTypes.StartStartPort_4004,
+			result.add(new PiviLinkDescriptor(source, destination,
+					PiviElementTypes.StartStartPort_4004,
 					StartStartPortEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<PiviLinkDescriptor> getOutgoingFeatureModelFacetLinks_OutputPort_InputPort_4002(
 			OutputPort source) {
 		LinkedList<PiviLinkDescriptor> result = new LinkedList<PiviLinkDescriptor>();
@@ -821,47 +1069,44 @@ public class PiviDiagramUpdater {
 		if (destination == null) {
 			return result;
 		}
-		result.add(new PiviLinkDescriptor(source, destination, PiviElementTypes.OutputPortInputPort_4002,
+		result.add(new PiviLinkDescriptor(source, destination,
+				PiviElementTypes.OutputPortInputPort_4002,
 				OutputPortInputPortEditPart.VISUAL_ID));
 		return result;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public List<PiviNodeDescriptor> getSemanticChildren(View view) {
 			return PiviDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public List<PiviLinkDescriptor> getContainedLinks(View view) {
 			return PiviDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public List<PiviLinkDescriptor> getIncomingLinks(View view) {
 			return PiviDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public List<PiviLinkDescriptor> getOutgoingLinks(View view) {
 			return PiviDiagramUpdater.getOutgoingLinks(view);
 		}

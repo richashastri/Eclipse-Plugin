@@ -14,44 +14,46 @@ import asu.ser.capstone.pivi.diagram.edit.policies.StartStartPortItemSemanticEdi
 /**
  * @generated
  */
-public class StartStartPortEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class StartStartPortEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 4004;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public StartStartPortEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StartStartPortItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new StartStartPortItemSemanticEditPolicy());
 	}
 
 	/**
-	* Creates figure for this edit part.
-	* 
-	* Body of this method does not depend on settings in generation model
-	* so you may safely remove <i>generated</i> tag and modify it.
-	* 
-	* @generated
-	*/
+	 * Creates figure for this edit part.
+	 * 
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * 
+	 * @generated
+	 */
 
 	protected Connection createConnectionFigure() {
 		return new StartStartPortFigure();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public StartStartPortFigure getPrimaryShape() {
 		return (StartStartPortFigure) getFigure();
 	}

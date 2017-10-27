@@ -58,6 +58,10 @@ import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartThreadStartFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndWhileEndFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart;
@@ -161,6 +165,8 @@ public class PiviViewProvider extends AbstractProvider implements IViewProvider 
 				case MethodStartEditPart.VISUAL_ID:
 				case WhileStartEditPart.VISUAL_ID:
 				case StartEditPart.VISUAL_ID:
+				case ThreadEndEditPart.VISUAL_ID:
+				case ThreadStartEditPart.VISUAL_ID:
 				case InputPortEditPart.VISUAL_ID:
 				case StartPortEditPart.VISUAL_ID:
 				case OutputPortEditPart.VISUAL_ID:
@@ -184,6 +190,8 @@ public class PiviViewProvider extends AbstractProvider implements IViewProvider 
 				|| MethodStartEditPart.VISUAL_ID == visualID
 				|| WhileStartEditPart.VISUAL_ID == visualID
 				|| StartEditPart.VISUAL_ID == visualID
+				|| ThreadEndEditPart.VISUAL_ID == visualID
+				|| ThreadStartEditPart.VISUAL_ID == visualID
 				|| InputPortEditPart.VISUAL_ID == visualID
 				|| StartPortEditPart.VISUAL_ID == visualID
 				|| OutputPortEditPart.VISUAL_ID == visualID;
@@ -266,6 +274,12 @@ public class PiviViewProvider extends AbstractProvider implements IViewProvider 
 					persisted, preferencesHint);
 		case StartEditPart.VISUAL_ID:
 			return createStart_2008(domainElement, containerView, index,
+					persisted, preferencesHint);
+		case ThreadEndEditPart.VISUAL_ID:
+			return createThreadEnd_2009(domainElement, containerView, index,
+					persisted, preferencesHint);
+		case ThreadStartEditPart.VISUAL_ID:
+			return createThreadStart_2010(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case InputPortEditPart.VISUAL_ID:
 			return createInputPort_3001(domainElement, containerView, index,
@@ -674,6 +688,102 @@ public class PiviViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createThreadEnd_2009(EObject domainElement, View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(PiviVisualIDRegistry.getType(ThreadEndEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		createCompartment(
+				node,
+				PiviVisualIDRegistry
+						.getType(ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID),
+				false, false, true, true);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createThreadStart_2010(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(PiviVisualIDRegistry
+				.getType(ThreadStartEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		createCompartment(
+				node,
+				PiviVisualIDRegistry
+						.getType(ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID),
+				false, false, true, true);
 		return node;
 	}
 

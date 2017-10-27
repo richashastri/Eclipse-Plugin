@@ -20,121 +20,133 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 public class PiviCreationWizard extends Wizard implements INewWizard {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IWorkbench workbench;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IStructuredSelection selection;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected PiviCreationWizardPage diagramModelFilePage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected PiviCreationWizardPage domainModelFilePage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Resource diagram;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean openNewlyCreatedDiagramEditor = true;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IWorkbench getWorkbench() {
 		return workbench;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IStructuredSelection getSelection() {
 		return selection;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final Resource getDiagram() {
 		return diagram;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final boolean isOpenNewlyCreatedDiagramEditor() {
 		return openNewlyCreatedDiagramEditor;
 	}
 
 	/**
-	* @generated
-	*/
-	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
+	 * @generated
+	 */
+	public void setOpenNewlyCreatedDiagramEditor(
+			boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(Messages.PiviCreationWizardTitle);
-		setDefaultPageImageDescriptor(
-				PiviDiagramEditorPlugin.getBundledImageDescriptor("icons/wizban/NewPiviWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(PiviDiagramEditorPlugin
+				.getBundledImageDescriptor("icons/wizban/NewPiviWizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void addPages() {
-		diagramModelFilePage = new PiviCreationWizardPage("DiagramModelFile", getSelection(), "pivi_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		diagramModelFilePage.setTitle(Messages.PiviCreationWizard_DiagramModelFilePageTitle);
-		diagramModelFilePage.setDescription(Messages.PiviCreationWizard_DiagramModelFilePageDescription);
+		diagramModelFilePage = new PiviCreationWizardPage(
+				"DiagramModelFile", getSelection(), "pivi_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage
+				.setTitle(Messages.PiviCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage
+				.setDescription(Messages.PiviCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new PiviCreationWizardPage("DomainModelFile", getSelection(), "pivi") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new PiviCreationWizardPage(
+				"DomainModelFile", getSelection(), "pivi") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".pivi_diagram".length()); //$NON-NLS-1$
-					setFileName(PiviDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "pivi")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length()
+							- ".pivi_diagram".length()); //$NON-NLS-1$
+					setFileName(PiviDiagramEditorUtil.getUniqueFileName(
+							getContainerFullPath(), fileName, "pivi")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		domainModelFilePage.setTitle(Messages.PiviCreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage.setDescription(Messages.PiviCreationWizard_DomainModelFilePageDescription);
+		domainModelFilePage
+				.setTitle(Messages.PiviCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage
+				.setDescription(Messages.PiviCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = PiviDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
+			protected void execute(IProgressMonitor monitor)
+					throws CoreException, InterruptedException {
+				diagram = PiviDiagramEditorUtil.createDiagram(
+						diagramModelFilePage.getURI(),
 						domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						PiviDiagramEditorUtil.openDiagram(diagram);
 					} catch (PartInitException e) {
-						ErrorDialog.openError(getContainer().getShell(), Messages.PiviCreationWizardOpenEditorError,
+						ErrorDialog.openError(getContainer().getShell(),
+								Messages.PiviCreationWizardOpenEditorError,
 								null, e.getStatus());
 					}
 				}
@@ -146,10 +158,12 @@ public class PiviCreationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			if (e.getTargetException() instanceof CoreException) {
-				ErrorDialog.openError(getContainer().getShell(), Messages.PiviCreationWizardCreationError, null,
+				ErrorDialog.openError(getContainer().getShell(),
+						Messages.PiviCreationWizardCreationError, null,
 						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				PiviDiagramEditorPlugin.getInstance().logError("Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+				PiviDiagramEditorPlugin.getInstance().logError(
+						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
 		}

@@ -120,6 +120,14 @@ public class PiviAdapterFactory extends AdapterFactoryImpl {
 				return createWhileStartAdapter();
 			}
 			@Override
+			public Adapter caseThreadEnd(ThreadEnd object) {
+				return createThreadEndAdapter();
+			}
+			@Override
+			public Adapter caseThreadStart(ThreadStart object) {
+				return createThreadStartAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -318,6 +326,34 @@ public class PiviAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createWhileStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link asu.ser.capstone.pivi.ThreadEnd <em>Thread End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see asu.ser.capstone.pivi.ThreadEnd
+	 * @generated
+	 */
+	public Adapter createThreadEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link asu.ser.capstone.pivi.ThreadStart <em>Thread Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see asu.ser.capstone.pivi.ThreadStart
+	 * @generated
+	 */
+	public Adapter createThreadStartAdapter() {
 		return null;
 	}
 

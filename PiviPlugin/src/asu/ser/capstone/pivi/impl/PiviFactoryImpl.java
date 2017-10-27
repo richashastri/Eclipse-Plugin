@@ -68,6 +68,8 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 			case PiviPackage.START_PORT: return createStartPort();
 			case PiviPackage.WHILE_END: return createWhileEnd();
 			case PiviPackage.WHILE_START: return createWhileStart();
+			case PiviPackage.THREAD_END: return createThreadEnd();
+			case PiviPackage.THREAD_START: return createThreadStart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -191,6 +193,26 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 	public WhileStart createWhileStart() {
 		WhileStartImpl whileStart = new WhileStartImpl();
 		return whileStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThreadEnd createThreadEnd() {
+		ThreadEndImpl threadEnd = new ThreadEndImpl();
+		return threadEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThreadStart createThreadStart() {
+		ThreadStartImpl threadStart = new ThreadStartImpl();
+		return threadStart;
 	}
 
 	/**

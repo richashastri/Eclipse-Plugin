@@ -9,18 +9,19 @@ import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
 /**
  * @generated
  */
-public class OutputPortInputPortItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy {
+public class OutputPortInputPortItemSemanticEditPolicy extends
+		PiviBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public OutputPortInputPortItemSemanticEditPolicy() {
 		super(PiviElementTypes.OutputPortInputPort_4002);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req));
 	}

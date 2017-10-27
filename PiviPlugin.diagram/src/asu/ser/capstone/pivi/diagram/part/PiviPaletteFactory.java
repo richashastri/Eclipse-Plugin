@@ -44,6 +44,8 @@ public class PiviPaletteFactory {
 		paletteContainer.add(createStart7CreationTool());
 		paletteContainer.add(createWhileEnd8CreationTool());
 		paletteContainer.add(createWhileStart9CreationTool());
+		paletteContainer.add(createThreadEnd10CreationTool());
+		paletteContainer.add(createThreadStart11CreationTool());
 		return paletteContainer;
 	}
 
@@ -187,6 +189,36 @@ public class PiviPaletteFactory {
 		entry.setId("createWhileStart9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PiviElementTypes
 				.getImageDescriptor(PiviElementTypes.WhileStart_2007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createThreadEnd10CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.ThreadEnd10CreationTool_title,
+				Messages.ThreadEnd10CreationTool_desc,
+				Collections.singletonList(PiviElementTypes.ThreadEnd_2009));
+		entry.setId("createThreadEnd10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(PiviElementTypes
+				.getImageDescriptor(PiviElementTypes.ThreadEnd_2009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createThreadStart11CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.ThreadStart11CreationTool_title,
+				Messages.ThreadStart11CreationTool_desc,
+				Collections.singletonList(PiviElementTypes.ThreadStart_2010));
+		entry.setId("createThreadStart11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(PiviElementTypes
+				.getImageDescriptor(PiviElementTypes.ThreadStart_2010));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

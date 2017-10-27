@@ -15,31 +15,34 @@ import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
 public class PiviDiagramEditPart extends DiagramEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final static String MODEL_ID = "Pivi"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 1000;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public PiviDiagramEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PiviDiagramItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PiviDiagramCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new PiviDiagramItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new PiviDiagramCanonicalEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(PiviVisualIDRegistry.TYPED_INSTANCE));
+				new CreationEditPolicyWithCustomReparent(
+						PiviVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

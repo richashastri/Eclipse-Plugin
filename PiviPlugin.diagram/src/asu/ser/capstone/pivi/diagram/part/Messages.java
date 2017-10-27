@@ -8,456 +8,486 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static {
 		NLS.initializeMessages("messages", Messages.class); //$NON-NLS-1$
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Messages() {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizardTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizard_DiagramModelFilePageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizard_DiagramModelFilePageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizard_DomainModelFilePageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizard_DomainModelFilePageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizardOpenEditorError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizardCreationError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviCreationWizardPageExtensionError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_isModifiable;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_handleElementContentChanged;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_IncorrectInputError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_NoDiagramInResourceError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_DiagramLoadingError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_SaveDiagramTask;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_SaveNextResourceTask;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDocumentProvider_SaveAsOperation;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_ResourceErrorDialogTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_ResourceErrorDialogMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_WizardTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_OpenModelFileDialogTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_CreationPageName;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_CreationPageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_CreationPageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviNewDiagramFileWizard_IncorrectRootError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditor_SavingDeletedFile;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditor_SaveAsErrorTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditor_SaveAsErrorMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditor_SaveErrorTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviDiagramEditor_SaveErrorMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviElementChooserDialog_SelectModelElementTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ModelElementSelectionPageMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ValidateActionMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Nodes1Group_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Connections2Group_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String IfEnd1CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String IfEnd1CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String IfStart2CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String IfStart2CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Instruction3CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Instruction3CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MethodEnd4CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MethodEnd4CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MethodStart5CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MethodStart5CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String OutputPort6CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String OutputPort6CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Start7CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Start7CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String WhileEnd8CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String WhileEnd8CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String WhileStart9CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String WhileStart9CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static String ThreadEnd10CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ThreadEnd10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ThreadStart11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ThreadStart11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String OutputPortInputPort1CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String OutputPortInputPort1CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String StartStartPort2CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String StartStartPort2CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String IfStartIfStartFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String WhileEndWhileEndFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MethodEndMethodEndFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String IfEndIfEndFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InstructionInstructionFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MethodStartMethodStartFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String WhileStartWhileStartFigureCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static String ThreadEndThreadEndFigureCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ThreadStartThreadStartFigureCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_PiviDiagram_1000_links;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Start_2008_outgoinglinks;
-
-	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_InputPort_3001_incominglinks;
 
 	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_StartPort_3002_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_OutputPort_3003_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_OutputPortInputPort_4002_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_OutputPortInputPort_4002_source;
-
-	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_StartStartPort_4004_target;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_StartStartPort_4004_source;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Start_2008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OutputPortInputPort_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OutputPortInputPort_4002_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OutputPort_3003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PiviDiagram_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StartPort_3002_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviModelingAssistantProviderTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String PiviModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	

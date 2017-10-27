@@ -28,7 +28,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StartPortItemProvider 
+public class StartPortItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -128,7 +128,6 @@ public class StartPortItemProvider
 	public String getText(Object object) {
 		return getString("_UI_StartPort_type");
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -28,7 +28,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StartItemProvider 
+public class StartItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -105,7 +105,6 @@ public class StartItemProvider
 	public String getText(Object object) {
 		return getString("_UI_Start_type");
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

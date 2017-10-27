@@ -21,26 +21,27 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedback
 /**
  * @generated
  */
-public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx implements IRefreshableFeedbackEditPolicy {
+public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx
+		implements IRefreshableFeedbackEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IFigure selectionFeedbackFigure;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IFigure focusFeedbackFigure;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private FigureListener hostPositionListener;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void showPrimarySelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(true);
@@ -52,8 +53,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void showSelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(true);
@@ -68,8 +69,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void hideSelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(false);
@@ -85,8 +86,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void showFocus() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setFocus(true);
@@ -98,8 +99,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void hideFocus() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setFocus(false);
@@ -112,8 +113,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Rectangle getFeedbackBounds() {
 		Rectangle bounds;
 		if (getHostFigure() instanceof Label) {
@@ -128,14 +129,16 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createSelectionFeedbackFigure() {
 		if (getHostFigure() instanceof Label) {
 			Label feedbackFigure = new Label();
 			feedbackFigure.setOpaque(true);
-			feedbackFigure.setBackgroundColor(ColorConstants.menuBackgroundSelected);
-			feedbackFigure.setForegroundColor(ColorConstants.menuForegroundSelected);
+			feedbackFigure
+					.setBackgroundColor(ColorConstants.menuBackgroundSelected);
+			feedbackFigure
+					.setForegroundColor(ColorConstants.menuForegroundSelected);
 			return feedbackFigure;
 		} else {
 			RectangleFigure feedbackFigure = new RectangleFigure();
@@ -145,8 +148,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createFocusFeedbackFigure() {
 		return new Figure() {
 
@@ -157,8 +160,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void updateLabel(Label target) {
 		Label source = (Label) getHostFigure();
 		target.setText(source.getText());
@@ -167,22 +170,23 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshSelectionFeedback() {
 		if (selectionFeedbackFigure != null) {
 			if (selectionFeedbackFigure instanceof Label) {
 				updateLabel((Label) selectionFeedbackFigure);
 				selectionFeedbackFigure.setBounds(getFeedbackBounds());
 			} else {
-				selectionFeedbackFigure.setBounds(getFeedbackBounds().expand(5, 5));
+				selectionFeedbackFigure.setBounds(getFeedbackBounds().expand(5,
+						5));
 			}
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshFocusFeedback() {
 		if (focusFeedbackFigure != null) {
 			focusFeedbackFigure.setBounds(getFeedbackBounds());
@@ -190,8 +194,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
@@ -199,8 +203,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private FigureListener getHostPositionListener() {
 		if (hostPositionListener == null) {
 			hostPositionListener = new FigureListener() {
@@ -213,8 +217,8 @@ public class PiviTextNonResizableEditPolicy extends NonResizableEditPolicyEx imp
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected List createSelectionHandles() {
 		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart) getHost());
 		moveHandle.setBorder(null);

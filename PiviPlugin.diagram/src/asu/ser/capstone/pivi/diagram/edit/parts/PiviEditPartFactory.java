@@ -15,8 +15,8 @@ import asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry;
 public class PiviEditPartFactory implements EditPartFactory {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
@@ -49,6 +49,12 @@ public class PiviEditPartFactory implements EditPartFactory {
 			case StartEditPart.VISUAL_ID:
 				return new StartEditPart(view);
 
+			case ThreadEndEditPart.VISUAL_ID:
+				return new ThreadEndEditPart(view);
+
+			case ThreadStartEditPart.VISUAL_ID:
+				return new ThreadStartEditPart(view);
+
 			case InputPortEditPart.VISUAL_ID:
 				return new InputPortEditPart(view);
 
@@ -79,6 +85,12 @@ public class PiviEditPartFactory implements EditPartFactory {
 			case WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID:
 				return new WhileStartWhileStartFigureCompartmentEditPart(view);
 
+			case ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:
+				return new ThreadEndThreadEndFigureCompartmentEditPart(view);
+
+			case ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
+				return new ThreadStartThreadStartFigureCompartmentEditPart(view);
+
 			case StartStartPortEditPart.VISUAL_ID:
 				return new StartStartPortEditPart(view);
 
@@ -91,18 +103,20 @@ public class PiviEditPartFactory implements EditPartFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private EditPart createUnrecognizedEditPart(EditPart context, Object model) {
 		// Handle creation of unrecognized child node EditParts here
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
-	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
+	 * @generated
+	 */
+	public static CellEditorLocator getTextCellEditorLocator(
+			ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE
+				.getTextCellEditorLocator(source);
 	}
 
 }

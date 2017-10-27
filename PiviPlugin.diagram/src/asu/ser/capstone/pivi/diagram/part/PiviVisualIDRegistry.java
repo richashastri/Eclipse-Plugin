@@ -24,6 +24,10 @@ import asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartThreadStartFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndWhileEndFigureCompartmentEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart;
@@ -39,13 +43,13 @@ import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompar
 public class PiviVisualIDRegistry {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static final String DEBUG_KEY = "PiviPlugin.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (PiviDiagramEditPart.MODEL_ID.equals(view.getType())) {
@@ -54,12 +58,13 @@ public class PiviVisualIDRegistry {
 				return -1;
 			}
 		}
-		return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(view.getType());
+		return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+				.getVisualID(view.getType());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String getModelID(View view) {
 		View diagram = view.getDiagram();
 		while (view != diagram) {
@@ -73,35 +78,38 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getVisualID(String type) {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
-				PiviDiagramEditorPlugin.getInstance()
-						.logError("Unable to parse view type as a visualID number: " + type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(
+					Platform.getDebugOption(DEBUG_KEY))) {
+				PiviDiagramEditorPlugin.getInstance().logError(
+						"Unable to parse view type as a visualID number: "
+								+ type);
 			}
 		}
 		return -1;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String getType(int visualID) {
 		return Integer.toString(visualID);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getDiagramVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (PiviPackage.eINSTANCE.getPiviDiagram().isSuperTypeOf(domainElement.eClass())
+		if (PiviPackage.eINSTANCE.getPiviDiagram().isSuperTypeOf(
+				domainElement.eClass())
 				&& isDiagram((PiviDiagram) domainElement)) {
 			return PiviDiagramEditPart.VISUAL_ID;
 		}
@@ -109,19 +117,21 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
 		}
-		String containerModelID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getModelID(containerView);
+		String containerModelID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+				.getModelID(containerView);
 		if (!PiviDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
 		if (PiviDiagramEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(containerView);
+			containerVisualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = PiviDiagramEditPart.VISUAL_ID;
@@ -131,105 +141,170 @@ public class PiviVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case PiviDiagramEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getIfStart().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getIfStart().isSuperTypeOf(
+					domainElement.eClass())) {
 				return IfStartEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getWhileEnd().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getWhileEnd().isSuperTypeOf(
+					domainElement.eClass())) {
 				return WhileEndEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getMethodEnd().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getMethodEnd().isSuperTypeOf(
+					domainElement.eClass())) {
 				return MethodEndEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getIfEnd().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getIfEnd().isSuperTypeOf(
+					domainElement.eClass())) {
 				return IfEndEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getInstruction().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInstruction().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InstructionEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getMethodStart().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getMethodStart().isSuperTypeOf(
+					domainElement.eClass())) {
 				return MethodStartEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getWhileStart().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getWhileStart().isSuperTypeOf(
+					domainElement.eClass())) {
 				return WhileStartEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStart().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStart().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartEditPart.VISUAL_ID;
+			}
+			if (PiviPackage.eINSTANCE.getThreadEnd().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ThreadEndEditPart.VISUAL_ID;
+			}
+			if (PiviPackage.eINSTANCE.getThreadStart().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ThreadStartEditPart.VISUAL_ID;
 			}
 			break;
 		case IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
 			break;
 		case WhileEndWhileEndFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
 			break;
 		case MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
 			break;
 		case IfEndIfEndFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
 			break;
 		case InstructionInstructionFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
 			break;
 		case MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
 			break;
 		case WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID:
-			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return OutputPortEditPart.VISUAL_ID;
 			}
-			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
+				return StartPortEditPart.VISUAL_ID;
+			}
+			break;
+		case ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
+				return InputPortEditPart.VISUAL_ID;
+			}
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
+				return OutputPortEditPart.VISUAL_ID;
+			}
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
+				return StartPortEditPart.VISUAL_ID;
+			}
+			break;
+		case ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
+			if (PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(
+					domainElement.eClass())) {
+				return InputPortEditPart.VISUAL_ID;
+			}
+			if (PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(
+					domainElement.eClass())) {
+				return OutputPortEditPart.VISUAL_ID;
+			}
+			if (PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StartPortEditPart.VISUAL_ID;
 			}
 			break;
@@ -238,16 +313,18 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
-		String containerModelID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getModelID(containerView);
+		String containerModelID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+				.getModelID(containerView);
 		if (!PiviDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
 		if (PiviDiagramEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(containerView);
+			containerVisualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = PiviDiagramEditPart.VISUAL_ID;
@@ -279,6 +356,12 @@ public class PiviVisualIDRegistry {
 				return true;
 			}
 			if (StartEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ThreadEndEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ThreadStartEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -317,6 +400,16 @@ public class PiviVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ThreadEndEditPart.VISUAL_ID:
+			if (ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ThreadStartEditPart.VISUAL_ID:
+			if (ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:
 			if (InputPortEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -394,13 +487,35 @@ public class PiviVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:
+			if (InputPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StartPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
+			if (InputPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StartPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -409,19 +524,20 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* User can change implementation of this method to handle some specific
-	* situations not covered by default logic.
-	* 
-	* @generated
-	*/
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
+	 * @generated
+	 */
 	private static boolean isDiagram(PiviDiagram element) {
 		return true;
 	}
 
 	/**
-	* @generated
-	*/
-	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView,
+			EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -431,8 +547,8 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
 		case IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:
@@ -442,6 +558,8 @@ public class PiviVisualIDRegistry {
 		case InstructionInstructionFigureCompartmentEditPart.VISUAL_ID:
 		case MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID:
 		case WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID:
+		case ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:
+		case ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -450,8 +568,8 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
 		case PiviDiagramEditPart.VISUAL_ID:
@@ -468,63 +586,62 @@ public class PiviVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public int getVisualID(View view) {
-			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(view);
+			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.getVisualID(view);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public String getModelID(View view) {
-			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getModelID(view);
+			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.getModelID(view);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(containerView,
-					domainElement);
+			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
-		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
-			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.checkNodeVisualID(containerView,
-					domainElement, candidate);
+		public boolean checkNodeVisualID(View containerView,
+				EObject domainElement, int candidate) {
+			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public boolean isCompartmentVisualID(int visualID) {
-			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.isCompartmentVisualID(visualID);
+			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@Override
-
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.isSemanticLeafVisualID(visualID);
+			return asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry
+					.isSemanticLeafVisualID(visualID);
 		}
 	};
 

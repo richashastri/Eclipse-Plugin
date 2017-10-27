@@ -303,7 +303,7 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2008"
+        visualID="2009"
         editPartClassName="ThreadEndEditPart"
         itemSemanticEditPolicyClassName="ThreadEndItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ThreadEndCanonicalEditPolicy"
@@ -329,7 +329,7 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2009"
+        visualID="2010"
         editPartClassName="ThreadStartEditPart"
         itemSemanticEditPolicyClassName="ThreadStartItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ThreadStartCanonicalEditPolicy"
@@ -522,7 +522,7 @@
         title="ThreadEndFigureCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.1">
+        node="//@diagram/@topLevelNodes.8">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -539,7 +539,7 @@
         title="ThreadStartFigureCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.6">
+        node="//@diagram/@topLevelNodes.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap

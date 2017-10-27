@@ -36,135 +36,162 @@ import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 public class PiviNewDiagramFileWizard extends Wizard {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private WizardNewFileCreationPage myFileCreationPage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private TransactionalEditingDomain myEditingDomain;
 
 	/**
-	* @generated
-	*/
-	public PiviNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
+	 * @generated
+	 */
+	public PiviNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
+			TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(Messages.PiviNewDiagramFileWizard_CreationPageName,
+		myFileCreationPage = new WizardNewFileCreationPage(
+				Messages.PiviNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
-		myFileCreationPage.setTitle(Messages.PiviNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage.setDescription(
-				NLS.bind(Messages.PiviNewDiagramFileWizard_CreationPageDescription, PiviDiagramEditPart.MODEL_ID));
+		myFileCreationPage
+				.setTitle(Messages.PiviNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(
+				Messages.PiviNewDiagramFileWizard_CreationPageDescription,
+				PiviDiagramEditPart.MODEL_ID));
 		IPath filePath;
-		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
+		String fileName = URI.decode(domainModelURI.trimFileExtension()
+				.lastSegment());
 		if (domainModelURI.isPlatformResource()) {
-			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
+			filePath = new Path(domainModelURI.trimSegments(1)
+					.toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
+			throw new IllegalArgumentException(
+					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage.setFileName(PiviDiagramEditorUtil.getUniqueFileName(filePath, fileName, "pivi_diagram")); //$NON-NLS-1$
+		myFileCreationPage.setFileName(PiviDiagramEditorUtil.getUniqueFileName(
+				filePath, fileName, "pivi_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.PiviNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage.setTitle(Messages.PiviNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage.setDescription(Messages.PiviNewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage
+				.setTitle(Messages.PiviNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage
+				.setDescription(Messages.PiviNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void addPages() {
 		addPage(myFileCreationPage);
 		addPage(diagramRootElementSelectionPage);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
 		PiviDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
+				.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain,
-				Messages.PiviNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
+		final Resource diagramResource = resourceSet
+				.createResource(diagramModelURI);
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
+				myEditingDomain,
+				Messages.PiviNewDiagramFileWizard_InitDiagramCommand,
+				affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(
+					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				int diagramVID = PiviVisualIDRegistry
-						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
+						.getDiagramVisualID(diagramRootElementSelectionPage
+								.getModelElement());
 				if (diagramVID != PiviDiagramEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult(Messages.PiviNewDiagramFileWizard_IncorrectRootError);
+					return CommandResult
+							.newErrorCommandResult(Messages.PiviNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
-						PiviDiagramEditPart.MODEL_ID, PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(
+						diagramRootElementSelectionPage.getModelElement(),
+						PiviDiagramEditPart.MODEL_ID,
+						PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
+			OperationHistoryFactory.getOperationHistory().execute(command,
+					new NullProgressMonitor(), null);
 			diagramResource.save(PiviDiagramEditorUtil.getSaveOptions());
 			PiviDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			PiviDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
+			PiviDiagramEditorPlugin.getInstance().logError(
+					"Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			PiviDiagramEditorPlugin.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			PiviDiagramEditorPlugin.getInstance().logError(
+					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			PiviDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
+			PiviDiagramEditorPlugin.getInstance().logError(
+					"Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
 
 	/**
-	* @generated
-	*/
-	private static class DiagramRootElementSelectionPage extends ModelElementSelectionPage {
+	 * @generated
+	 */
+	private static class DiagramRootElementSelectionPage extends
+			ModelElementSelectionPage {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		protected DiagramRootElementSelectionPage(String pageName) {
 			super(pageName);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		protected String getSelectionTitle() {
 			return Messages.PiviNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		protected boolean validatePage() {
-			if (getModelElement() == null) {
+			if (selectedModelElement == null) {
 				setErrorMessage(Messages.PiviNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			boolean result = ViewService.getInstance()
-					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
-							PiviDiagramEditPart.MODEL_ID, PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null : Messages.PiviNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+			boolean result = ViewService.getInstance().provides(
+					new CreateDiagramViewOperation(new EObjectAdapter(
+							selectedModelElement),
+							PiviDiagramEditPart.MODEL_ID,
+							PiviDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(result ? null
+					: Messages.PiviNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

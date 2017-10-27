@@ -13,6 +13,8 @@ import asu.ser.capstone.pivi.diagram.edit.commands.InstructionCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.MethodEndCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.MethodStartCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.StartCreateCommand;
+import asu.ser.capstone.pivi.diagram.edit.commands.ThreadEndCreateCommand;
+import asu.ser.capstone.pivi.diagram.edit.commands.ThreadStartCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.WhileEndCreateCommand;
 import asu.ser.capstone.pivi.diagram.edit.commands.WhileStartCreateCommand;
 import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
@@ -20,18 +22,19 @@ import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
 /**
  * @generated
  */
-public class PiviDiagramItemSemanticEditPolicy extends PiviBaseItemSemanticEditPolicy {
+public class PiviDiagramItemSemanticEditPolicy extends
+		PiviBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public PiviDiagramItemSemanticEditPolicy() {
 		super(PiviElementTypes.PiviDiagram_1000);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (PiviElementTypes.IfStart_2001 == req.getElementType()) {
 			return getGEFWrapper(new IfStartCreateCommand(req));
@@ -57,27 +60,39 @@ public class PiviDiagramItemSemanticEditPolicy extends PiviBaseItemSemanticEditP
 		if (PiviElementTypes.Start_2008 == req.getElementType()) {
 			return getGEFWrapper(new StartCreateCommand(req));
 		}
+		if (PiviElementTypes.ThreadEnd_2009 == req.getElementType()) {
+			return getGEFWrapper(new ThreadEndCreateCommand(req));
+		}
+		if (PiviElementTypes.ThreadStart_2010 == req.getElementType()) {
+			return getGEFWrapper(new ThreadStartCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
+				.getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
-	* @generated
-	*/
-	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
+	 * @generated
+	 */
+	private static class DuplicateAnythingCommand extends
+			DuplicateEObjectsCommand {
 
 		/**
-		* @generated
-		*/
-		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
+		 * @generated
+		 */
+		public DuplicateAnythingCommand(
+				TransactionalEditingDomain editingDomain,
+				DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req
+					.getElementsToBeDuplicated(), req
+					.getAllDuplicatedElementsMap());
 		}
 
 	}

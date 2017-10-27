@@ -15,6 +15,8 @@ import asu.ser.capstone.pivi.PiviPackage;
 import asu.ser.capstone.pivi.Start;
 import asu.ser.capstone.pivi.StartPort;
 import asu.ser.capstone.pivi.Statement;
+import asu.ser.capstone.pivi.ThreadEnd;
+import asu.ser.capstone.pivi.ThreadStart;
 import asu.ser.capstone.pivi.WhileEnd;
 import asu.ser.capstone.pivi.WhileStart;
 
@@ -122,6 +124,20 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 	 * @generated
 	 */
 	private EClass whileStartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass threadEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass threadStartEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -459,6 +475,33 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getThreadEnd() {
+		return threadEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getThreadStart() {
+		return threadStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getThreadStart_Condition() {
+		return (EAttribute)threadStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PiviFactory getPiviFactory() {
 		return (PiviFactory)getEFactoryInstance();
 	}
@@ -524,6 +567,11 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 
 		whileStartEClass = createEClass(WHILE_START);
 		createEAttribute(whileStartEClass, WHILE_START__CONDITION);
+
+		threadEndEClass = createEClass(THREAD_END);
+
+		threadStartEClass = createEClass(THREAD_START);
+		createEAttribute(threadStartEClass, THREAD_START__CONDITION);
 	}
 
 	/**
@@ -561,6 +609,8 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 		methodStartEClass.getESuperTypes().add(this.getStatement());
 		whileEndEClass.getESuperTypes().add(this.getStatement());
 		whileStartEClass.getESuperTypes().add(this.getStatement());
+		threadEndEClass.getESuperTypes().add(this.getStatement());
+		threadStartEClass.getESuperTypes().add(this.getStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ifEndEClass, IfEnd.class, "IfEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -605,6 +655,11 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 
 		initEClass(whileStartEClass, WhileStart.class, "WhileStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWhileStart_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, WhileStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(threadEndEClass, ThreadEnd.class, "ThreadEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(threadStartEClass, ThreadStart.class, "ThreadStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThreadStart_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, ThreadStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

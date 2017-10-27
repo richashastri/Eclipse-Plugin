@@ -348,6 +348,52 @@ public class PiviItemProviderAdapterFactory extends PiviAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link asu.ser.capstone.pivi.ThreadEnd} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThreadEndItemProvider threadEndItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link asu.ser.capstone.pivi.ThreadEnd}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThreadEndAdapter() {
+		if (threadEndItemProvider == null) {
+			threadEndItemProvider = new ThreadEndItemProvider(this);
+		}
+
+		return threadEndItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link asu.ser.capstone.pivi.ThreadStart} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThreadStartItemProvider threadStartItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link asu.ser.capstone.pivi.ThreadStart}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThreadStartAdapter() {
+		if (threadStartItemProvider == null) {
+			threadStartItemProvider = new ThreadStartItemProvider(this);
+		}
+
+		return threadStartItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -458,6 +504,8 @@ public class PiviItemProviderAdapterFactory extends PiviAdapterFactory implement
 		if (startPortItemProvider != null) startPortItemProvider.dispose();
 		if (whileEndItemProvider != null) whileEndItemProvider.dispose();
 		if (whileStartItemProvider != null) whileStartItemProvider.dispose();
+		if (threadEndItemProvider != null) threadEndItemProvider.dispose();
+		if (threadStartItemProvider != null) threadStartItemProvider.dispose();
 	}
 
 }

@@ -29,6 +29,8 @@ import asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart;
+import asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart;
 import asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart;
 import asu.ser.capstone.pivi.diagram.part.PiviDiagramEditorPlugin;
@@ -95,6 +97,14 @@ public class PiviElementTypes {
 	 * @generated
 	 */
 	public static final IElementType Start_2008 = getElementType("PiviPlugin.diagram.Start_2008"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ThreadEnd_2009 = getElementType("PiviPlugin.diagram.ThreadEnd_2009"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ThreadStart_2010 = getElementType("PiviPlugin.diagram.ThreadStart_2010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -248,6 +258,11 @@ public class PiviElementTypes {
 
 			elements.put(Start_2008, PiviPackage.eINSTANCE.getStart());
 
+			elements.put(ThreadEnd_2009, PiviPackage.eINSTANCE.getThreadEnd());
+
+			elements.put(ThreadStart_2010,
+					PiviPackage.eINSTANCE.getThreadStart());
+
 			elements.put(InputPort_3001, PiviPackage.eINSTANCE.getInputPort());
 
 			elements.put(StartPort_3002, PiviPackage.eINSTANCE.getStartPort());
@@ -285,6 +300,8 @@ public class PiviElementTypes {
 			KNOWN_ELEMENT_TYPES.add(MethodStart_2006);
 			KNOWN_ELEMENT_TYPES.add(WhileStart_2007);
 			KNOWN_ELEMENT_TYPES.add(Start_2008);
+			KNOWN_ELEMENT_TYPES.add(ThreadEnd_2009);
+			KNOWN_ELEMENT_TYPES.add(ThreadStart_2010);
 			KNOWN_ELEMENT_TYPES.add(InputPort_3001);
 			KNOWN_ELEMENT_TYPES.add(StartPort_3002);
 			KNOWN_ELEMENT_TYPES.add(OutputPort_3003);
@@ -317,6 +334,10 @@ public class PiviElementTypes {
 			return WhileStart_2007;
 		case StartEditPart.VISUAL_ID:
 			return Start_2008;
+		case ThreadEndEditPart.VISUAL_ID:
+			return ThreadEnd_2009;
+		case ThreadStartEditPart.VISUAL_ID:
+			return ThreadStart_2010;
 		case InputPortEditPart.VISUAL_ID:
 			return InputPort_3001;
 		case StartPortEditPart.VISUAL_ID:
