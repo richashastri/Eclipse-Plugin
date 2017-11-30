@@ -350,6 +350,78 @@
         href="pivi.ecore#//PiviDiagram/statements"/>
     <ownedChild>
       <domainMetaElement
+          href="pivi.ecore#//SyncEnd"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pivi.gmftool#//@palette/@tools.0/@tools.12"/>
+      <diagramNode
+          href="pivi.gmfgraph#SyncEnd"/>
+      <children
+          compartment="//@nodes.10/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/inputs"/>
+      </children>
+      <children
+          compartment="//@nodes.10/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/outputs"/>
+      </children>
+      <children
+          compartment="//@nodes.10/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/start"/>
+      </children>
+      <compartments
+          children="//@nodes.10/@ownedChild/@children.0 //@nodes.10/@ownedChild/@children.1 //@nodes.10/@ownedChild/@children.2">
+        <compartment
+            href="pivi.gmfgraph#SyncEndFigureCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pivi.ecore#//PiviDiagram/statements"/>
+    <ownedChild>
+      <domainMetaElement
+          href="pivi.ecore#//SyncStart"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="pivi.gmftool#//@palette/@tools.0/@tools.13"/>
+      <diagramNode
+          href="pivi.gmfgraph#SyncStart"/>
+      <children
+          compartment="//@nodes.11/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/inputs"/>
+      </children>
+      <children
+          compartment="//@nodes.11/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/outputs"/>
+      </children>
+      <children
+          compartment="//@nodes.11/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="pivi.ecore#//Statement/start"/>
+      </children>
+      <compartments
+          children="//@nodes.11/@ownedChild/@children.0 //@nodes.11/@ownedChild/@children.1 //@nodes.11/@ownedChild/@children.2">
+        <compartment
+            href="pivi.gmfgraph#SyncStartFigureCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="pivi.ecore#//PiviDiagram/statements"/>
+    <ownedChild>
+      <domainMetaElement
           href="pivi.ecore#//ThreadStart"/>
       <tool
           xsi:type="gmftool:CreationTool"

@@ -221,6 +221,40 @@
       <accessors
           figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="SyncEndFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="SyncEndFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SyncEndFigureCompartment">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="SyncStartFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="SyncStartFigure">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SyncStartFigureCompartment">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="IfEnd"
@@ -261,6 +295,12 @@
   <nodes
       name="ThreadStart"
       figure="ThreadStartFigure"/>
+  <nodes
+      name="SyncEnd"
+      figure="SyncEndFigure"/>
+  <nodes
+      name="SyncStart"
+      figure="SyncStartFigure"/>
   <nodes
       name="PrintStatement"
       figure="PrintStatementFigure"/>
@@ -307,7 +347,15 @@
       figure="ThreadStartFigure"
       accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <compartments
-      name="InstructionFigureCompartment"
-      figure="InstructionFigure"
+      name="PrintFigureCompartment"
+      figure="PrintFigure"
       accessor="//@figures.0/@descriptors.15/@accessors.0"/>
+  <compartments
+      name="SyncEndFigureCompartment"
+      figure="SyncEndFigure"
+      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+  <compartments
+      name="SyncStartFigureCompartment"
+      figure="SyncStartFigure"
+      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
 </gmfgraph:Canvas>

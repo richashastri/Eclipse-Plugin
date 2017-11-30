@@ -108,6 +108,24 @@
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
+       <tools
+          xsi:type="gmftool:CreationTool"
+          title="SyncEnd"
+          description="Create new Synchronized End Block">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="SyncStart"
+          description="Create new Synchronized Start Block">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

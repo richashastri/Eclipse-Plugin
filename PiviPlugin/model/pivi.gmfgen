@@ -28,7 +28,7 @@
         canonicalEditPolicyClassName="InputPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InputPortGraphicalNodeEditPolicy"
         createCommandClassName="InputPortCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
+        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9 //@diagram/@compartments.10 //@diagram/@compartments.11" >
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -53,7 +53,7 @@
         canonicalEditPolicyClassName="StartPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StartPortGraphicalNodeEditPolicy"
         createCommandClassName="StartPortCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8">
+        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9 //@diagram/@compartments.10 //@diagram/@compartments.11">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -78,7 +78,7 @@
         canonicalEditPolicyClassName="OutputPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="OutputPortGraphicalNodeEditPolicy"
         createCommandClassName="OutputPortCreateCommand"
-        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6">
+        containers="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9 //@diagram/@compartments.10 //@diagram/@compartments.11">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -380,6 +380,58 @@
             href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
       </modelFacet>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2012"
+        editPartClassName="SyncEndEditPart"
+        itemSemanticEditPolicyClassName="SyncEndItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="SyncEndCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.10"
+        graphicalNodeEditPolicyClassName="SyncEndGraphicalNodeEditPolicy"
+        createCommandClassName="SyncEndCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="SyncEndEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="SyncEndFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SyncEndFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSyncEndFigureCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SyncEndFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSyncEndFigureCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureSyncEndFigureCompartment, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSyncEndFigureCompartment() {&#xA;&#x9;&#x9;return fFigureSyncEndFigureCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="pivi.genmodel#//pivi/SyncEnd"/>
+        <containmentMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+        <childMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+      </modelFacet>
+    </topLevelNodes>
+    <topLevelNodes
+        visualID="2013"
+        editPartClassName="SyncStartEditPart"
+        itemSemanticEditPolicyClassName="SyncStartItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="SyncStartCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.11"
+        graphicalNodeEditPolicyClassName="SyncStartGraphicalNodeEditPolicy"
+        createCommandClassName="SyncStartCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="SyncStartEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="SyncStartFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SyncStartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSyncStartFigureCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SyncStartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSyncStartFigureCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;this.add(fFigureSyncStartFigureCompartment, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSyncStartFigureCompartment() {&#xA;&#x9;&#x9;return fFigureSyncStartFigureCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="pivi.genmodel#//pivi/SyncStart"/>
+        <containmentMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+        <childMetaFeature
+            href="pivi.genmodel#//pivi/PiviDiagram/statements"/>
+      </modelFacet>
+    </topLevelNodes> 
     <links
         visualID="4004"
         editPartClassName="StartStartPortEditPart"
@@ -590,6 +642,40 @@
           getterName="getFigureThreadStartFigureCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
+    <compartments
+        visualID="7012"
+        editPartClassName="SyncEndSyncEndFigureCompartmentEditPart"
+        itemSemanticEditPolicyClassName="SyncEndSyncEndFigureCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="SyncEndSyncEndFigureCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.2 //@diagram/@childNodes.1"
+        title="SyncEndFigureCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.11">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureSyncEndFigureCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
+        visualID="7013"
+        editPartClassName="SyncStartSyncStartFigureCompartmentEditPart"
+        itemSemanticEditPolicyClassName="SyncStartSyncStartFigureCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="SyncStartSyncStartFigureCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.2 //@diagram/@childNodes.1"
+        title="SyncStartFigureCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.12">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureSyncStartFigureCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
     <palette>
       <groups
           title="nodes">
@@ -647,6 +733,16 @@
             title="ThreadStart"
             description="Create new Thread Start"
             genNodes="//@diagram/@topLevelNodes.9"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="SyncEnd"
+            description="Create new Sync End Block"
+            genNodes="//@diagram/@topLevelNodes.11"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="SyncStart"
+            description="Create new Sync Start Block"
+            genNodes="//@diagram/@topLevelNodes.12"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="PrintStatement"
@@ -825,6 +921,30 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.10"/>
+     <childReferences
+        parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.11"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.11"/>
+     <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.12"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.12"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"

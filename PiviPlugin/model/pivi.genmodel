@@ -53,5 +53,9 @@
      <genClasses ecoreClass="pivi.ecore#//PrintStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivi.ecore#//PrintStatement/printlines"/>
     </genClasses>
+    <genClasses ecoreClass="pivi.ecore#//SyncEnd"/>
+    <genClasses ecoreClass="pivi.ecore#//SyncStart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivi.ecore#//SyncStart/condition"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
