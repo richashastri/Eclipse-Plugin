@@ -204,6 +204,16 @@ public class PiviDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(PiviPackage.Literals.PIVI_DIAGRAM__STATEMENTS,
+				 PiviFactory.eINSTANCE.createSyncEnd()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PiviPackage.Literals.PIVI_DIAGRAM__STATEMENTS,
+				 PiviFactory.eINSTANCE.createSyncStart()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(PiviPackage.Literals.PIVI_DIAGRAM__START,
 				 PiviFactory.eINSTANCE.createStart()));
 

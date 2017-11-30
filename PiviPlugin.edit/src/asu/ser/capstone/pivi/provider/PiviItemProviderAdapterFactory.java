@@ -417,6 +417,52 @@ public class PiviItemProviderAdapterFactory extends PiviAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link asu.ser.capstone.pivi.SyncEnd} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SyncEndItemProvider syncEndItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link asu.ser.capstone.pivi.SyncEnd}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSyncEndAdapter() {
+		if (syncEndItemProvider == null) {
+			syncEndItemProvider = new SyncEndItemProvider(this);
+		}
+
+		return syncEndItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link asu.ser.capstone.pivi.SyncStart} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SyncStartItemProvider syncStartItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link asu.ser.capstone.pivi.SyncStart}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSyncStartAdapter() {
+		if (syncStartItemProvider == null) {
+			syncStartItemProvider = new SyncStartItemProvider(this);
+		}
+
+		return syncStartItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -530,6 +576,8 @@ public class PiviItemProviderAdapterFactory extends PiviAdapterFactory implement
 		if (threadEndItemProvider != null) threadEndItemProvider.dispose();
 		if (threadStartItemProvider != null) threadStartItemProvider.dispose();
 		if (printStatementItemProvider != null) printStatementItemProvider.dispose();
+		if (syncEndItemProvider != null) syncEndItemProvider.dispose();
+		if (syncStartItemProvider != null) syncStartItemProvider.dispose();
 	}
 
 }
