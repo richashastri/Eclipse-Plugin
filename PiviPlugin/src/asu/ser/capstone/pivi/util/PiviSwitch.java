@@ -172,6 +172,20 @@ public class PiviSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PiviPackage.SYNC_END: {
+				SyncEnd syncEnd = (SyncEnd)theEObject;
+				T result = caseSyncEnd(syncEnd);
+				if (result == null) result = caseStatement(syncEnd);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PiviPackage.SYNC_START: {
+				SyncStart syncStart = (SyncStart)theEObject;
+				T result = caseSyncStart(syncStart);
+				if (result == null) result = caseStatement(syncStart);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -413,6 +427,36 @@ public class PiviSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePrintStatement(PrintStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sync End</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sync End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSyncEnd(SyncEnd object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sync Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sync Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSyncStart(SyncStart object) {
 		return null;
 	}
 
