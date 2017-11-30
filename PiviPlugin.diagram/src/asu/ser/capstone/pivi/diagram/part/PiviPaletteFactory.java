@@ -32,7 +32,9 @@ paletteContainer.add(createWhileEnd8CreationTool());
 paletteContainer.add(createWhileStart9CreationTool());
 paletteContainer.add(createThreadEnd10CreationTool());
 paletteContainer.add(createThreadStart11CreationTool());
-paletteContainer.add(createPrintStatement12CreationTool());
+paletteContainer.add(createSyncEnd12CreationTool());
+paletteContainer.add(createSyncStart13CreationTool());
+paletteContainer.add(createPrintStatement14CreationTool());
 		return paletteContainer;
 	}
 	/**
@@ -158,9 +160,29 @@ paletteContainer.add(createStartStartPort2CreationTool());
 	/**
  * @generated
  */
-	private org.eclipse.gef.palette.ToolEntry createPrintStatement12CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(asu.ser.capstone.pivi.diagram.part.Messages.PrintStatement12CreationTool_title, asu.ser.capstone.pivi.diagram.part.Messages.PrintStatement12CreationTool_desc, java.util.Collections.singletonList(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.PrintStatement_2011));
-				 entry.setId("createPrintStatement12CreationTool"); //$NON-NLS-1$
+	private org.eclipse.gef.palette.ToolEntry createSyncEnd12CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(asu.ser.capstone.pivi.diagram.part.Messages.SyncEnd12CreationTool_title, asu.ser.capstone.pivi.diagram.part.Messages.SyncEnd12CreationTool_desc, java.util.Collections.singletonList(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.SyncEnd_2012));
+				 entry.setId("createSyncEnd12CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.getImageDescriptor(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.SyncEnd_2012));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createSyncStart13CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(asu.ser.capstone.pivi.diagram.part.Messages.SyncStart13CreationTool_title, asu.ser.capstone.pivi.diagram.part.Messages.SyncStart13CreationTool_desc, java.util.Collections.singletonList(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.SyncStart_2013));
+				 entry.setId("createSyncStart13CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.getImageDescriptor(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.SyncStart_2013));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createPrintStatement14CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(asu.ser.capstone.pivi.diagram.part.Messages.PrintStatement14CreationTool_title, asu.ser.capstone.pivi.diagram.part.Messages.PrintStatement14CreationTool_desc, java.util.Collections.singletonList(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.PrintStatement_2011));
+				 entry.setId("createPrintStatement14CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.getImageDescriptor(asu.ser.capstone.pivi.diagram.providers.PiviElementTypes.PrintStatement_2011));
 		entry.setLargeIcon(entry.getSmallIcon());
 						return entry;

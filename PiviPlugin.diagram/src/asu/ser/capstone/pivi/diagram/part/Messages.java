@@ -363,12 +363,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String PrintStatement12CreationTool_title;
+	public static String SyncEnd12CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PrintStatement12CreationTool_desc;
+	public static String SyncEnd12CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String SyncStart13CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SyncStart13CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String PrintStatement14CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PrintStatement14CreationTool_desc;
 
 	/**
 	 * @generated
@@ -443,12 +463,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String SyncEndSyncEndFigureCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SyncStartSyncStartFigureCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_PiviDiagram_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InputPort_3001_incominglinks;
 
 	/**
 	 * @generated
@@ -463,12 +498,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_InputPort_3001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_OutputPort_3003_outgoinglinks;
+	public static String NavigatorGroupName_Start_2008_outgoinglinks;
 
 	/**
 	 * @generated
@@ -483,12 +513,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_StartPort_3002_incominglinks;
+	public static String NavigatorGroupName_OutputPort_3003_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Start_2008_outgoinglinks;
+	public static String NavigatorGroupName_StartPort_3002_incominglinks;
 
 	/**
 	 * @generated

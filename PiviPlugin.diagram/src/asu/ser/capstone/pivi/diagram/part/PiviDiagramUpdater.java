@@ -32,6 +32,10 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmen
 	return getThreadEndThreadEndFigureCompartment_7009SemanticChildren(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
 	return getThreadStartThreadStartFigureCompartment_7010SemanticChildren(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID:
+	return getSyncEndSyncEndFigureCompartment_7012SemanticChildren(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID:
+	return getSyncStartSyncStartFigureCompartment_7013SemanticChildren(view);
 	}
 		return java.util.Collections.emptyList();
 }
@@ -85,6 +89,14 @@ if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VIS
 	continue;
 }
 if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID) {
 	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
 	continue;
 }
@@ -497,6 +509,86 @@ asu.ser.capstone.pivi.ThreadStart modelElement = (asu.ser.capstone.pivi.ThreadSt
 	}
 			return result;
 	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> getSyncEndSyncEndFigureCompartment_7012SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+asu.ser.capstone.pivi.SyncEnd modelElement = (asu.ser.capstone.pivi.SyncEnd) containerView.getElement();
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
+		asu.ser.capstone.pivi.InputPort childElement = (asu.ser.capstone.pivi.InputPort) it.next();
+					int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+						for (java.util.Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		asu.ser.capstone.pivi.OutputPort childElement = (asu.ser.capstone.pivi.OutputPort) it.next();
+					int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+						for (java.util.Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
+		asu.ser.capstone.pivi.StartPort childElement = (asu.ser.capstone.pivi.StartPort) it.next();
+					int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> getSyncStartSyncStartFigureCompartment_7013SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+asu.ser.capstone.pivi.SyncStart modelElement = (asu.ser.capstone.pivi.SyncStart) containerView.getElement();
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getInputs().iterator(); it.hasNext();) {
+		asu.ser.capstone.pivi.InputPort childElement = (asu.ser.capstone.pivi.InputPort) it.next();
+					int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+						for (java.util.Iterator<?> it = modelElement.getOutputs().iterator(); it.hasNext();) {
+		asu.ser.capstone.pivi.OutputPort childElement = (asu.ser.capstone.pivi.OutputPort) it.next();
+					int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+						for (java.util.Iterator<?> it = modelElement.getStart().iterator(); it.hasNext();) {
+		asu.ser.capstone.pivi.StartPort childElement = (asu.ser.capstone.pivi.StartPort) it.next();
+					int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID) {
+	result.add(new asu.ser.capstone.pivi.diagram.part.PiviNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
 	
 		/**
  * @generated
@@ -527,6 +619,10 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:
 	return getThreadStart_2010ContainedLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:
 	return getPrintStatement_2011ContainedLinks(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:
+	return getSyncEnd_2012ContainedLinks(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:
+	return getSyncStart_2013ContainedLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:
 	return getInputPort_3001ContainedLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:
@@ -564,6 +660,10 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:
 	return getThreadStart_2010IncomingLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:
 	return getPrintStatement_2011IncomingLinks(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:
+	return getSyncEnd_2012IncomingLinks(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:
+	return getSyncStart_2013IncomingLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:
 	return getInputPort_3001IncomingLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:
@@ -601,6 +701,10 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:
 	return getThreadStart_2010OutgoingLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:
 	return getPrintStatement_2011OutgoingLinks(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:
+	return getSyncEnd_2012OutgoingLinks(view);
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:
+	return getSyncStart_2013OutgoingLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:
 	return getInputPort_3001OutgoingLinks(view);
 case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:
@@ -695,6 +799,20 @@ public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescript
  * @generated
  */
 public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getPrintStatement_2011ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getSyncEnd_2012ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getSyncStart_2013ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
 	return java.util.Collections.emptyList();
 }
 	
@@ -796,6 +914,20 @@ public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescript
  * @generated
  */
 public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getPrintStatement_2011IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getSyncEnd_2012IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getSyncStart_2013IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
 	return java.util.Collections.emptyList();
 }
 	
@@ -905,6 +1037,20 @@ public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescript
  * @generated
  */
 public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getPrintStatement_2011OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getSyncEnd_2012OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<asu.ser.capstone.pivi.diagram.part.PiviLinkDescriptor> getSyncStart_2013OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
 	return java.util.Collections.emptyList();
 }
 	

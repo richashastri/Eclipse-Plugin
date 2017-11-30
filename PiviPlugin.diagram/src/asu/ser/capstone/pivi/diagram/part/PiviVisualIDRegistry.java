@@ -133,8 +133,14 @@ if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getThreadStart().isSuperTypeOf(d
 if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getPrintStatement().isSuperTypeOf(domainElement.eClass())) {
 	return asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID;
 }
+if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getSyncEnd().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID;
+}
+if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getSyncStart().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID;
+}
 	break;
-																case asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:
+																		case asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:
 	if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
 	return asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID;
 }
@@ -244,6 +250,28 @@ if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(dom
 	return asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID;
 }
 	break;
+		case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID:
+	if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID;
+}
+if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID;
+}
+if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID;
+}
+	break;
+		case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID:
+	if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getInputPort().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID;
+}
+if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getOutputPort().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID;
+}
+if (asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getStartPort().isSuperTypeOf(domainElement.eClass())) {
+	return asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID;
+}
+	break;
 		}
 	return -1;
 }
@@ -301,6 +329,12 @@ if (asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID == no
 if (asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID == nodeVisualID) {
 	return true;
 }
+if (asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
 	break;
 case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID:
 	if (asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -349,6 +383,16 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:
 	break;
 case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:
 	if (asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:
+	if (asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:
+	if (asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 	return true;
 }
 	break;
@@ -462,6 +506,28 @@ if (asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID == node
 	return true;
 }
 	break;
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID:
+	if (asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID:
+	if (asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+if (asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID == nodeVisualID) {
+	return true;
+}
+	break;
 			}
 	return false;
 }
@@ -505,7 +571,7 @@ private static boolean isDiagram(asu.ser.capstone.pivi.PiviDiagram element) {
  */
 	public static boolean isCompartmentVisualID(int visualID) {
 					switch (visualID) {
-				case asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndWhileEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
+				case asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndWhileEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID:
 					return true;
 				default:
 					break;
@@ -521,7 +587,7 @@ private static boolean isDiagram(asu.ser.capstone.pivi.PiviDiagram element) {
 						case asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.VISUAL_ID:
 				return false;
 																																																																																																case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID:
-																																																						case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:
+																																																																														case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:
 																		case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:
 																		case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID:
 													return true;
