@@ -71,6 +71,8 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 			case PiviPackage.THREAD_END: return createThreadEnd();
 			case PiviPackage.THREAD_START: return createThreadStart();
 			case PiviPackage.PRINT_STATEMENT: return createPrintStatement();
+			case PiviPackage.SYNC_END: return createSyncEnd();
+			case PiviPackage.SYNC_START: return createSyncStart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -224,6 +226,26 @@ public class PiviFactoryImpl extends EFactoryImpl implements PiviFactory {
 	public PrintStatement createPrintStatement() {
 		PrintStatementImpl printStatement = new PrintStatementImpl();
 		return printStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SyncEnd createSyncEnd() {
+		SyncEndImpl syncEnd = new SyncEndImpl();
+		return syncEnd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SyncStart createSyncStart() {
+		SyncStartImpl syncStart = new SyncStartImpl();
+		return syncStart;
 	}
 
 	/**

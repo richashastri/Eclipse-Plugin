@@ -16,6 +16,8 @@ import asu.ser.capstone.pivi.PrintStatement;
 import asu.ser.capstone.pivi.Start;
 import asu.ser.capstone.pivi.StartPort;
 import asu.ser.capstone.pivi.Statement;
+import asu.ser.capstone.pivi.SyncEnd;
+import asu.ser.capstone.pivi.SyncStart;
 import asu.ser.capstone.pivi.ThreadEnd;
 import asu.ser.capstone.pivi.ThreadStart;
 import asu.ser.capstone.pivi.WhileEnd;
@@ -146,6 +148,20 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 	 * @generated
 	 */
 	private EClass printStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass syncEndEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass syncStartEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -528,6 +544,33 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSyncEnd() {
+		return syncEndEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSyncStart() {
+		return syncStartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSyncStart_Condition() {
+		return (EAttribute)syncStartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PiviFactory getPiviFactory() {
 		return (PiviFactory)getEFactoryInstance();
 	}
@@ -601,6 +644,11 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 
 		printStatementEClass = createEClass(PRINT_STATEMENT);
 		createEAttribute(printStatementEClass, PRINT_STATEMENT__PRINTLINES);
+
+		syncEndEClass = createEClass(SYNC_END);
+
+		syncStartEClass = createEClass(SYNC_START);
+		createEAttribute(syncStartEClass, SYNC_START__CONDITION);
 	}
 
 	/**
@@ -641,6 +689,8 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 		threadEndEClass.getESuperTypes().add(this.getStatement());
 		threadStartEClass.getESuperTypes().add(this.getStatement());
 		printStatementEClass.getESuperTypes().add(this.getStatement());
+		syncEndEClass.getESuperTypes().add(this.getStatement());
+		syncStartEClass.getESuperTypes().add(this.getStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ifEndEClass, IfEnd.class, "IfEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -693,6 +743,11 @@ public class PiviPackageImpl extends EPackageImpl implements PiviPackage {
 
 		initEClass(printStatementEClass, PrintStatement.class, "PrintStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrintStatement_Printlines(), ecorePackage.getEString(), "printlines", null, 0, 1, PrintStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(syncEndEClass, SyncEnd.class, "SyncEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(syncStartEClass, SyncStart.class, "SyncStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSyncStart_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, SyncStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
