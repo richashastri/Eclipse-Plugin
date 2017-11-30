@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import asu.ser.capstone.pivi.diagram.providers.PiviElementTypes;
 import asu.ser.capstone.pivi.diagram.providers.PiviModelingAssistantProvider;
 
-public class PiviModelingAssistantProviderOfThreadEndEditPart extends PiviModelingAssistantProvider{
+public class PiviModelingAssistantProviderOfSyncEndEditPart extends PiviModelingAssistantProvider{
 	
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {

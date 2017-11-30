@@ -79,7 +79,7 @@ public class PiviViewProvider extends org.eclipse.gmf.runtime.common.core.servic
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-						case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID:									if (domainElement == null || visualID != asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
+						case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID:									if (domainElement == null || visualID != asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
@@ -88,7 +88,7 @@ public class PiviViewProvider extends org.eclipse.gmf.runtime.common.core.servic
 				}
 			}
 		}
-		return asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID == visualID;
+		return asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID == visualID||asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -146,6 +146,8 @@ public class PiviViewProvider extends org.eclipse.gmf.runtime.common.core.servic
 				case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID: return createThreadEnd_2009(domainElement, containerView, index, persisted, preferencesHint);
 				case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID: return createThreadStart_2010(domainElement, containerView, index, persisted, preferencesHint);
 				case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID: return createPrintStatement_2011(domainElement, containerView, index, persisted, preferencesHint);
+				case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID: return createSyncEnd_2012(domainElement, containerView, index, persisted, preferencesHint);
+				case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID: return createSyncStart_2013(domainElement, containerView, index, persisted, preferencesHint);
 				case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID: return createInputPort_3001(domainElement, containerView, index, persisted, preferencesHint);
 				case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID: return createStartPort_3002(domainElement, containerView, index, persisted, preferencesHint);
 				case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID: return createOutputPort_3003(domainElement, containerView, index, persisted, preferencesHint);
@@ -495,6 +497,66 @@ public class PiviViewProvider extends org.eclipse.gmf.runtime.common.core.servic
 				org.eclipse.swt.graphics.RGB fillRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_FILL_COLOR);
 	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(node, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_FillColor(), org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(fillRGB));
 							createCompartment(node, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID), false, false, true, true);
+						return node;
+	}
+	/**
+ * @generated
+ */
+	public org.eclipse.gmf.runtime.notation.Node createSyncEnd_2012(org.eclipse.emf.ecore.EObject domainElement, org.eclipse.gmf.runtime.notation.View containerView, int index, boolean persisted, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
+		org.eclipse.gmf.runtime.notation.Shape node = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createShape();
+						node.setLayoutConstraint(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createBounds());
+		node.setType(asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID));
+		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final org.eclipse.jface.preference.IPreferenceStore prefStore = (org.eclipse.jface.preference.IPreferenceStore) preferencesHint.getPreferenceStore();
+			
+				org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(node, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getLineStyle_LineColor(), org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(lineRGB));
+				org.eclipse.gmf.runtime.notation.FontStyle nodeFontStyle = (org.eclipse.gmf.runtime.notation.FontStyle) node.getStyle(org.eclipse.gmf.runtime.notation.NotationPackage.Literals.FONT_STYLE);
+	if (nodeFontStyle != null) {
+		org.eclipse.swt.graphics.FontData fontData = org.eclipse.jface.preference.PreferenceConverter.getFontData(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT);
+		nodeFontStyle.setFontName(fontData.getName());
+		nodeFontStyle.setFontHeight(fontData.getHeight());
+		nodeFontStyle.setBold((fontData.getStyle() & org.eclipse.swt.SWT.BOLD) != 0);
+		nodeFontStyle.setItalic((fontData.getStyle() & org.eclipse.swt.SWT.ITALIC) != 0);
+		org.eclipse.swt.graphics.RGB fontRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_FONT_COLOR);
+		nodeFontStyle.setFontColor(org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(fontRGB).intValue());
+	}
+				org.eclipse.swt.graphics.RGB fillRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_FILL_COLOR);
+	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(node, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_FillColor(), org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(fillRGB));
+							createCompartment(node, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID), false, false, true, true);
+						return node;
+	}
+	/**
+ * @generated
+ */
+	public org.eclipse.gmf.runtime.notation.Node createSyncStart_2013(org.eclipse.emf.ecore.EObject domainElement, org.eclipse.gmf.runtime.notation.View containerView, int index, boolean persisted, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
+		org.eclipse.gmf.runtime.notation.Shape node = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createShape();
+						node.setLayoutConstraint(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createBounds());
+		node.setType(asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID));
+		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final org.eclipse.jface.preference.IPreferenceStore prefStore = (org.eclipse.jface.preference.IPreferenceStore) preferencesHint.getPreferenceStore();
+			
+				org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
+	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(node, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getLineStyle_LineColor(), org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(lineRGB));
+				org.eclipse.gmf.runtime.notation.FontStyle nodeFontStyle = (org.eclipse.gmf.runtime.notation.FontStyle) node.getStyle(org.eclipse.gmf.runtime.notation.NotationPackage.Literals.FONT_STYLE);
+	if (nodeFontStyle != null) {
+		org.eclipse.swt.graphics.FontData fontData = org.eclipse.jface.preference.PreferenceConverter.getFontData(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT);
+		nodeFontStyle.setFontName(fontData.getName());
+		nodeFontStyle.setFontHeight(fontData.getHeight());
+		nodeFontStyle.setBold((fontData.getStyle() & org.eclipse.swt.SWT.BOLD) != 0);
+		nodeFontStyle.setItalic((fontData.getStyle() & org.eclipse.swt.SWT.ITALIC) != 0);
+		org.eclipse.swt.graphics.RGB fontRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_FONT_COLOR);
+		nodeFontStyle.setFontColor(org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(fontRGB).intValue());
+	}
+				org.eclipse.swt.graphics.RGB fillRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_FILL_COLOR);
+	org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.setStructuralFeatureValue(node, org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFillStyle_FillColor(), org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities.RGBToInteger(fillRGB));
+							createCompartment(node, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID), false, false, true, true);
 						return node;
 	}
 	/**

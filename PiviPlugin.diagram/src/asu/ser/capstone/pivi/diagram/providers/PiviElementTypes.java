@@ -77,6 +77,14 @@ public static final org.eclipse.gmf.runtime.emf.type.core.IElementType PrintStat
 				/**
  * @generated
  */
+public static final org.eclipse.gmf.runtime.emf.type.core.IElementType SyncEnd_2012 = getElementType("PiviPlugin.diagram.SyncEnd_2012");  //$NON-NLS-1$
+				/**
+ * @generated
+ */
+public static final org.eclipse.gmf.runtime.emf.type.core.IElementType SyncStart_2013 = getElementType("PiviPlugin.diagram.SyncStart_2013");  //$NON-NLS-1$
+				/**
+ * @generated
+ */
 public static final org.eclipse.gmf.runtime.emf.type.core.IElementType InputPort_3001 = getElementType("PiviPlugin.diagram.InputPort_3001");  //$NON-NLS-1$
 				/**
  * @generated
@@ -238,6 +246,12 @@ public static org.eclipse.emf.ecore.ENamedElement getElement(org.eclipse.core.ru
 	elements.put(PrintStatement_2011, asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getPrintStatement());
 					
 	
+	elements.put(SyncEnd_2012, asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getSyncEnd());
+					
+	
+	elements.put(SyncStart_2013, asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getSyncStart());
+					
+	
 	elements.put(InputPort_3001, asu.ser.capstone.pivi.PiviPackage.eINSTANCE.getInputPort());
 					
 	
@@ -278,6 +292,8 @@ public static boolean isKnownElementType(org.eclipse.gmf.runtime.emf.type.core.I
 		KNOWN_ELEMENT_TYPES.add(ThreadEnd_2009);
 		KNOWN_ELEMENT_TYPES.add(ThreadStart_2010);
 		KNOWN_ELEMENT_TYPES.add(PrintStatement_2011);
+		KNOWN_ELEMENT_TYPES.add(SyncEnd_2012);
+		KNOWN_ELEMENT_TYPES.add(SyncStart_2013);
 		KNOWN_ELEMENT_TYPES.add(InputPort_3001);
 		KNOWN_ELEMENT_TYPES.add(StartPort_3002);
 		KNOWN_ELEMENT_TYPES.add(OutputPort_3003);
@@ -304,6 +320,8 @@ public static boolean isKnownElementType(org.eclipse.gmf.runtime.emf.type.core.I
 	case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID:		return ThreadEnd_2009;
 	case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:		return ThreadStart_2010;
 	case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:		return PrintStatement_2011;
+	case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:		return SyncEnd_2012;
+	case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:		return SyncStart_2013;
 	case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID:		return InputPort_3001;
 	case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID:		return StartPort_3002;
 	case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID:		return OutputPort_3003;
