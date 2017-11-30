@@ -181,6 +181,70 @@ return getViewChildren(navigatorItem.getView(), parentElement);
 private Object[] getViewChildren(org.eclipse.gmf.runtime.notation.View view, Object parentElement) {
    	switch (asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(view)) {
 	
+case asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
 case asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.VISUAL_ID: {
 	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
 		org.eclipse.gmf.runtime.notation.Diagram sv = (org.eclipse.gmf.runtime.notation.Diagram) view;
@@ -210,6 +274,10 @@ case asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.VISUAL_ID: {
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID));
 								links.addChildren(createNavigatorItems(connectedViews, links, false));
 																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID));
@@ -218,20 +286,33 @@ case asu.ser.capstone.pivi.diagram.edit.parts.PiviDiagramEditPart.VISUAL_ID: {
 					}			return result.toArray();
 }
 
-case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID: {
+case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID: {
 	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
 		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
 							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID));
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup incominglinks = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup(
+	asu.ser.capstone.pivi.diagram.part.Messages.NavigatorGroupName_InputPort_3001_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}			return result.toArray();
 }
 
 case asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID: {
@@ -253,95 +334,18 @@ case asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID: 
 					}			return result.toArray();
 }
 
-case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID: {
+case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID: {
 	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
 		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
 							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID));
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementPrintStatementFigureCompartmentEditPart.VISUAL_ID));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-											return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-				asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup incominglinks = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup(
-	asu.ser.capstone.pivi.diagram.part.Messages.NavigatorGroupName_InputPort_3001_incominglinks,
-	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
-				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID));
-								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
-					}			return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InstructionInstructionFigureCompartmentEditPart.VISUAL_ID));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-											return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-											return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfStartIfStartFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-											return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodStartMethodStartFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 											return result.toArray();
 }
@@ -362,51 +366,6 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID: {
 											return result.toArray();
 }
 
-case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.MethodEndMethodEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-											return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndThreadEndFigureCompartmentEditPart.VISUAL_ID));
-									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
-								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-											return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-				asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup outgoinglinks = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup(
-	asu.ser.capstone.pivi.diagram.part.Messages.NavigatorGroupName_OutputPort_3003_outgoinglinks,
-	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
-				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID));
-								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-															if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
-					}			return result.toArray();
-}
-
 case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID: {
 	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
 		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
@@ -418,6 +377,51 @@ case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID: {
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileEndWhileEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup outgoinglinks = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup(
+	asu.ser.capstone.pivi.diagram.part.Messages.NavigatorGroupName_Start_2008_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.IfEndIfEndFigureCompartmentEditPart.VISUAL_ID));
 									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
 								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 											return result.toArray();
@@ -442,6 +446,51 @@ case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL
 					}			return result.toArray();
 }
 
+case asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup outgoinglinks = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup(
+	asu.ser.capstone.pivi.diagram.part.Messages.NavigatorGroupName_OutputPort_3003_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortInputPortEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.WhileStartWhileStartFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID: {
+	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+							java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+											return result.toArray();
+}
+
 case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID: {
 	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
 		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
@@ -452,19 +501,6 @@ case asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart.VISUAL_ID: {
 														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID));
 								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
-					}			return result.toArray();
-}
-
-case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID: {
-	java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem> result = new java.util.LinkedList<asu.ser.capstone.pivi.diagram.navigator.PiviAbstractNavigatorItem>();
-		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
-				asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup outgoinglinks = new asu.ser.capstone.pivi.diagram.navigator.PiviNavigatorGroup(
-	asu.ser.capstone.pivi.diagram.part.Messages.NavigatorGroupName_Start_2008_outgoinglinks,
-	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
-				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
-														connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getType(asu.ser.capstone.pivi.diagram.edit.parts.StartStartPortEditPart.VISUAL_ID));
-								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-															if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
 					}			return result.toArray();
 }
 	}
