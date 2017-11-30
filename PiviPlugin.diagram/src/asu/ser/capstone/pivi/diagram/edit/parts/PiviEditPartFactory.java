@@ -58,6 +58,12 @@ public class PiviEditPartFactory implements EditPartFactory {
 			case PrintStatementEditPart.VISUAL_ID:
 				return new PrintStatementEditPart(view);
 
+			case SyncEndEditPart.VISUAL_ID:
+				return new SyncEndEditPart(view);
+
+			case SyncStartEditPart.VISUAL_ID:
+				return new SyncStartEditPart(view);
+
 			case InputPortEditPart.VISUAL_ID:
 				return new InputPortEditPart(view);
 
@@ -97,6 +103,12 @@ public class PiviEditPartFactory implements EditPartFactory {
 
 			case ThreadStartThreadStartFigureCompartmentEditPart.VISUAL_ID:
 				return new ThreadStartThreadStartFigureCompartmentEditPart(view);
+
+			case SyncEndSyncEndFigureCompartmentEditPart.VISUAL_ID:
+				return new SyncEndSyncEndFigureCompartmentEditPart(view);
+
+			case SyncStartSyncStartFigureCompartmentEditPart.VISUAL_ID:
+				return new SyncStartSyncStartFigureCompartmentEditPart(view);
 
 			case StartStartPortEditPart.VISUAL_ID:
 				return new StartStartPortEditPart(view);
