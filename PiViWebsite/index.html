@@ -4,6 +4,7 @@
 	<title>PiVi Project</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|Michroma|Overpass" rel="stylesheet">
 </head>
 <body>
 	<h1> PiVi - An Eclipse Plugin for visual programming </h1>
@@ -30,22 +31,29 @@
 		<br>
 		<div class = "container">
 			<ol>
+				<li>Check if you have Java installed, if not to download java <a href="https://java.com/en/download/" target="_blank">Click here</a></li>
+				<li>Check if you Eclipse installed, if not to download Eclipse (Juno/Mars/Neon) <a href = "http://www.eclipse.org/downloads/packages/release/Juno/SR2" target="_blank">Click here.</a></li>
+				<li>Download the plugin archieve from the <a href = "https://drive.google.com/file/d/1j__XeVEN-e6-NWqJLBxPCCOtej6cNErj/view" target="_blank">link </a> and save it in a folder.</li>
+				<li> The source code for the project can be found <a href = "https://github.com/richashastri/Eclipse-Plugin">here.</a></li>
+				<br>
+				<br>
+				<br>
 				<div class = "row">
 					<div class = "col-md-6">
 						<div clas = "thumbnail">
 							<div class = "caption">
-								<li>Go to Help of your IDC -> Install new software. Then click on Add. Select the PiviThread.zip archive after clicking on Archive.</li>
+								<li>Go to Help of your IDE -> Install new software.</li>
 							</div>
-							<img src = "images/Plugin_install/Step1.JPG">
+							<img src = "images/Installation_steps/Step1.PNG">
 							<hr>
 						</div>
 					</div>
 					<div class = "col-md-6">
 						<div clas = "thumbnail">
 							<div class = "caption">
-								<li>Uncheck ‘Group items by category’ then select Pivi and click next and install.</li>
+								<li>Click on Add and then click on Archive. Select the Pivi_Plugin_Team13_Final.zip archive from where you saved.</li>
 							</div>
-							<img src = "images/Plugin_install/Step2.JPG">
+							<img src = "images/Installation_steps/Step2.PNG">
 							<hr>
 						</div>
 					</div>
@@ -55,9 +63,9 @@
 					<div class = "col-md-6">
 						<div clas = "thumbnail">
 							<div class = "caption">
-								<li>Accept terms and conditions and click on next. </li>
+								<li>Uncheck ‘Group items by category’.Select Pivi and click next and install. </li>
 							</div>
-							<img src = "images/Plugin_install/Step3.JPG">
+							<img src = "images/Installation_steps/Step3.PNG">
 							<hr>
 						</div>
 					</div>
@@ -76,22 +84,42 @@
 					<div class = "col-md-6">
 						<div clas = "thumbnail">
 							<div class = "caption">
-								<li>After the eclipse gets restarted, create a new Java project. </li>
+								<li>After the eclipse gets restarted, to check if PiVi is installed, Go to Help -> Installation Details.</li>
 							</div>
-							<img src = "images/Plugin_install/Step5.JPG">
+							<img src = "images/Installation_steps/Step5.PNG">
 							<hr>
 						</div>
 					</div>
 					<div class = "col-md-6">
 						<div clas = "thumbnail">
 							<div class = "caption">
-								<li>Create new PiVi diagram inside the project.</li>
+								<li>Go to file create a new Java Project.</li>
 							</div>
-							<img src = "images/Plugin_install/Step6.JPG">
+							<img src = "images/Installation_steps/Step6.PNG">
 							<hr>
 						</div>
 					</div>
 				</div>
+				<div class = "row">
+						<div class = "col-md-6">
+							<div clas = "thumbnail">
+								<div class = "caption">
+									<li>To add the Pivi plugin, Right Click on the project,Go to New -> Others </li>
+								</div>
+								<img src = "images/Installation_steps/Step7.PNG">
+								<hr>
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div clas = "thumbnail">
+								<div class = "caption">
+									<li>Select PiVi diagram, in the examples folder.</li>
+								</div>
+								<img src = "images/Installation_steps/Step7.PNG">
+								<hr>
+							</div>
+						</div>
+					</div>
 			</ol>
 		</div>
 		
@@ -103,16 +131,17 @@
 	<section name = "partsof_pivi">
 		<h2>3. Building components of PiVi </h2>
 		<ul>
-			<li><h3> Tools used </h3></li>
+			<li class="subheading">Tools used</li>
 			<dl> 
 				<dt>Ecplise IDE</dt>
 				<dt>Java 8</dt>
 				<dt>GMF (Graphical Modelling Framework) </dt>
 				<dt>EMF (Eclipse Modelling Framework) </dt>
 				<dt>XML parser</dt>
+				<dt>Git</dt>
 			</dl>
 			<br>
-			<li><h3>Parts of PiVi</h3></li>
+			<li class="subheading">Parts of PiVi</li>
 			<p> The PiVi development environment is made up of two basic parts:</p>
 			<dl>
 				<dt>Palette:</dt>
@@ -121,7 +150,7 @@
 				<dd> This is the area where the user is able to drag and drop nodes and add connections amongst these nodes.</dd>
 			</dl>
 			<br>
-			<li><h3> Basic components of PiVi </h3></li>
+			<li class="subheading">Basic components of PiVi</li>
 			<dl>
 				<dt> Node:</dt>
 				<dd>It can be defined as an icon in the UI, which symbolizes a programming construct of Java. </dd>
@@ -139,29 +168,54 @@
 		<div class = "container">
 			<div class = "row">
 				<div class = "col-md-4">
+
+				</div>
+				<div class = "col-md-4">
 					<div class = "thumbnail">
-						<h4>Start</h4>
-						<img src = "images/PiVi_icons/Start.JPG">
+							<h4>Start</h4>
+							<img src = "images/PiVi_icons/Start.JPG">
+							<div class = "caption">
+								This icon represents the start of the main method in the program.
+							</div>
+					</div>
+				</div>
+				<div class = "col-md-4">		
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "col-md-3  col-sm-6">
+					<div class = "thumbnail">
+						<h4>Sync Start</h4>
+						<img src = "images/PiVi_icons/SyncStart.JPG">
 						<div class = "caption">
-							It is the icon used to represent the main method in the class.
+							This icon represents the start of synchronization of a method or an instruction set.
 						</div>
 					</div>
 				</div>
-				<div class = "col-md-4">
+				<div class = "col-md-3  col-sm-6">
+						<div class = "thumbnail">
+							<h4>Sync End</h4>
+							<img src = "images/PiVi_icons/SyncEnd.JPG">
+							<div class = "caption">
+								This icon represents the end of of synchronization of a method or an instruction set.
+							</div>
+						</div>
+					</div>
+				<div class = "col-md-3  col-sm-6">
 					<div class = "thumbnail">
 						<h4>Instruction</h4>
 						<img src = "images/PiVi_icons/Instruction.JPG">
 						<div class = "caption">
-							It is a block through which a program instruction can be entered as a paranter to the icon. 
+							It is a block through which any instruction statement can be entered in the program. 
 						</div>
 					</div>
 				</div>
-				<div class = "col-md-4">
+				<div class = "col-md-3  col-sm-6">
 					<div class = "thumbnail">
 						<h4>Print Statement</h4>
 						<img src = "images/PiVi_icons/Print.JPG">
 						<div class = "caption">
-							It is the icon which will help the user to write print statements.
+							It is the block through which user can add the output statements to the program.
 						</div>
 					</div>
 				</div>
@@ -173,7 +227,7 @@
 						<h4>If Start</h4>
 						<img src = "images/PiVi_icons/IfStart.JPG">
 						<div class = "caption">
-							It is the icon which represents the start of the If loop and takes the condition as the input parameter.
+							This icon represents the start of the If loop and takes the condition as the input parameter.
 						</div>
 					</div>
 				</div>
@@ -182,7 +236,7 @@
 						<h4>If End</h4>
 						<img src = "images/PiVi_icons/IfEnd.JPG">
 						<div class = "caption">
-							It marks the end of the If loop.
+							This icon represents the end of the If loop.
 						</div>
 					</div>
 				</div>
@@ -191,7 +245,7 @@
 						<h4>While Start</h4>
 						<img src = "images/PiVi_icons/While.JPG">
 						<div class = "caption">
-							It represents the start of the looping statement where looping condition can be given.
+							This icon represents the start of the looping statement where looping condition can be given.
 						</div>
 					</div>
 				</div>
@@ -200,7 +254,7 @@
 						<h4>While End</h4>
 						<img src = "images/PiVi_icons/WhileEnd.JPG">
 						<div class = "caption">
-							It represents the end of the end of the while looping statement.
+							This icon represents the end of the While loop.
 						</div>
 					</div>
 				</div>
@@ -212,7 +266,7 @@
 						<h4>Method Start</h4>
 						<img src = "images/PiVi_icons/MethodStart.JPG">
 						<div class = "caption">
-							It is the icon used to represent the start of the anonymous method.
+							This icon represent the start of the user defined anonymous method.
 						</div>
 					</div>
 				</div>
@@ -221,7 +275,7 @@
 						<h4>Method End</h4>
 						<img src = "images/PiVi_icons/MethodEnd.JPG">
 						<div class = "caption">
-							It is the icon used to represent the end of the user defined method.
+							This icon represents the end of the user defined anonymous method.
 						</div>
 					</div>
 				</div>
@@ -230,7 +284,7 @@
 						<h4>Thread Start</h4>
 						<img src = "images/PiVi_icons/ThreadStart.JPG">
 						<div class = "caption">
-							It is the icon used to represent the start of the thread.
+							This icon is used to start the implementation of any function inside the thread.
 						</div>
 					</div>
 				</div>
@@ -239,7 +293,7 @@
 						<h4>Thread End</h4>
 						<img src = "images/PiVi_icons/ThreadEnd.JPG">
 						<div class = "caption">
-							It is the icon used to represent the end of the thread.
+							This icon represents the end of the function which is executed inside the thread.
 						</div>
 					</div>
 				</div>
@@ -254,7 +308,7 @@
 
 
 	<section name = "create_project">
-		<h2> 4. Steps to create a PiVi project </h2>
+		<h2> 5. Steps to create a PiVi project </h2>
 		<p> Steps to create a PiVi project are as follows, after successful download of the plugin.</p>
 		<ol>
 			<li>Open Eclipse IDE and create a new General project and name it.</li>
@@ -264,25 +318,12 @@
 		</ol>
 	</section>
 	<!---*********************************************** -->
-
-
-
-	<section name = "demo_example">
-		<h2> 5. Sample example of the PiVi project </h2>
-		<p> Let us see how a real world problem can be modelled in PiVi and how Java code is generated from the visual representation.</p>
-		<ol>
-			<li> Drag and drop the Start block from the palette to the main Canvas to mark the start of the main block the code. </li>
-			<li> Select the instruction block to declare a variable. Write the code, by double clikcing the node. </li>
-			<li> Make a connection from the start node to the instruction node using the connection start link.</li>
-			<li> Select the If- Start block to mark the start of the If loop and write the loop condition.</li>
-			<li> Select the two instruction blocks where the program snippet would be written. In case of the If condition is satisfied one instrcution block would be executed and if the condition is failed other instrcution block would be excuted. </li>
-			<li> Drag and drop the If-end block to mark the end of the If loop</li>
-			<li>Select the connnection links and make the necessary series of connections.</li>
-			<li> Click on the generate code button to generate the Java code.</li>
-			<li> Refresh the project and you will see a Solutions.java file is generated which will contain the syntactically correct java code.</li>
-			<li> The user can run the Solutions.java file to execute and to get the desired output. </li>
-		</ol>
-	</section>
-
+	<br>
+	<br>
+	<h2> 6. Sample Project Step by Step Guide </h2>
+	<li><a href = "Page2.html">Click here</a> &nbsp; to run through the steps of project creation. </li> 
+	<br>
+	<br>
+	<br> 
 </body>
 </html>

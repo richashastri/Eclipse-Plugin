@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>PiVi Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">\
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Michroma" rel="stylesheet">
+    <style>
+        .footer {
+            width:100% !important;
+            padding: 2rem;
+            background-color: #efefef;
+            text-align: center;
+         }
+    </style>
+ </head>
+<body>
+        <section name = "demo_example">
+                <h2> Sample example of the PiVi project </h2>
+                <p> Let us see how a real world problem can be modelled in PiVi and how Java code is generated from the visual representation.</p>
+                <ol>
+                    <li> Drag and drop the Start block from the palette to the main Canvas to mark the start of the main block the code. </li>
+                    <li> Select the instruction block and create an instance of the thread. </li>
+                    <li> Make a connection from the start node to the instruction node using the connection start link.</li>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6"><img class="center-block" src="images/Sample_project/Step1.PNG" /></div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                    <li>Select the thread start block to provide instructions to be run in the thread.</li>
+                    <li>Select instruction block connected to the thread start block and write the instructions.</li>
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6"><img class="center-block" src="images/Sample_project/Step2.PNG" /></div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    <li>Select the print block and write the value of the variable to be printed.</li>
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6"><img class="center-block" src="images/Sample_project/Step3.PNG" /></div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    <li>Select synchronization start block and connect it to the instruction and the print block followed by Synchronization end block.
+                         This would indicate that the instructions will run in a  synchronized manner.</li>
+                         <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6"><img class="center-block" src="images/Sample_project/Step4.PNG" /></div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                            </div>
+                    <li>Select the connnection links and make the necessary series of connections.</li>
+                    <li> Click on the generate code button to generate the Java code.</li>
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6"><img class="center-block" src="images/Sample_project/Step5.PNG" /></div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    <li> Refresh the project and you will see a Solutions.java file is generated which will contain the syntactically correct java code.</li>
+                    <li> The user can run the Solutions.java file to execute and to get the desired output. </li>
+                </ol>
+            </section>
+<br>
+<br>
+<div class = "footer">
+SER 517 project - <strong>Prepared By :</strong> Richa Shastri, Sarvesh Kulkarni, Smita Hirve, Subhankar Mishra
+</div>
+        
+</body>
+</html>
