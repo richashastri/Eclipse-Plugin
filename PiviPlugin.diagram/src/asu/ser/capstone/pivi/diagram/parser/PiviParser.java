@@ -29,6 +29,7 @@ public class PiviParser {
 	Stack<StatementNode> methodStack;
 	StringBuilder threadDefinitionCode;
 	Stack<StatementNode> threadStack;
+	Stack<StatementNode> syncStack;
 	int counter = 0;
 
 
@@ -41,6 +42,8 @@ public class PiviParser {
 		methodStack = new Stack<>();
 		threadDefinitionCode = new StringBuilder();
 		threadStack = new Stack<>();
+		syncStack = new Stack<>();
+
 	}
 
 	public void ParseDiagram(String path, String fileName) {
@@ -143,17 +146,40 @@ public class PiviParser {
 				code.append(((InstructionNode) statement).instructions);
 				code.append("\n");
 				index = ((InstructionNode) statement).firstOutputIndex;
-			} else if (statement instanceof WhileStartNode) {
+			} else if (statement instanceof PrintStatementNode) {
+				code.append("System.out.println(");
+				code.append(((PrintStatementNode) statement).printlines);
+				code.append(");\n");
+				index = ((PrintStatementNode) statement).firstOutputIndex;
+			} 
+			else if (statement instanceof WhileStartNode) 
+			{
 				whileStack.push(statement);
 				code.append("while(");
 				code.append(((WhileStartNode) statement).condition);
 				code.append("){\n");
 				index = ((WhileStartNode) statement).firstOutputIndex;
-			} else if (statement instanceof WhileEndNode) {
+			} 
+			else if (statement instanceof WhileEndNode) 
+			{
 				if (!whileStack.isEmpty()) {
 					whileStack.pop();
 					code.append("}\n");
 					index = ((WhileEndNode) statement).firstOutputIndex;
+				}
+			}
+			else if (statement instanceof SyncStartNode) 
+			{
+				syncStack.push(statement);
+				code.append("synchronized(this){\n");
+				index = ((SyncStartNode) statement).firstOutputIndex;
+			} 
+			else if (statement instanceof SyncEndNode) 
+			{
+				if (!syncStack.isEmpty()) {
+					syncStack.pop();
+					code.append("}\n");
+					index = ((SyncEndNode) statement).firstOutputIndex;
 				}
 			}
 			else if (statement instanceof MethodEndNode){
@@ -176,9 +202,23 @@ public class PiviParser {
 		for (StatementNode statement : statements) {
 			if(statement instanceof MethodStartNode){
 				methodStack.push(statement);
+				String methodType = ((MethodStartNode)statement).name;
+				String type = methodType.substring(0,methodType.indexOf("_"));
+				System.out.println(type);
+				String funcname = methodType.substring(methodType.indexOf("_")+1);
+				System.out.println(funcname);
+				if(type.equals("Async")){
+					methodDefinitionCode.append("public void " + funcname + "(){\n");
+					generateStatementCode(((MethodStartNode)statement).firstOutputIndex, methodDefinitionCode);
+				}else if(type.equals("Sync")){
+					methodDefinitionCode.append("synchronized public void " + funcname + "(){\n");
+					generateStatementCode(((MethodStartNode)statement).firstOutputIndex, methodDefinitionCode);
+				}else{
+					methodDefinitionCode.append("public void " + funcname + "(){\n");
+					generateStatementCode(((MethodStartNode)statement).firstOutputIndex, methodDefinitionCode);
+				}
 				//methodDefinitionCode.append("public void " + ((MethodStartNode)statement).name + "(){\n");
-				methodDefinitionCode.append("public void run " + ((MethodStartNode)statement).name + "(){\n");
-				generateStatementCode(((MethodStartNode)statement).firstOutputIndex, methodDefinitionCode);
+				
 			}
 		}
 	}
@@ -214,6 +254,8 @@ public class PiviParser {
 					statements.add(new IfEndNode(element));
 				} else if (statementType.contains("Instruction")) {
 					statements.add(new InstructionNode(element));
+				}  else if (statementType.contains("PrintStatement")) {
+					statements.add(new PrintStatementNode(element));
 				} else if (statementType.contains("WhileStart")) {
 					statements.add(new WhileStartNode(element));
 				} else if (statementType.contains("WhileEnd")) {
@@ -233,6 +275,14 @@ public class PiviParser {
 					statements.add(new ThreadEndNode(element));
 					counter++;
 				}
+				else if (statementType.contains("SyncStart")) 
+				{
+					statements.add(new SyncStartNode(element));
+				} 
+				else if (statementType.contains("SyncEnd")) 
+				{
+					statements.add(new SyncEndNode(element));
+				} 
 			}
 		}
 	}
