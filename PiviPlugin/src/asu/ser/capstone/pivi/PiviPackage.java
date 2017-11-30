@@ -945,6 +945,125 @@ public interface PiviPackage extends EPackage {
 	 */
 	int PRINT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link asu.ser.capstone.pivi.impl.SyncEndImpl <em>Sync End</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see asu.ser.capstone.pivi.impl.SyncEndImpl
+	 * @see asu.ser.capstone.pivi.impl.PiviPackageImpl#getSyncEnd()
+	 * @generated
+	 */
+	int SYNC_END = 16;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_END__START = STATEMENT__START;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_END__INPUTS = STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_END__OUTPUTS = STATEMENT__OUTPUTS;
+
+	/**
+	 * The number of structural features of the '<em>Sync End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_END_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sync End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_END_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link asu.ser.capstone.pivi.impl.SyncStartImpl <em>Sync Start</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see asu.ser.capstone.pivi.impl.SyncStartImpl
+	 * @see asu.ser.capstone.pivi.impl.PiviPackageImpl#getSyncStart()
+	 * @generated
+	 */
+	int SYNC_START = 17;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_START__START = STATEMENT__START;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_START__INPUTS = STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_START__OUTPUTS = STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_START__CONDITION = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Sync Start</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_START_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Sync Start</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNC_START_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link asu.ser.capstone.pivi.IfEnd <em>If End</em>}'.
@@ -1316,6 +1435,37 @@ public interface PiviPackage extends EPackage {
 	EAttribute getPrintStatement_Printlines();
 
 	/**
+	 * Returns the meta object for class '{@link asu.ser.capstone.pivi.SyncEnd <em>Sync End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sync End</em>'.
+	 * @see asu.ser.capstone.pivi.SyncEnd
+	 * @generated
+	 */
+	EClass getSyncEnd();
+
+	/**
+	 * Returns the meta object for class '{@link asu.ser.capstone.pivi.SyncStart <em>Sync Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sync Start</em>'.
+	 * @see asu.ser.capstone.pivi.SyncStart
+	 * @generated
+	 */
+	EClass getSyncStart();
+
+	/**
+	 * Returns the meta object for the attribute '{@link asu.ser.capstone.pivi.SyncStart#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see asu.ser.capstone.pivi.SyncStart#getCondition()
+	 * @see #getSyncStart()
+	 * @generated
+	 */
+	EAttribute getSyncStart_Condition();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1649,6 +1799,34 @@ public interface PiviPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRINT_STATEMENT__PRINTLINES = eINSTANCE.getPrintStatement_Printlines();
+
+		/**
+		 * The meta object literal for the '{@link asu.ser.capstone.pivi.impl.SyncEndImpl <em>Sync End</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see asu.ser.capstone.pivi.impl.SyncEndImpl
+		 * @see asu.ser.capstone.pivi.impl.PiviPackageImpl#getSyncEnd()
+		 * @generated
+		 */
+		EClass SYNC_END = eINSTANCE.getSyncEnd();
+
+		/**
+		 * The meta object literal for the '{@link asu.ser.capstone.pivi.impl.SyncStartImpl <em>Sync Start</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see asu.ser.capstone.pivi.impl.SyncStartImpl
+		 * @see asu.ser.capstone.pivi.impl.PiviPackageImpl#getSyncStart()
+		 * @generated
+		 */
+		EClass SYNC_START = eINSTANCE.getSyncStart();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYNC_START__CONDITION = eINSTANCE.getSyncStart_Condition();
 
 	}
 

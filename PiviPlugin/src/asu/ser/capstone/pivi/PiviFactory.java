@@ -157,6 +157,24 @@ public interface PiviFactory extends EFactory {
 	PrintStatement createPrintStatement();
 
 	/**
+	 * Returns a new object of class '<em>Sync End</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sync End</em>'.
+	 * @generated
+	 */
+	SyncEnd createSyncEnd();
+
+	/**
+	 * Returns a new object of class '<em>Sync Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sync Start</em>'.
+	 * @generated
+	 */
+	SyncStart createSyncStart();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
