@@ -65,7 +65,7 @@ protected boolean isOrphaned(java.util.Collection<org.eclipse.emf.ecore.EObject>
 private boolean isMyDiagramElement(org.eclipse.gmf.runtime.notation.View view) {
 		int visualID = asu.ser.capstone.pivi.diagram.part.PiviVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:
+		case asu.ser.capstone.pivi.diagram.edit.parts.IfStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.IfEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.InstructionEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.MethodStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.WhileStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID:case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID:
 		return true;
 	}
 	return false;
@@ -277,6 +277,20 @@ case asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart.VISUAL_ID: {
 case asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart.VISUAL_ID: {
 	if (!domain2NotationMap.containsKey(view.getElement())) {
 		result.addAll(asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getPrintStatement_2011ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getSyncEnd_2012ContainedLinks(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+case asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart.VISUAL_ID: {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(asu.ser.capstone.pivi.diagram.part.PiviDiagramUpdater.getSyncStart_2013ContainedLinks(view));
 	}
 	domain2NotationMap.putView(view.getElement(), view);
 	break;	
