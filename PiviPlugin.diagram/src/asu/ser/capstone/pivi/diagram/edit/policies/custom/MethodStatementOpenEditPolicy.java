@@ -38,7 +38,7 @@ public class MethodStatementOpenEditPolicy extends OpenEditPolicy{
 						GraphicalEditPart methodStatementGEP = ((GraphicalEditPart) editPart);
 						TransactionalEditingDomain domain = methodStatementGEP.getEditingDomain();
 						EObject modelElement = methodStatementGEP.resolveSemanticElement();
-						EStructuralFeature feature = modelElement.eClass().getEStructuralFeature("condition");
+						EStructuralFeature feature = modelElement.eClass().getEStructuralFeature("name");
 						Thread editMethodStartCommand = new Thread(new EditMethodStartCommandThread(domain, feature, modelElement, wizard));
 						editMethodStartCommand.start();
 					}

@@ -217,7 +217,7 @@
       <viewProvider class="asu.ser.capstone.pivi.diagram.providers.PiviViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pivi"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,3001,3002,3003"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4002"/>
       </viewProvider>
    </extension>
@@ -230,7 +230,7 @@
             <method name="getType()" value="Pivi"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003"/>
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,3001,3002,3003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4004,4002"/>
@@ -261,10 +261,13 @@
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.StartEditPart" id="Start_2008"/>
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.ThreadEndEditPart" id="ThreadEnd_2009"/>
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.ThreadStartEditPart" id="ThreadStart_2010"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.PrintStatementEditPart" id="PrintStatement_2011"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.SyncEndEditPart" id="SyncEnd_2012"/>
+         <object class="asu.ser.capstone.pivi.diagram.edit.parts.SyncStartEditPart" id="SyncStart_2013"/>
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.InputPortEditPart" id="InputPort_3001"/>
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.StartPortEditPart" id="StartPort_3002"/>
          <object class="asu.ser.capstone.pivi.diagram.edit.parts.OutputPortEditPart" id="OutputPort_3003"/>
-         <context elements="PiviDiagram_1000,IfStart_2001,WhileEnd_2002,MethodEnd_2003,IfEnd_2004,Instruction_2005,MethodStart_2006,WhileStart_2007,Start_2008,ThreadEnd_2009,ThreadStart_2010,InputPort_3001,StartPort_3002,OutputPort_3003"/>
+         <context elements="PiviDiagram_1000,IfStart_2001,WhileEnd_2002,MethodEnd_2003,IfEnd_2004,Instruction_2005,MethodStart_2006,WhileStart_2007,Start_2008,ThreadEnd_2009,ThreadStart_2010,PrintStatement_2011,SyncEnd_2012,SyncStart_2013,InputPort_3001,StartPort_3002,OutputPort_3003"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -390,6 +393,36 @@
       </metamodel>
       <metamodel nsURI="http:///asu/ser/capstone/pivi.ecore">
          <metamodelType
+               id="PiviPlugin.diagram.PrintStatement_2011"
+               name="%metatype.name.PrintStatement_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PrintStatement"
+               edithelper="asu.ser.capstone.pivi.diagram.edit.helpers.PrintStatementEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///asu/ser/capstone/pivi.ecore">
+         <metamodelType
+               id="PiviPlugin.diagram.SyncEnd_2012"
+               name="%metatype.name.SyncEnd_2012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SyncEnd"
+               edithelper="asu.ser.capstone.pivi.diagram.edit.helpers.SyncEndEditHelper">
+            <param name="semanticHint" value="2012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///asu/ser/capstone/pivi.ecore">
+         <metamodelType
+               id="PiviPlugin.diagram.SyncStart_2013"
+               name="%metatype.name.SyncStart_2013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SyncStart"
+               edithelper="asu.ser.capstone.pivi.diagram.edit.helpers.SyncStartEditHelper">
+            <param name="semanticHint" value="2013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///asu/ser/capstone/pivi.ecore">
+         <metamodelType
                id="PiviPlugin.diagram.InputPort_3001"
                name="%metatype.name.InputPort_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -459,6 +492,9 @@
          <elementType ref="PiviPlugin.diagram.Start_2008"/>
          <elementType ref="PiviPlugin.diagram.ThreadEnd_2009"/>
          <elementType ref="PiviPlugin.diagram.ThreadStart_2010"/>
+         <elementType ref="PiviPlugin.diagram.PrintStatement_2011"/>
+         <elementType ref="PiviPlugin.diagram.SyncEnd_2012"/>
+         <elementType ref="PiviPlugin.diagram.SyncStart_2013"/>
          <elementType ref="PiviPlugin.diagram.InputPort_3001"/>
          <elementType ref="PiviPlugin.diagram.StartPort_3002"/>
          <elementType ref="PiviPlugin.diagram.OutputPort_3003"/>
